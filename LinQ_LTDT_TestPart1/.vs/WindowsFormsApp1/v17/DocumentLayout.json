@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C2E4DCA-0760-4DC0-BF83-945B6B7DCEED}|Solution Items{4C2E4DCA-0760-4DC0-BF83-945B6B7DCEED}|C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{4C2E4DCA-0760-4DC0-BF83-945B6B7DCEED}|Solution Items{4C2E4DCA-0760-4DC0-BF83-945B6B7DCEED}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\windowsformsapp1\\frmhostohos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\frmhostohos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\admin\\desktop\\graphtheoryfall\\linq_ltdt_testpart1\\windowsformsapp1\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\windowsformsapp1\\frm115.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\frm115.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\windowsformsapp1\\frm115.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\frm115.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\windowsformsapp1\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\windowsformsapp1\\menumain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\menumain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\windowsformsapp1\\astar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\astar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\windowsformsapp1\\menumain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4627939-64EE-4032-ACF9-0BD247CA79D3}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\menumain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 387,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-07T10:43:07.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cf577b8c-4134-11d2-83e5-00c04f9902c1}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3fd5e0cc-709a-4f8c-94c3-7f0f8dff5bb2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmHostoHos.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\FrmHostoHos.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\FrmHostoHos.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\FrmHostoHos.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\FrmHostoHos.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T09:26:25.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Astar.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\Astar.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Astar.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\Astar.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Astar.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T09:25:51.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormView.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\FormView.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\FormView.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\FormView.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\FormView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T11:13:46.346Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormView.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\FormView.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\FormView.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\FormView.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\FormView.cs",
+              "ViewState": "AgIAANkDAAAAAAAAAAAQwDEAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T07:18:59.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MenuMain.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\MenuMain.Designer.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\MenuMain.Designer.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\MenuMain.Designer.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\MenuMain.Designer.cs",
+              "ViewState": "AgIAAGIBAAAAAAAAAAAYwKUAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T06:55:34.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\Program.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\Program.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T15:31:49.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Frm115.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\Frm115.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Frm115.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\Frm115.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Frm115.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T11:35:55.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MenuMain.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\MenuMain.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\MenuMain.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\MenuMain.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\MenuMain.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAswFQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T11:35:47.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Frm115.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\Frm115.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Frm115.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\GraphTheoryFall\\LinQ_LTDT_TestPart1\\WindowsFormsApp1\\Frm115.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Frm115.cs",
+              "ViewState": "AgIAAKEBAAAAAAAAAAAqwOwBAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T10:39:24.508Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 224,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
