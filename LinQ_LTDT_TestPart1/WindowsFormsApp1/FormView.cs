@@ -50,6 +50,7 @@ namespace WindowsFormsApp1
         private bool reachedAccidentLocation = false; // Biến theo dõi trạng thái
         private int vertecnt = Form1.GetStreetNamesCount();
         private Random random = new Random();
+        private List<TrafficLight> trafficLights = Form1.trafficLights;
         //Hàm khởi tạo các thuộc tính của form
         private void InitializeForm()
         {
@@ -653,11 +654,11 @@ namespace WindowsFormsApp1
                 // Kiểm tra xem currentNode hoặc nextNode có phải là đèn đỏ không
                 if (nodePositions[currentNode].Type == NodeType.TrafficLight)
                 {
-                    lightToCheck = Form1.trafficLights.Find(l => l.Index == currentNode);
+                    lightToCheck = trafficLights.Find(l => l.Index == currentNode);
                 }
                 else if (nodePositions[nextNode].Type == NodeType.TrafficLight)
                 {
-                    lightToCheck = Form1.trafficLights.Find(l => l.Index == nextNode);
+                    lightToCheck = trafficLights.Find(l => l.Index == nextNode);
                 }
 
                 // Nếu tìm thấy đèn đỏ, kiểm tra khoảng cách và điều chỉnh tốc độ
@@ -791,53 +792,7 @@ namespace WindowsFormsApp1
                 */
                 if (ViewChose.SelectedItem.ToString() == "Zoom")
                 {
-                    // Cập nhật zoomedBmp
-                    zoomedBmp = new Bitmap(pictureBoxZoom.Width, pictureBoxZoom.Height);
-                    using (Graphics g = Graphics.FromImage(zoomedBmp))
-                    {
-                        //cải thiện chất lượng hình ảnh
-                        g.SmoothingMode = SmoothingMode.AntiAlias; // bật khử răng cưa
-                        g.InterpolationMode = InterpolationMode.HighQualityBicubic;//giúp tạo ra hình ảnh mượt mà và sắc nét hơn khi thay đổi kích thước.
-                        // Tính toán zoomRect với kích thước bằng 1/4 kích thước pictureBox1
-                        int zoomWidth = pictureBox1.Width / 4;
-                        int zoomHeight = pictureBox1.Height / 4;
-                        // Tính toán tọa độ góc trên bên trái của zoomRect sao cho xe cứu thương nằm ở giữa pictureBoxZoom
-                        int zoomX = pictureBoxAmbulance.Location.X - zoomWidth / 2;
-                        int zoomY = pictureBoxAmbulance.Location.Y - zoomHeight / 2;
-                        // Giới hạn zoomRect để không vượt quá giới hạn của bmp
-                        zoomX = Math.Max(0, zoomX);
-                        zoomY = Math.Max(0, zoomY);
-
-                        // Đảm bảo zoomWidth không vượt quá giới hạn bên phải của bmp
-                        zoomWidth = Math.Min(bmp.Width - zoomX, zoomWidth);
-
-                        // Đảm bảo zoomHeight không vượt quá giới hạn dưới của bmp
-                        zoomHeight = Math.Min(bmp.Height - zoomY, zoomHeight);
-
-                        // Tạo zoomRect với tọa độ (zoomX, zoomY), chiều rộng zoomWidth và chiều cao zoomHeight
-                        zoomRect = new Rectangle(zoomX, zoomY, zoomWidth, zoomHeight);
-
-                        // Giới hạn zoomRect để không vượt quá giới hạn của bmp
-                        zoomRect.X = Math.Max(0, zoomRect.X);
-                        zoomRect.Y = Math.Max(0, zoomRect.Y);
-                        zoomRect.Width = Math.Min(bmp.Width - zoomRect.X, zoomRect.Width);
-                        zoomRect.Height = Math.Min(bmp.Height - zoomRect.Y, zoomRect.Height);
-                        g.DrawImage(bmp, pictureBoxZoom.ClientRectangle, zoomRect, GraphicsUnit.Pixel); // tạo hiệu ứng phóng to vùng bản đồ được chọn.
-
-                        // Tính toán vị trí mới của xe cứu thương trên pictureBoxZoom
-                        float zoomRatioX = (float)pictureBoxZoom.Width / zoomRect.Width;
-                        float zoomRatioY = (float)pictureBoxZoom.Height / zoomRect.Height;
-                        Point newAmbulanceLocation = new Point(
-                          (int)((pictureBoxAmbulance.Location.X - zoomRect.X) * zoomRatioX) - pictureBoxAmbulance.Width / 2,
-                          (int)((pictureBoxAmbulance.Location.Y - zoomRect.Y) * zoomRatioY) - pictureBoxAmbulance.Height / 2
-                        );
-
-                        // Vẽ xe cứu thương lên zoomedBm
-                        g.DrawImage(pictureBoxAmbulance.Image, new Rectangle(newAmbulanceLocation.X, newAmbulanceLocation.Y, pictureBoxAmbulance.Width, pictureBoxAmbulance.Height));
-                    }
-                    // Cập nhật pictureBoxZoom
-                    pictureBoxZoom.Image = zoomedBmp;
-                    pictureBoxZoom.Invalidate();
+                    UpdateAmbulanceLocation_ZoomMode();
                 }
                 else
 
@@ -959,7 +914,60 @@ namespace WindowsFormsApp1
                 }
             }
         }
- 
+ /*
+  
+  */
+ void UpdateAmbulanceLocation_ZoomMode()
+        {
+            // Cập nhật zoomedBmp
+            zoomedBmp = new Bitmap(pictureBoxZoom.Width, pictureBoxZoom.Height);
+            using (Graphics g = Graphics.FromImage(zoomedBmp))
+            {
+                //cải thiện chất lượng hình ảnh
+                g.SmoothingMode = SmoothingMode.AntiAlias; // bật khử răng cưa
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;//giúp tạo ra hình ảnh mượt mà và sắc nét hơn khi thay đổi kích thước.
+                                                                           // Tính toán zoomRect với kích thước bằng 1/4 kích thước pictureBox1
+                int zoomWidth = pictureBox1.Width / 4;
+                int zoomHeight = pictureBox1.Height / 4;
+                // Tính toán tọa độ góc trên bên trái của zoomRect sao cho xe cứu thương nằm ở giữa pictureBoxZoom
+                int zoomX = pictureBoxAmbulance.Location.X - zoomWidth / 2;
+                int zoomY = pictureBoxAmbulance.Location.Y - zoomHeight / 2;
+                // Giới hạn zoomRect để không vượt quá giới hạn của bmp
+                zoomX = Math.Max(0, zoomX);
+                zoomY = Math.Max(0, zoomY);
+
+                // Đảm bảo zoomWidth không vượt quá giới hạn bên phải của bmp
+                zoomWidth = Math.Min(bmp.Width - zoomX, zoomWidth);
+
+                // Đảm bảo zoomHeight không vượt quá giới hạn dưới của bmp
+                zoomHeight = Math.Min(bmp.Height - zoomY, zoomHeight);
+
+                // Tạo zoomRect với tọa độ (zoomX, zoomY), chiều rộng zoomWidth và chiều cao zoomHeight
+                zoomRect = new Rectangle(zoomX, zoomY, zoomWidth, zoomHeight);
+
+                // Giới hạn zoomRect để không vượt quá giới hạn của bmp
+                zoomRect.X = Math.Max(0, zoomRect.X);
+                zoomRect.Y = Math.Max(0, zoomRect.Y);
+                zoomRect.Width = Math.Min(bmp.Width - zoomRect.X, zoomRect.Width);
+                zoomRect.Height = Math.Min(bmp.Height - zoomRect.Y, zoomRect.Height);
+                g.DrawImage(bmp, pictureBoxZoom.ClientRectangle, zoomRect, GraphicsUnit.Pixel); // tạo hiệu ứng phóng to vùng bản đồ được chọn.
+
+                // Tính toán vị trí mới của xe cứu thương trên pictureBoxZoom
+                float zoomRatioX = (float)pictureBoxZoom.Width / zoomRect.Width;
+                float zoomRatioY = (float)pictureBoxZoom.Height / zoomRect.Height;
+                Point newAmbulanceLocation = new Point(
+                  (int)((pictureBoxAmbulance.Location.X - zoomRect.X) * zoomRatioX) - pictureBoxAmbulance.Width / 2,
+                  (int)((pictureBoxAmbulance.Location.Y - zoomRect.Y) * zoomRatioY) - pictureBoxAmbulance.Height / 2
+                );
+
+                // Vẽ xe cứu thương lên zoomedBm
+                g.DrawImage(pictureBoxAmbulance.Image, new Rectangle(newAmbulanceLocation.X, newAmbulanceLocation.Y, pictureBoxAmbulance.Width, pictureBoxAmbulance.Height));
+            }
+            // Cập nhật pictureBoxZoom
+            pictureBoxZoom.Image = zoomedBmp;
+            pictureBoxZoom.Invalidate();
+        }
+         
         private void ResetSimulationData()
         {
             path = new List<int>();

@@ -9,6 +9,7 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using iText.IO.Font.Otf.Lookuptype7;
 namespace WindowsFormsApp1
 {
     /*
@@ -23,6 +24,7 @@ namespace WindowsFormsApp1
         private FormView currentFormView; // Biến để lưu FormView hiện tại
         private Astar astar;
         public static int testerindex;
+        private string AlgorithmType = MenuMain.AlgrType;
         //Ma trận của đề tài
         public static int[,] adjacencyMatrix = new int[,] {
             //đơn vị : mét - đồ thị vô hướng  a->b , b->a
@@ -271,7 +273,7 @@ namespace WindowsFormsApp1
             }
 
             // Tìm bệnh viện gần nhất với vị trí tai nạn
-            int nearestHospitalIndex = FindNearestHospital(streetName, MenuMain.AlgrType);
+            int nearestHospitalIndex = FindNearestHospital(streetName);
             // Kiểm tra xem có tìm thấy bệnh viện gần nhất không
             if (nearestHospitalIndex == -1)
             {
@@ -284,7 +286,7 @@ namespace WindowsFormsApp1
 
             // Khởi tạo FormView với đường đi từ bệnh viện gần nhất đến vị trí tai nạn
             //tìm đường đi đến vị trí bị tai nạn
-            List<int> pathToAccident = FindShortestPath(listVertex[nearestHospitalIndex], streetName, MenuMain.AlgrType);
+            List<int> pathToAccident = FindShortestPath(listVertex[nearestHospitalIndex], streetName);
             Console.WriteLine("Path to Accident:");    
             // Kiểm tra xem có tìm thấy đường đi đến vị trí tai nạn không
             if (pathToAccident.Count == 0)
@@ -402,7 +404,7 @@ namespace WindowsFormsApp1
                     // Tính toán đường đi từ vị tr  í tai nạn đến bệnh viện chuyên khoa
                     int startIndex = listVertex.IndexOf(accidentLocation);
                     int endIndex = listVertex.IndexOf(targetHospital);
-                    List<int> pathToHospital = FindShortestPath(startIndex, endIndex, MenuMain.AlgrType);
+                    List<int> pathToHospital = FindShortestPath(startIndex, endIndex);
 
                     // Kiểm tra xem có tìm thấy đường đi đến bệnh viện chuyên khoa không
                     if (pathToHospital.Count == 0)
@@ -427,14 +429,14 @@ namespace WindowsFormsApp1
         private void EmergencyButton_Click(object sender, EventArgs e)
         {
             string currentStreet = accidentLocation;
-            int nearHospitalIndex = FindNearestHospital(currentStreet, MenuMain.AlgrType);
+            int nearHospitalIndex = FindNearestHospital(currentStreet);
             //check lỗi...
             if (nearHospitalIndex == -1)
             {
                 MessageBox.Show("Không tìm thấy bệnh viện gần nhất.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            List<int> pathToHospital = FindShortestPath(currentStreet, listVertex[nearHospitalIndex], MenuMain.AlgrType);
+            List<int> pathToHospital = FindShortestPath(currentStreet, listVertex[nearHospitalIndex]);
             // Kiểm tra xem có tìm thấy đường đi đến bệnh viện không
             //check lỗi...
             if (pathToHospital.Count == 0)
@@ -452,10 +454,11 @@ namespace WindowsFormsApp1
             }
         }
         // Tìm bệnh viện gần nhất từ một địa điểm cho trước
-        private int FindNearestHospital(string streetName, string algorithmType)
+        private int FindNearestHospital(string streetName)
         {
             // Tìm chỉ số của đường trong danh sách đỉnh
             int startIndex = listVertex.IndexOf(streetName);
+            string algorithmType = this.AlgorithmType;
 
             // Khởi tạo biến lưu trữ chỉ số bệnh viện gần nhất và khoảng cách tối thiểu
             int nearestHospitalIndex = -1;
@@ -500,12 +503,12 @@ namespace WindowsFormsApp1
             // Trả về chỉ số của bệnh viện gần nhất
             return nearestHospitalIndex;
         }
-        private List<int> FindShortestPath(string startStreet, string endStreet, string algorithmType)
+        private List<int> FindShortestPath(string startStreet, string endStreet)
         {
             // Tìm chỉ số của đường trong danh sách đỉnh
             int startIndex = listVertex.IndexOf(startStreet);
             int endIndex = listVertex.IndexOf(endStreet);
-
+            string algorithmType = this.AlgorithmType;
             List<int> shortestPath = null; //khởi tạo path
             
             if (algorithmType == "A*")
@@ -520,9 +523,10 @@ namespace WindowsFormsApp1
             return shortestPath;
         }
         //nạp chồng hàm với 2 para kiểu int
-        private List<int> FindShortestPath(int startIndex, int endIndex, string algorithmType)
+        private List<int> FindShortestPath(int startIndex, int endIndex)
         {
             List<int> shortestPath = null;
+            string algorithmType = this.AlgorithmType;
             // Tìm đường đi ngắn nhất đến bệnh viện hiện tại bằng thuật toán A* hoặc Dijkstra
             if (algorithmType == "A*")
             {

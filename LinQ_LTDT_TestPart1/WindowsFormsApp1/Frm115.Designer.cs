@@ -102,10 +102,10 @@
             this.EmercengyButton.BackColor = System.Drawing.Color.Red;
             this.EmercengyButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmercengyButton.Image = ((System.Drawing.Image)(resources.GetObject("EmercengyButton.Image")));
-            this.EmercengyButton.Location = new System.Drawing.Point(12, 143);
-            this.EmercengyButton.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.EmercengyButton.Location = new System.Drawing.Point(15, 146);
+            this.EmercengyButton.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             this.EmercengyButton.Name = "EmercengyButton";
-            this.EmercengyButton.Size = new System.Drawing.Size(827, 129);
+            this.EmercengyButton.Size = new System.Drawing.Size(821, 123);
             this.EmercengyButton.TabIndex = 3;
             this.EmercengyButton.Click += new System.EventHandler(this.EmergencyButton_Click);
             this.EmercengyButton.MouseLeave += new System.EventHandler(this.Emercengy_MouseLeave);
@@ -134,18 +134,18 @@
             // txtStreetName
             // 
             this.txtStreetName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtStreetName.Location = new System.Drawing.Point(119, 119);
-            this.txtStreetName.Margin = new System.Windows.Forms.Padding(119, 119, 119, 119);
+            this.txtStreetName.Location = new System.Drawing.Point(149, 149);
+            this.txtStreetName.Margin = new System.Windows.Forms.Padding(149, 149, 149, 149);
             this.txtStreetName.Name = "txtStreetName";
-            this.txtStreetName.Size = new System.Drawing.Size(613, 33);
+            this.txtStreetName.Size = new System.Drawing.Size(553, 33);
             this.txtStreetName.TabIndex = 1;
             // 
             // btnRun
             // 
             this.btnRun.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRun.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRun.Location = new System.Drawing.Point(2115, 1258);
-            this.btnRun.Margin = new System.Windows.Forms.Padding(1258, 1258, 1258, 1258);
+            this.btnRun.Location = new System.Drawing.Point(2429, 1572);
+            this.btnRun.Margin = new System.Windows.Forms.Padding(1572, 1572, 1572, 1572);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(1, 1);
             this.btnRun.TabIndex = 1;
