@@ -123,7 +123,7 @@ namespace WindowsFormsApp1
         "Đường Lý Chính Thắng",     // 24
         "Đường nguyễn văn Luông",   // 25
         "Bệnh viện Tai Mũi Họng",   // 26
-        "Đường Nguyễn Văn Cừ",      //27
+        "Đườn g Nguyễn Văn Cừ",      //27
         "Đường Ngô Quyền nối dài", //28
     "Đèn đỏ bệnh viện quận 6 - Nguyễn Văn Luông", //29
     "Đèn đỏ hồng bàng - An dương vương",// 30
@@ -372,6 +372,49 @@ namespace WindowsFormsApp1
             btnRun.Enabled = true; // Cho phép nhấn nút "Bắt đầu"
             EmercengyButton.Visible = true;
         }
+        //tạo một event hco btbRun click ở đợt mô phỏng 2
+        private void btbRunReached_Click(object sender , EventArgs e)
+        {
+            string diseaseType = cmbDiseaseType.SelectedItem?.ToString();
+
+            // Kiểm tra xem người dùng đã chọn loại bệnh chưa
+            if (string.IsNullOrEmpty(diseaseType) || diseaseType == "Hãy chọn loại bệnh mà nạn nhân gặp phải")
+            {
+                MessageBox.Show("Vui lòng chọn loại bệnh.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Tìm bệnh viện chuyên khoa
+            string targetHospital = diseaseHospitalMap.ContainsKey(diseaseType) ? diseaseHospitalMap[diseaseType] : null;
+            if (targetHospital == null)
+            {
+                MessageBox.Show("Không tìm thấy bệnh viện chuyên khoa cho loại bệnh này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Tính toán đường đi từ vị tr  í tai nạn đến bệnh viện chuyên khoa
+            int startIndex = listVertex.IndexOf(accidentLocation);
+            int endIndex = listVertex.IndexOf(targetHospital);
+            List<int> pathToHospital = FindShortestPath(startIndex, endIndex);
+
+            // Kiểm tra xem có tìm thấy đường đi đến bệnh viện chuyên khoa không
+            if (pathToHospital.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy đường đi đến bệnh viện chuyên khoa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Cập nhật đường đi và bắt đầu lại animation trong FormView
+            FormView formView = (FormView)sender; // Lấy FormView từ sender
+            formView.UpdatePath(pathToHospital);
+            formView.StartAnimation();
+            Form1 frm1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+            if (frm1 != null)
+            {
+                frm1.Close();
+            }
+            this.Hide(); // Ẩn Form115 sau khi bắt đầu di chuyển đến bệnh viện chuyên khoa
+        }
         //khi xe cứu thương đến vị trí tai nạn thì gọi Event này
         private void FormView_ReachedDestination(object sender, EventArgs e)
         {
@@ -382,48 +425,8 @@ namespace WindowsFormsApp1
 
             // Xử lý sự kiện nút "Bắt đầu" sau khi người dùng chọn bệnh
             btnRun.Click -= btnRun_Click;  // Gỡ sự kiện cũ
-            btnRun.Click += (s, args) =>
-                {
-                    string diseaseType = cmbDiseaseType.SelectedItem?.ToString();
-
-                    // Kiểm tra xem người dùng đã chọn loại bệnh chưa
-                    if (string.IsNullOrEmpty(diseaseType) || diseaseType == "Hãy chọn loại bệnh mà nạn nhân gặp phải")
-                    {
-                        MessageBox.Show("Vui lòng chọn loại bệnh.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    // Tìm bệnh viện chuyên khoa
-                    string targetHospital = diseaseHospitalMap.ContainsKey(diseaseType) ? diseaseHospitalMap[diseaseType] : null;
-                    if (targetHospital == null)
-                    {
-                        MessageBox.Show("Không tìm thấy bệnh viện chuyên khoa cho loại bệnh này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    // Tính toán đường đi từ vị tr  í tai nạn đến bệnh viện chuyên khoa
-                    int startIndex = listVertex.IndexOf(accidentLocation);
-                    int endIndex = listVertex.IndexOf(targetHospital);
-                    List<int> pathToHospital = FindShortestPath(startIndex, endIndex);
-
-                    // Kiểm tra xem có tìm thấy đường đi đến bệnh viện chuyên khoa không
-                    if (pathToHospital.Count == 0)
-                    {
-                        MessageBox.Show("Không tìm thấy đường đi đến bệnh viện chuyên khoa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    // Cập nhật đường đi và bắt đầu lại animation trong FormView
-                    FormView formView = (FormView)sender; // Lấy FormView từ sender
-                    formView.UpdatePath(pathToHospital);
-                    formView.StartAnimation();
-                    Form1 frm1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
-                    if (frm1 != null)
-                    {
-                        frm1.Close(); 
-                    }
-                    this.Hide(); // Ẩn Form115 sau khi bắt đầu di chuyển đến bệnh viện chuyên khoa
-                };
+            btnRun.Click += btbRunReached_Click; //thay thế bằng event mới
+           
         }
         //sử lý sự kiện khi click vào nút khẩn cấp
         private void EmergencyButton_Click(object sender, EventArgs e)

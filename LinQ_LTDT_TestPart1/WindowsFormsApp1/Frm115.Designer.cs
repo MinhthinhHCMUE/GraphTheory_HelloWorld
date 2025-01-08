@@ -83,9 +83,9 @@
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.EmercengyButton, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.txtHint, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.cmbDiseaseType, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtStreetName, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtHint, 0, 3);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -102,10 +102,10 @@
             this.EmercengyButton.BackColor = System.Drawing.Color.Red;
             this.EmercengyButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmercengyButton.Image = ((System.Drawing.Image)(resources.GetObject("EmercengyButton.Image")));
-            this.EmercengyButton.Location = new System.Drawing.Point(15, 146);
-            this.EmercengyButton.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.EmercengyButton.Location = new System.Drawing.Point(24, 155);
+            this.EmercengyButton.Margin = new System.Windows.Forms.Padding(24, 24, 24, 24);
             this.EmercengyButton.Name = "EmercengyButton";
-            this.EmercengyButton.Size = new System.Drawing.Size(821, 123);
+            this.EmercengyButton.Size = new System.Drawing.Size(803, 105);
             this.EmercengyButton.TabIndex = 3;
             this.EmercengyButton.Click += new System.EventHandler(this.EmergencyButton_Click);
             this.EmercengyButton.MouseLeave += new System.EventHandler(this.Emercengy_MouseLeave);
@@ -113,10 +113,12 @@
             // 
             // txtHint
             // 
+            this.txtHint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtHint.Location = new System.Drawing.Point(3, 287);
+            this.txtHint.Location = new System.Drawing.Point(2, 286);
+            this.txtHint.Margin = new System.Windows.Forms.Padding(2);
             this.txtHint.Name = "txtHint";
-            this.txtHint.Size = new System.Drawing.Size(793, 34);
+            this.txtHint.Size = new System.Drawing.Size(847, 34);
             this.txtHint.TabIndex = 4;
             // 
             // cmbDiseaseType
@@ -133,21 +135,22 @@
             // 
             // txtStreetName
             // 
+            this.txtStreetName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtStreetName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtStreetName.Location = new System.Drawing.Point(149, 149);
-            this.txtStreetName.Margin = new System.Windows.Forms.Padding(149, 149, 149, 149);
+            this.txtStreetName.Location = new System.Drawing.Point(35, 35);
+            this.txtStreetName.Margin = new System.Windows.Forms.Padding(35);
             this.txtStreetName.Name = "txtStreetName";
-            this.txtStreetName.Size = new System.Drawing.Size(553, 33);
+            this.txtStreetName.Size = new System.Drawing.Size(781, 33);
             this.txtStreetName.TabIndex = 1;
             // 
             // btnRun
             // 
             this.btnRun.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRun.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRun.Location = new System.Drawing.Point(2429, 1572);
-            this.btnRun.Margin = new System.Windows.Forms.Padding(1572, 1572, 1572, 1572);
+            this.btnRun.Location = new System.Drawing.Point(872, 15);
+            this.btnRun.Margin = new System.Windows.Forms.Padding(15);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(1, 1);
+            this.btnRun.Size = new System.Drawing.Size(551, 291);
             this.btnRun.TabIndex = 1;
             this.btnRun.Text = "Bắt đầu";
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
