@@ -35,9 +35,9 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.EmercengyButton = new Telerik.WinControls.UI.RadButton();
-            this.txtHint = new System.Windows.Forms.TextBox();
             this.cmbDiseaseType = new System.Windows.Forms.ComboBox();
             this.txtStreetName = new Telerik.WinControls.UI.RadTextBox();
+            this.txtHint = new System.Windows.Forms.TextBox();
             this.btnRun = new Telerik.WinControls.UI.RadButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -102,24 +102,14 @@
             this.EmercengyButton.BackColor = System.Drawing.Color.Red;
             this.EmercengyButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmercengyButton.Image = ((System.Drawing.Image)(resources.GetObject("EmercengyButton.Image")));
-            this.EmercengyButton.Location = new System.Drawing.Point(24, 155);
-            this.EmercengyButton.Margin = new System.Windows.Forms.Padding(24, 24, 24, 24);
+            this.EmercengyButton.Location = new System.Drawing.Point(30, 161);
+            this.EmercengyButton.Margin = new System.Windows.Forms.Padding(30, 30, 30, 30);
             this.EmercengyButton.Name = "EmercengyButton";
-            this.EmercengyButton.Size = new System.Drawing.Size(803, 105);
+            this.EmercengyButton.Size = new System.Drawing.Size(791, 93);
             this.EmercengyButton.TabIndex = 3;
             this.EmercengyButton.Click += new System.EventHandler(this.EmergencyButton_Click);
             this.EmercengyButton.MouseLeave += new System.EventHandler(this.Emercengy_MouseLeave);
             this.EmercengyButton.MouseHover += new System.EventHandler(this.Emercengy_MouseHover);
-            // 
-            // txtHint
-            // 
-            this.txtHint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtHint.Location = new System.Drawing.Point(2, 286);
-            this.txtHint.Margin = new System.Windows.Forms.Padding(2);
-            this.txtHint.Name = "txtHint";
-            this.txtHint.Size = new System.Drawing.Size(847, 34);
-            this.txtHint.TabIndex = 4;
             // 
             // cmbDiseaseType
             // 
@@ -137,20 +127,30 @@
             // 
             this.txtStreetName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtStreetName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtStreetName.Location = new System.Drawing.Point(35, 35);
-            this.txtStreetName.Margin = new System.Windows.Forms.Padding(35);
+            this.txtStreetName.Location = new System.Drawing.Point(44, 44);
+            this.txtStreetName.Margin = new System.Windows.Forms.Padding(44, 44, 44, 44);
             this.txtStreetName.Name = "txtStreetName";
-            this.txtStreetName.Size = new System.Drawing.Size(781, 33);
+            this.txtStreetName.Size = new System.Drawing.Size(763, 33);
             this.txtStreetName.TabIndex = 1;
+            // 
+            // txtHint
+            // 
+            this.txtHint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtHint.Location = new System.Drawing.Point(2, 286);
+            this.txtHint.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHint.Name = "txtHint";
+            this.txtHint.Size = new System.Drawing.Size(847, 34);
+            this.txtHint.TabIndex = 4;
             // 
             // btnRun
             // 
             this.btnRun.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRun.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRun.Location = new System.Drawing.Point(872, 15);
-            this.btnRun.Margin = new System.Windows.Forms.Padding(15);
+            this.btnRun.Location = new System.Drawing.Point(876, 19);
+            this.btnRun.Margin = new System.Windows.Forms.Padding(19, 19, 19, 19);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(551, 291);
+            this.btnRun.Size = new System.Drawing.Size(543, 283);
             this.btnRun.TabIndex = 1;
             this.btnRun.Text = "Bắt đầu";
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);

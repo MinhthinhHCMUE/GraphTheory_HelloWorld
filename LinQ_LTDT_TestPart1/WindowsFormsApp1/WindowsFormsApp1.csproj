@@ -103,6 +103,7 @@
     </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -168,11 +169,34 @@
     <Compile Include="AStarAndDijktraFrm.Designer.cs">
       <DependentUpon>AStarAndDijktraFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.dbml</DependentUpon>
+    </Compile>
     <Compile Include="FormView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormView.Designer.cs">
       <DependentUpon>FormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanLy.Designer.cs">
+      <DependentUpon>FrmQuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSign.Designer.cs">
+      <DependentUpon>FrmSign.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphNode.cs" />
     <Compile Include="IntroduceForm.cs">
@@ -227,6 +251,15 @@
     <EmbeddedResource Include="FormView.resx">
       <DependentUpon>FormView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanLy.resx">
+      <DependentUpon>FrmQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSign.resx">
+      <DependentUpon>FrmSign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IntroduceForm.resx">
       <DependentUpon>IntroduceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +275,14 @@
     <EmbeddedResource Include="AlgorithmFrm.resx">
       <DependentUpon>AlgorithmFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Database.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Database.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database.dbml.layout">
+      <DependentUpon>Database.dbml</DependentUpon>
+    </None>
     <None Include="IconFolder\logo-bo-y-te.ico.crdownload" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -283,6 +324,8 @@
     <None Include="Resources\HospitalToHospitalGIf.gif" />
     <None Include="Resources\hostoHosGIF.gif" />
     <None Include="Resources\VideoAlgor.mp4" />
+    <None Include="Resources\BackgroundLogin.jpg" />
+    <None Include="Resources\BgLogin.jpg" />
     <Content Include="Resources\logo-bo-y-te.ico" />
     <Content Include="RoadImg.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -315,6 +358,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

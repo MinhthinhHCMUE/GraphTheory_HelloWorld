@@ -227,7 +227,7 @@ namespace WindowsFormsApp1
             }
 
             cmbDiseaseType.Items.Insert(0, "Hãy chọn loại bệnh mà nạn nhân gặp phải"); //item mặc định hiển thị cho ng dùng
-            cmbDiseaseType.SelectedIndex = 0; // Chọn item mặc định
+            cmbDiseaseType.SelectedIndex = 0; // Chọn item   mặc định
                                               // Gợi ý tên đường khi nhập 1 vài từ ngữ đầu của nó
                                               // Gợi ý tên đường
             AutoCompleteStringCollection streetAutoComplete = new AutoCompleteStringCollection();
@@ -287,7 +287,6 @@ namespace WindowsFormsApp1
             // Khởi tạo FormView với đường đi từ bệnh viện gần nhất đến vị trí tai nạn
             //tìm đường đi đến vị trí bị tai nạn
             List<int> pathToAccident = FindShortestPath(listVertex[nearestHospitalIndex], streetName);
-            Console.WriteLine("Path to Accident:");    
             // Kiểm tra xem có tìm thấy đường đi đến vị trí tai nạn không
             if (pathToAccident.Count == 0)
             {
@@ -301,7 +300,6 @@ namespace WindowsFormsApp1
             if (currentFormView == null || currentFormView.IsDisposed)
             {   
                 // Khởi tạo FormView và truyền dữ liệu
-                Console.WriteLine($"form115 : pathTo {pathToAccident} and accidentloca {accidentLocation} and targer {targetStreetIndex}");
                 currentFormView = new FormView(pathToAccident, 1, accidentLocation,targetStreetIndex);
                 currentFormView.ReachedDestination += FormView_ReachedDestination; // Đăng ký event
                 currentFormView.Show();

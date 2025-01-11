@@ -61,6 +61,8 @@
             this.radMenuButtonItem8 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenuButtonItem12 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenu2 = new Telerik.WinControls.UI.RadMenu();
+            this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.lblEle2 = new Telerik.WinControls.UI.RadLabelElement();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboAlgorithm.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
@@ -81,9 +83,11 @@
             this.radStatusStrip1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radLabelElement1,
             this.commandBarSeparator1,
-            this.lblAlgorNoti});
+            this.lblAlgorNoti,
+            this.commandBarSeparator2,
+            this.lblEle2});
             this.radStatusStrip1.Location = new System.Drawing.Point(0, 1011);
-            this.radStatusStrip1.Margin = new System.Windows.Forms.Padding(3360, 3360, 3360, 3360);
+            this.radStatusStrip1.Margin = new System.Windows.Forms.Padding(4200, 4200, 4200, 4200);
             this.radStatusStrip1.Name = "radStatusStrip1";
             this.radStatusStrip1.Size = new System.Drawing.Size(1912, 36);
             this.radStatusStrip1.TabIndex = 3;
@@ -225,8 +229,8 @@
             this.radMenu1.FitToScreenMode = ((Telerik.WinControls.UI.FitToScreenModes)((Telerik.WinControls.UI.FitToScreenModes.FitWidth | Telerik.WinControls.UI.FitToScreenModes.FitHeight)));
             this.radMenu1.HorizontalAlignmentCorrectionMode = Telerik.WinControls.UI.AlignmentCorrectionMode.Smooth;
             this.radMenu1.LastShowDpiScaleFactor = new System.Drawing.SizeF(1.25F, 1.25F);
-            this.radMenu1.Location = new System.Drawing.Point(80, 231);
-            this.radMenu1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.radMenu1.Location = new System.Drawing.Point(100, 289);
+            this.radMenu1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.radMenu1.Maximum = new System.Drawing.Size(0, 0);
             this.radMenu1.Minimum = new System.Drawing.Size(0, 0);
             this.radMenu1.Name = "radMenu1";
@@ -256,10 +260,10 @@
             this.Btb115.ForeColor = System.Drawing.SystemColors.InfoText;
             this.Btb115.Image = global::WindowsFormsApp1.Properties.Resources.ezgif_com_resize;
             this.Btb115.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Btb115.Location = new System.Drawing.Point(149, 421);
-            this.Btb115.Margin = new System.Windows.Forms.Padding(149, 149, 149, 149);
+            this.Btb115.Location = new System.Drawing.Point(186, 458);
+            this.Btb115.Margin = new System.Windows.Forms.Padding(186, 186, 186, 186);
             this.Btb115.Name = "Btb115";
-            this.Btb115.Size = new System.Drawing.Size(658, 312);
+            this.Btb115.Size = new System.Drawing.Size(584, 238);
             this.Btb115.TabIndex = 2;
             this.Btb115.Text = "Cấp cứu 115";
             this.Btb115.Click += new System.EventHandler(this.Btb115_Click);
@@ -290,10 +294,10 @@
             this.BtbHostoHos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtbHostoHos.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.BtbHostoHos.Image = global::WindowsFormsApp1.Properties.Resources.HospitalToHospitalGIf;
-            this.BtbHostoHos.Location = new System.Drawing.Point(1087, 403);
-            this.BtbHostoHos.Margin = new System.Windows.Forms.Padding(131, 131, 131, 131);
+            this.BtbHostoHos.Location = new System.Drawing.Point(1120, 436);
+            this.BtbHostoHos.Margin = new System.Windows.Forms.Padding(164, 164, 164, 164);
             this.BtbHostoHos.Name = "BtbHostoHos";
-            this.BtbHostoHos.Size = new System.Drawing.Size(694, 348);
+            this.BtbHostoHos.Size = new System.Drawing.Size(628, 282);
             this.BtbHostoHos.TabIndex = 3;
             this.BtbHostoHos.Text = "Chuyển tuyến";
             this.BtbHostoHos.Click += new System.EventHandler(this.btbChuyenTuyen_Click);
@@ -387,10 +391,24 @@
             this.radMenuItem4,
             this.radMenuItem5});
             this.radMenu2.Location = new System.Drawing.Point(0, 0);
-            this.radMenu2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.radMenu2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radMenu2.Name = "radMenu2";
             this.radMenu2.Size = new System.Drawing.Size(1912, 36);
             this.radMenu2.TabIndex = 4;
+            // 
+            // commandBarSeparator2
+            // 
+            this.commandBarSeparator2.Name = "commandBarSeparator2";
+            this.radStatusStrip1.SetSpring(this.commandBarSeparator2, false);
+            this.commandBarSeparator2.Text = "";
+            this.commandBarSeparator2.VisibleInOverflowMenu = false;
+            // 
+            // lblEle2
+            // 
+            this.lblEle2.Name = "lblEle2";
+            this.radStatusStrip1.SetSpring(this.lblEle2, false);
+            this.lblEle2.Text = "radLabelElement2";
+            this.lblEle2.TextWrap = true;
             // 
             // MenuMain
             // 
@@ -457,5 +475,7 @@
         private Telerik.WinControls.UI.RadMenuItem radMenuItem5;
         private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem12;
         private Telerik.WinControls.UI.RadMenu radMenu2;
+        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator2;
+        private Telerik.WinControls.UI.RadLabelElement lblEle2;
     }
 }

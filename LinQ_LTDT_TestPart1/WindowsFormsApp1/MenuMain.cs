@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
     public partial class MenuMain : Telerik.WinControls.UI.RadForm
     {
         public static  string AlgrType = "Dijkstra";
-
+        public static string infor = "";
         public MenuMain()
         {
 
