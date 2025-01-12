@@ -75,10 +75,10 @@
             // 
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBack.Location = new System.Drawing.Point(15, 15);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.btnBack.Location = new System.Drawing.Point(19, 19);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(19, 19, 19, 19);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(956, 112);
+            this.btnBack.Size = new System.Drawing.Size(948, 104);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Quay lại Menu";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -143,10 +143,10 @@
             // 
             this.radButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radButton1.Location = new System.Drawing.Point(595, 75);
-            this.radButton1.Margin = new System.Windows.Forms.Padding(75, 75, 75, 75);
+            this.radButton1.Location = new System.Drawing.Point(614, 94);
+            this.radButton1.Margin = new System.Windows.Forms.Padding(94, 94, 94, 94);
             this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(316, 27);
+            this.radButton1.Size = new System.Drawing.Size(278, 1);
             this.radButton1.TabIndex = 1;
             this.radButton1.Text = "Bắt đầu";
             this.radButton1.Click += new System.EventHandler(this.btnRun_Click);
