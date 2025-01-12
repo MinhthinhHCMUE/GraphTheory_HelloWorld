@@ -666,3 +666,4 @@ C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmLogin.resources
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmQuanLy.resources
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmSign.resources
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login_Signin.Frmxacthuc.resources

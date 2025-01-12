@@ -57,7 +57,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTime.Location = new System.Drawing.Point(-2, 146);
+            this.lblTime.Location = new System.Drawing.Point(1, 177);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(70, 28);
             this.lblTime.TabIndex = 0;
@@ -115,8 +115,8 @@
             // flashingCheck
             // 
             this.flashingCheck.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.flashingCheck.Location = new System.Drawing.Point(4, 144);
-            this.flashingCheck.Margin = new System.Windows.Forms.Padding(19, 19, 19, 19);
+            this.flashingCheck.Location = new System.Drawing.Point(6, 225);
+            this.flashingCheck.Margin = new System.Windows.Forms.Padding(30, 30, 30, 30);
             this.flashingCheck.Name = "flashingCheck";
             this.flashingCheck.Size = new System.Drawing.Size(204, 29);
             this.flashingCheck.TabIndex = 6;
@@ -126,8 +126,8 @@
             // lblNotiForTrackbar
             // 
             this.lblNotiForTrackbar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblNotiForTrackbar.Location = new System.Drawing.Point(4, 41);
-            this.lblNotiForTrackbar.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.lblNotiForTrackbar.Location = new System.Drawing.Point(6, 64);
+            this.lblNotiForTrackbar.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.lblNotiForTrackbar.Name = "lblNotiForTrackbar";
             this.lblNotiForTrackbar.Size = new System.Drawing.Size(200, 24);
             this.lblNotiForTrackbar.TabIndex = 8;
@@ -138,8 +138,8 @@
             this.lblNotiPause.BackColor = System.Drawing.Color.Transparent;
             this.lblNotiPause.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNotiPause.ForeColor = System.Drawing.Color.Red;
-            this.lblNotiPause.Location = new System.Drawing.Point(1172, 19);
-            this.lblNotiPause.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lblNotiPause.Location = new System.Drawing.Point(1831, 30);
+            this.lblNotiPause.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.lblNotiPause.Name = "lblNotiPause";
             this.lblNotiPause.Size = new System.Drawing.Size(120, 35);
             this.lblNotiPause.TabIndex = 9;
@@ -167,12 +167,12 @@
             // 
             // radTrackBar1
             // 
-            this.radTrackBar1.Location = new System.Drawing.Point(4, 67);
-            this.radTrackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radTrackBar1.Location = new System.Drawing.Point(6, 105);
+            this.radTrackBar1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radTrackBar1.Name = "radTrackBar1";
-            this.radTrackBar1.Size = new System.Drawing.Size(185, 54);
+            this.radTrackBar1.Size = new System.Drawing.Size(242, 55);
             this.radTrackBar1.TabIndex = 10;
-            this.radTrackBar1.ThumbSize = new System.Drawing.Size(13, 31);
+            this.radTrackBar1.ThumbSize = new System.Drawing.Size(20, 49);
             this.radTrackBar1.ValueChanged += new System.EventHandler(this.TimeTrackBar_ValueChanged);
             // 
             // FormView
