@@ -41,15 +41,15 @@
             this.flashingCheck = new Telerik.WinControls.UI.RadCheckBox();
             this.lblNotiForTrackbar = new Telerik.WinControls.UI.RadLabel();
             this.lblNotiPause = new Telerik.WinControls.UI.RadLabel();
+            this.radTrackBar1 = new Telerik.WinControls.UI.RadTrackBar();
             this.pictureBoxZoom = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.radTrackBar1 = new Telerik.WinControls.UI.RadTrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.flashingCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblNotiForTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblNotiPause)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTime.Location = new System.Drawing.Point(1, 177);
+            this.lblTime.Location = new System.Drawing.Point(12, 163);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(70, 28);
             this.lblTime.TabIndex = 0;
@@ -115,8 +115,8 @@
             // flashingCheck
             // 
             this.flashingCheck.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.flashingCheck.Location = new System.Drawing.Point(6, 225);
-            this.flashingCheck.Margin = new System.Windows.Forms.Padding(30, 30, 30, 30);
+            this.flashingCheck.Location = new System.Drawing.Point(8, 201);
+            this.flashingCheck.Margin = new System.Windows.Forms.Padding(38, 38, 38, 38);
             this.flashingCheck.Name = "flashingCheck";
             this.flashingCheck.Size = new System.Drawing.Size(204, 29);
             this.flashingCheck.TabIndex = 6;
@@ -126,8 +126,8 @@
             // lblNotiForTrackbar
             // 
             this.lblNotiForTrackbar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblNotiForTrackbar.Location = new System.Drawing.Point(6, 64);
-            this.lblNotiForTrackbar.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.lblNotiForTrackbar.Location = new System.Drawing.Point(8, 55);
+            this.lblNotiForTrackbar.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             this.lblNotiForTrackbar.Name = "lblNotiForTrackbar";
             this.lblNotiForTrackbar.Size = new System.Drawing.Size(200, 24);
             this.lblNotiForTrackbar.TabIndex = 8;
@@ -138,8 +138,8 @@
             this.lblNotiPause.BackColor = System.Drawing.Color.Transparent;
             this.lblNotiPause.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNotiPause.ForeColor = System.Drawing.Color.Red;
-            this.lblNotiPause.Location = new System.Drawing.Point(1831, 30);
-            this.lblNotiPause.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.lblNotiPause.Location = new System.Drawing.Point(1054, 9);
+            this.lblNotiPause.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.lblNotiPause.Name = "lblNotiPause";
             this.lblNotiPause.Size = new System.Drawing.Size(120, 35);
             this.lblNotiPause.TabIndex = 9;
@@ -147,6 +147,16 @@
             this.lblNotiPause.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblNotiPause.ThemeName = "ControlDefault";
             this.lblNotiPause.Visible = false;
+            // 
+            // radTrackBar1
+            // 
+            this.radTrackBar1.Location = new System.Drawing.Point(3, 88);
+            this.radTrackBar1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.radTrackBar1.Name = "radTrackBar1";
+            this.radTrackBar1.Size = new System.Drawing.Size(220, 67);
+            this.radTrackBar1.TabIndex = 10;
+            this.radTrackBar1.ThumbSize = new System.Drawing.Size(31, 76);
+            this.radTrackBar1.ValueChanged += new System.EventHandler(this.TimeTrackBar_ValueChanged);
             // 
             // pictureBoxZoom
             // 
@@ -164,16 +174,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(2000, 2000);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // radTrackBar1
-            // 
-            this.radTrackBar1.Location = new System.Drawing.Point(6, 105);
-            this.radTrackBar1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.radTrackBar1.Name = "radTrackBar1";
-            this.radTrackBar1.Size = new System.Drawing.Size(242, 55);
-            this.radTrackBar1.TabIndex = 10;
-            this.radTrackBar1.ThumbSize = new System.Drawing.Size(20, 49);
-            this.radTrackBar1.ValueChanged += new System.EventHandler(this.TimeTrackBar_ValueChanged);
             // 
             // FormView
             // 
@@ -198,9 +198,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.flashingCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblNotiForTrackbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblNotiPause)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

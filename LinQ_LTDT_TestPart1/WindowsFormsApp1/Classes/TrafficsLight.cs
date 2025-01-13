@@ -5,11 +5,12 @@ using System.Linq;
 
 namespace WindowsFormsApp1
 {
+
     internal class TrafficLight
     {
         public List<int> AdjacentNodes { get; set; } // Danh sách các đỉnh kề
         public int Index { get; set; } // Chỉ số của đèn đỏ trong ma trận kề
-        public int VertexA { get; set; } // Chỉ số của đỉnh A
+        public int VertexA { get; set;  } // Chỉ số của đỉnh A
         public int VertexB { get; set; } // Chỉ số của đỉnh B
         public int DistanceFromA { get; set; } // Khoảng cách từ A đến đèn đỏ
         public bool IsRed { get; set; } // Trạng thái của đèn (đỏ hoặc xanh)

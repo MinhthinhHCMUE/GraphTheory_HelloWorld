@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
     {
         public FrmSign()
         {
-            InitializeComponent();
+                InitializeComponent();
         }
 
         private void label6_Click(object sender, EventArgs e)

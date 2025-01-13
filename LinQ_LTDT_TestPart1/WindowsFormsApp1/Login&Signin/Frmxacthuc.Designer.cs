@@ -38,8 +38,8 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.txtOTP = new System.Windows.Forms.TextBox();
+            this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -70,7 +70,7 @@
             this.lblHienthi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.lblHienthi.Location = new System.Drawing.Point(3, 0);
             this.lblHienthi.Name = "lblHienthi";
-            this.lblHienthi.Size = new System.Drawing.Size(640, 65);
+            this.lblHienthi.Size = new System.Drawing.Size(640, 64);
             this.lblHienthi.TabIndex = 0;
             this.lblHienthi.Text = "Xác thực tài khoản";
             this.lblHienthi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,13 +82,13 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 68);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 67);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(640, 208);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(640, 209);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -101,7 +101,7 @@
             this.tableLayoutPanel3.Controls.Add(this.btnGuiLai, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btbExit, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 163);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 164);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -171,7 +171,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(634, 146);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(634, 147);
             this.tableLayoutPanel4.TabIndex = 1;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
@@ -198,10 +198,21 @@
             this.label2.Location = new System.Drawing.Point(25, 98);
             this.label2.Margin = new System.Windows.Forms.Padding(25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 23);
+            this.label2.Size = new System.Drawing.Size(190, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã xác thực";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtOTP
+            // 
+            this.txtOTP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtOTP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtOTP.Location = new System.Drawing.Point(265, 98);
+            this.txtOTP.Margin = new System.Windows.Forms.Padding(25);
+            this.txtOTP.Name = "txtOTP";
+            this.txtOTP.Size = new System.Drawing.Size(344, 30);
+            this.txtOTP.TabIndex = 3;
+            this.txtOTP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTaiKhoan
             // 
@@ -214,17 +225,6 @@
             this.lblTaiKhoan.TabIndex = 2;
             this.lblTaiKhoan.Text = "Tên tài khoản";
             this.lblTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtOTP
-            // 
-            this.txtOTP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtOTP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.txtOTP.Location = new System.Drawing.Point(265, 98);
-            this.txtOTP.Margin = new System.Windows.Forms.Padding(25);
-            this.txtOTP.Name = "txtOTP";
-            this.txtOTP.Size = new System.Drawing.Size(344, 30);
-            this.txtOTP.TabIndex = 3;
-            this.txtOTP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Frmxacthuc
             // 
