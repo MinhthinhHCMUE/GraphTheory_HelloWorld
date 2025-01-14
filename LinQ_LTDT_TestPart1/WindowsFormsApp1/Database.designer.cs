@@ -48,7 +48,6 @@ namespace WindowsFormsApp1
 				base(global::WindowsFormsApp1.Properties.Settings.Default.GraphTheoryProjectConnectionString, mappingSource)
 		{
 			OnCreated();
-			this.DeferredLoadingEnabled = false;
 		}
 		
 		public DataClasses1DataContext(string connection) : 
