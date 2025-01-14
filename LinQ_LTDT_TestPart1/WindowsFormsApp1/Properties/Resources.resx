@@ -118,20 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Logo-HCMUE---ENG-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo-HCMUE---ENG-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="VideoAlgor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VideoAlgor.mp4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="logo-bo-y-te" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-bo-y-te.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ministry_of_Health_(Vietnam)_Logo.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ministry_of_Health_(Vietnam)_Logo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ezgif.com-resize(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ezgif.com-resize(2).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Ministry_of_Health_(Vietnam)_Logo.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ministry_of_Health_(Vietnam)_Logo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Flag_of_the_Red_Cross.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Flag_of_the_Red_Cross.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="resize288" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resize288.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ezgif.com-webp-to-gif-converter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ezgif.com-webp-to-gif-converter.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +142,14 @@
   <data name="BackgroundLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroundLogin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VideoAlgor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VideoAlgor.mp4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="hostoHosGIF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hostoHosGIF.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BgLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BgLogin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo-HCMUE---ENG-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo-HCMUE---ENG-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HospitalToHospitalGIf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HospitalToHospitalGIf.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,7 +163,7 @@
   <data name="EmercengyBUtton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EmercengyBUtton.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BgLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BgLogin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="resize288HOs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resize288HOs.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

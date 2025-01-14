@@ -8,6 +8,7 @@ using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Telerik.WinControls.UI.Map.Bing;
 
 namespace WindowsFormsApp1
 {
@@ -142,7 +143,6 @@ namespace WindowsFormsApp1
         private void InitializeComponents()
         {
             string f = Path.Combine(Application.StartupPath, "logo-bo-y-te.ico");
-
             this.Icon = new Icon(f);
             zoomedBmp = new Bitmap(pictureBox1.Width * 2, pictureBox1.Height * 2);
             zoomRect = new Rectangle(0, 0, pictureBox1.Width / 2, pictureBox1.Height / 2);
@@ -202,9 +202,11 @@ namespace WindowsFormsApp1
             }
         }
         //khởi tạo vs 4 para dành cho form115
-        public FormView(List<int> path, int speedMultiplier, string accidentLocation, int targetStreetIndex)
+        public FormView(List<int> path, int speedMultiplier, string accidentLocation, int targetStreetIndex,int randId)
         {
             InitializeComponent();
+            this.Visible = false;
+            this.Tag = randId;
             this.path = path;
             this.speedMultiplier = speedMultiplier;
             this.accidentLocation = accidentLocation;

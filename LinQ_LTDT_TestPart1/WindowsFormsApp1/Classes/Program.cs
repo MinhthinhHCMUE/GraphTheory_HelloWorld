@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
 using WindowsFormsApp1.QuanLyData;
+using WindowsFormsApp1.QuanLy_Ambulance;
 
 namespace WindowsFormsApp1
 {
@@ -19,7 +20,7 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmQuanLy());
+            Application.Run(new MenuMain());
         }
     }
 }

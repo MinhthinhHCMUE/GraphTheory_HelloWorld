@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -14,9 +15,15 @@ namespace WindowsFormsApp1.QuanLyData
 {
     public partial class FrmQuanLy : Telerik.WinControls.UI.RadForm
     {
+        private DataClasses1DataContext db;
         public FrmQuanLy()
         {
             InitializeComponent();
+            db = new DataClasses1DataContext(); // Khởi tạo DataContext
+            this.FormElement.Border.ForeColor = Color.White;
+            this.WindowState = FormWindowState.Maximized;
+            string ico = Path.Combine(Application.StartupPath, "HCMUEicon.ico");
+            this.Icon = new Icon(ico);
         }
         private void btnAmbulance_Click(object sender, EventArgs e)
         {
@@ -60,77 +67,59 @@ namespace WindowsFormsApp1.QuanLyData
         }
         private void loadDuLieuHospital()
         {
-            using (DataClasses1DataContext db = new DataClasses1DataContext())
-            {
-                RGVHospital.DataSource = db.Hospitals.OrderBy(p => p.HospitalID); // Giả sử Hospital có cột HospitalID
-                if (db.Hospitals.Any())
-                    hienThiDuLieuHospital(0);
-            }
+            RGVHospital.DataSource = db.Hospitals.OrderBy(p => p.HospitalID);
+            if (db.Hospitals.Any())
+                hienThiDuLieuHospital(0);
         }
+
         private void loadDuLieuAmbulance()
         {
-            using (DataClasses1DataContext db = new DataClasses1DataContext())
-            {
-                RGVAmbu.DataSource = db.Ambulances.OrderBy(p => p.AmbulanceId); // Giả sử Ambulance có cột AmbulanceID
-                if (db.Ambulances.Any())
-                    hienThiDuLieuAmbulance(0);
-            }
+            RGVAmbu.DataSource = db.Ambulances.OrderBy(p => p.AmbulanceId);
+            if (db.Ambulances.Any())
+                hienThiDuLieuAmbulance(0);
         }
+
         private void loadDuLieuNguoiDung()
         {
-            using (DataClasses1DataContext db = new DataClasses1DataContext())
-            {
-                RGVUser.DataSource = db.NguoiDungs.OrderBy(p => p.ID.ToString()); // Giả sử NguoiDung có cột UserID
-                if (db.NguoiDungs.Any())
-                    hienThiDuLieuNguoiDung(0);
-            }
+            RGVUser.DataSource = db.NguoiDungs.OrderBy(p => p.ID.ToString());
+            if (db.NguoiDungs.Any())
+                hienThiDuLieuNguoiDung(0);
         }
 
         private void loadDuLieuPatient()
         {
-            using (DataClasses1DataContext db = new DataClasses1DataContext())
-            {
-                RGVPatient.DataSource = db.Patients.OrderBy(p => p.PatientId.ToString()); // Giả sử Patient có cột PatientID
-                if (db.Patients.Any())
-                    hienThiDuLieuPatient(0);
-            }
+            RGVPatient.DataSource = db.Patients.OrderBy(p => p.PatientId.ToString());
+            if (db.Patients.Any())
+                hienThiDuLieuPatient(0);
         }
+
         private void hienThiDuLieuAmbulance(int idrow)
         {
-            using (DataClasses1DataContext db = new DataClasses1DataContext())
-            {
-                string ambulanceID = RGVAmbu.Rows[idrow].Cells[0].Value.ToString(); // Chuyển sang string
-                Ambulance ambulance = db.Ambulances.SingleOrDefault(p => p.AmbulanceId == ambulanceID.ToString());
-
-            }
+            string ambulanceID = RGVAmbu.Rows[idrow].Cells[0].Value.ToString();
+            Ambulance ambulance = db.Ambulances.SingleOrDefault(p => p.AmbulanceId == ambulanceID.ToString());
         }
 
-             private void hienThiDuLieuHospital(int idrow)
-         {
-            using (DataClasses1DataContext db = new DataClasses1DataContext())
-            {
-                string HospitalId = RGVHospital.Rows[idrow].Cells[0].Value.ToString(); // Chuyển sang string
-                Hospital Hospital = db.Hospitals.SingleOrDefault(p => p.HospitalID.ToString() == HospitalId.ToString());
-
-            }
+        private void hienThiDuLieuHospital(int idrow)
+        {
+            string HospitalId = RGVHospital.Rows[idrow].Cells[0].Value.ToString();
+            Hospital Hospital = db.Hospitals.SingleOrDefault(p => p.HospitalID.ToString() == HospitalId.ToString());
         }
+
         private void hienThiDuLieuNguoiDung(int idrow)
         {
-            using (DataClasses1DataContext db = new DataClasses1DataContext())
-            {
-                string UserID = RGVUser.Rows[idrow].Cells[0].Value.ToString(); // Chuyển sang string
-                NguoiDung nd = db.NguoiDungs.SingleOrDefault(p => p.ID.ToString() == UserID);
-
-            }
+            string UserID = RGVUser.Rows[idrow].Cells[0].Value.ToString();
+            NguoiDung nd = db.NguoiDungs.SingleOrDefault(p => p.ID.ToString() == UserID);
         }
+
         private void hienThiDuLieuPatient(int idrow)
         {
-            using (DataClasses1DataContext db = new DataClasses1DataContext())
-            {
-                string PatientId = RGVPatient.Rows[idrow].Cells[0].Value.ToString(); // Chuyển sang string
-                Patient pt = db.Patients.SingleOrDefault(p => p.PatientId.ToString() == PatientId);
-
-            }
+            string PatientId = RGVPatient.Rows[idrow].Cells[0].Value.ToString();
+            Patient pt = db.Patients.SingleOrDefault(p => p.PatientId.ToString() == PatientId);
+        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (db != null)
+                db.Dispose(); // Giải phóng DataContext khi form đóng
         }
         private void RadNavigationChanged(Object sender , EventArgs e)
         {
@@ -147,7 +136,12 @@ namespace WindowsFormsApp1.QuanLyData
         {
             foreach (GridViewColumn col in RGVAmbu.MasterTemplate.Columns)
                 col.TextAlignment = ContentAlignment.MiddleCenter;
-               
+            foreach (GridViewColumn col in RGVHospital.MasterTemplate.Columns)
+                col.TextAlignment = ContentAlignment.MiddleCenter;
+            foreach (GridViewColumn col in RGVPatient.MasterTemplate.Columns)
+                col.TextAlignment = ContentAlignment.MiddleCenter;
+            foreach (GridViewColumn col in RGVUser.MasterTemplate.Columns)
+                col.TextAlignment = ContentAlignment.MiddleCenter;
         }
     }
 }

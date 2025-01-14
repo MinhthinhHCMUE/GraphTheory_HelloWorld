@@ -30,9 +30,6 @@ namespace WindowsFormsApp1
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertAmbulance(Ambulance instance);
-    partial void UpdateAmbulance(Ambulance instance);
-    partial void DeleteAmbulance(Ambulance instance);
     partial void InsertHospital(Hospital instance);
     partial void UpdateHospital(Hospital instance);
     partial void DeleteHospital(Hospital instance);
@@ -42,6 +39,12 @@ namespace WindowsFormsApp1
     partial void InsertNguoiDung(NguoiDung instance);
     partial void UpdateNguoiDung(NguoiDung instance);
     partial void DeleteNguoiDung(NguoiDung instance);
+    partial void InsertAmbulance(Ambulance instance);
+    partial void UpdateAmbulance(Ambulance instance);
+    partial void DeleteAmbulance(Ambulance instance);
+    partial void InsertAmbulanceMission(AmbulanceMission instance);
+    partial void UpdateAmbulanceMission(AmbulanceMission instance);
+    partial void DeleteAmbulanceMission(AmbulanceMission instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -74,14 +77,6 @@ namespace WindowsFormsApp1
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Ambulance> Ambulances
-		{
-			get
-			{
-				return this.GetTable<Ambulance>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Hospital> Hospitals
 		{
 			get
@@ -105,155 +100,20 @@ namespace WindowsFormsApp1
 				return this.GetTable<NguoiDung>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Ambulance")]
-	public partial class Ambulance : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _AmbulanceId;
-		
-		private string _AmbulanceName;
-		
-		private System.Nullable<int> _AmbulanceLocation;
-		
-		private EntityRef<Hospital> _Hospital;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnAmbulanceIdChanging(string value);
-    partial void OnAmbulanceIdChanged();
-    partial void OnAmbulanceNameChanging(string value);
-    partial void OnAmbulanceNameChanged();
-    partial void OnAmbulanceLocationChanging(System.Nullable<int> value);
-    partial void OnAmbulanceLocationChanged();
-    #endregion
-		
-		public Ambulance()
-		{
-			this._Hospital = default(EntityRef<Hospital>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmbulanceId", DbType="Char(4) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string AmbulanceId
+		public System.Data.Linq.Table<Ambulance> Ambulances
 		{
 			get
 			{
-				return this._AmbulanceId;
-			}
-			set
-			{
-				if ((this._AmbulanceId != value))
-				{
-					this.OnAmbulanceIdChanging(value);
-					this.SendPropertyChanging();
-					this._AmbulanceId = value;
-					this.SendPropertyChanged("AmbulanceId");
-					this.OnAmbulanceIdChanged();
-				}
+				return this.GetTable<Ambulance>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmbulanceName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string AmbulanceName
+		public System.Data.Linq.Table<AmbulanceMission> AmbulanceMissions
 		{
 			get
 			{
-				return this._AmbulanceName;
-			}
-			set
-			{
-				if ((this._AmbulanceName != value))
-				{
-					this.OnAmbulanceNameChanging(value);
-					this.SendPropertyChanging();
-					this._AmbulanceName = value;
-					this.SendPropertyChanged("AmbulanceName");
-					this.OnAmbulanceNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmbulanceLocation", DbType="Int")]
-		public System.Nullable<int> AmbulanceLocation
-		{
-			get
-			{
-				return this._AmbulanceLocation;
-			}
-			set
-			{
-				if ((this._AmbulanceLocation != value))
-				{
-					if (this._Hospital.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnAmbulanceLocationChanging(value);
-					this.SendPropertyChanging();
-					this._AmbulanceLocation = value;
-					this.SendPropertyChanged("AmbulanceLocation");
-					this.OnAmbulanceLocationChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hospital_Ambulance", Storage="_Hospital", ThisKey="AmbulanceLocation", OtherKey="HospitalID", IsForeignKey=true)]
-		public Hospital Hospital
-		{
-			get
-			{
-				return this._Hospital.Entity;
-			}
-			set
-			{
-				Hospital previousValue = this._Hospital.Entity;
-				if (((previousValue != value) 
-							|| (this._Hospital.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Hospital.Entity = null;
-						previousValue.Ambulances.Remove(this);
-					}
-					this._Hospital.Entity = value;
-					if ((value != null))
-					{
-						value.Ambulances.Add(this);
-						this._AmbulanceLocation = value.HospitalID;
-					}
-					else
-					{
-						this._AmbulanceLocation = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Hospital");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<AmbulanceMission>();
 			}
 		}
 	}
@@ -268,9 +128,9 @@ namespace WindowsFormsApp1
 		
 		private string _HospitalName;
 		
-		private EntitySet<Ambulance> _Ambulances;
-		
 		private EntitySet<Patient> _Patients;
+		
+		private EntitySet<Ambulance> _Ambulances;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -284,8 +144,8 @@ namespace WindowsFormsApp1
 		
 		public Hospital()
 		{
-			this._Ambulances = new EntitySet<Ambulance>(new Action<Ambulance>(this.attach_Ambulances), new Action<Ambulance>(this.detach_Ambulances));
 			this._Patients = new EntitySet<Patient>(new Action<Patient>(this.attach_Patients), new Action<Patient>(this.detach_Patients));
+			this._Ambulances = new EntitySet<Ambulance>(new Action<Ambulance>(this.attach_Ambulances), new Action<Ambulance>(this.detach_Ambulances));
 			OnCreated();
 		}
 		
@@ -329,19 +189,6 @@ namespace WindowsFormsApp1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hospital_Ambulance", Storage="_Ambulances", ThisKey="HospitalID", OtherKey="AmbulanceLocation")]
-		public EntitySet<Ambulance> Ambulances
-		{
-			get
-			{
-				return this._Ambulances;
-			}
-			set
-			{
-				this._Ambulances.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hospital_Patient", Storage="_Patients", ThisKey="HospitalID", OtherKey="HospitalID")]
 		public EntitySet<Patient> Patients
 		{
@@ -352,6 +199,19 @@ namespace WindowsFormsApp1
 			set
 			{
 				this._Patients.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hospital_Ambulance", Storage="_Ambulances", ThisKey="HospitalID", OtherKey="AmbulanceLocation")]
+		public EntitySet<Ambulance> Ambulances
+		{
+			get
+			{
+				return this._Ambulances;
+			}
+			set
+			{
+				this._Ambulances.Assign(value);
 			}
 		}
 		
@@ -375,18 +235,6 @@ namespace WindowsFormsApp1
 			}
 		}
 		
-		private void attach_Ambulances(Ambulance entity)
-		{
-			this.SendPropertyChanging();
-			entity.Hospital = this;
-		}
-		
-		private void detach_Ambulances(Ambulance entity)
-		{
-			this.SendPropertyChanging();
-			entity.Hospital = null;
-		}
-		
 		private void attach_Patients(Patient entity)
 		{
 			this.SendPropertyChanging();
@@ -394,6 +242,18 @@ namespace WindowsFormsApp1
 		}
 		
 		private void detach_Patients(Patient entity)
+		{
+			this.SendPropertyChanging();
+			entity.Hospital = null;
+		}
+		
+		private void attach_Ambulances(Ambulance entity)
+		{
+			this.SendPropertyChanging();
+			entity.Hospital = this;
+		}
+		
+		private void detach_Ambulances(Ambulance entity)
 		{
 			this.SendPropertyChanging();
 			entity.Hospital = null;
@@ -972,6 +832,315 @@ namespace WindowsFormsApp1
 					this._RandomKey = value;
 					this.SendPropertyChanged("RandomKey");
 					this.OnRandomKeyChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Ambulance")]
+	public partial class Ambulance : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _AmbulanceId;
+		
+		private string _AmbulanceName;
+		
+		private System.Nullable<int> _AmbulanceLocation;
+		
+		private System.Nullable<bool> _Đang_Hoạt_Động;
+		
+		private EntityRef<Hospital> _Hospital;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAmbulanceIdChanging(string value);
+    partial void OnAmbulanceIdChanged();
+    partial void OnAmbulanceNameChanging(string value);
+    partial void OnAmbulanceNameChanged();
+    partial void OnAmbulanceLocationChanging(System.Nullable<int> value);
+    partial void OnAmbulanceLocationChanged();
+    partial void OnĐang_Hoạt_ĐộngChanging(System.Nullable<bool> value);
+    partial void OnĐang_Hoạt_ĐộngChanged();
+    #endregion
+		
+		public Ambulance()
+		{
+			this._Hospital = default(EntityRef<Hospital>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmbulanceId", DbType="Char(4) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string AmbulanceId
+		{
+			get
+			{
+				return this._AmbulanceId;
+			}
+			set
+			{
+				if ((this._AmbulanceId != value))
+				{
+					this.OnAmbulanceIdChanging(value);
+					this.SendPropertyChanging();
+					this._AmbulanceId = value;
+					this.SendPropertyChanged("AmbulanceId");
+					this.OnAmbulanceIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmbulanceName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string AmbulanceName
+		{
+			get
+			{
+				return this._AmbulanceName;
+			}
+			set
+			{
+				if ((this._AmbulanceName != value))
+				{
+					this.OnAmbulanceNameChanging(value);
+					this.SendPropertyChanging();
+					this._AmbulanceName = value;
+					this.SendPropertyChanged("AmbulanceName");
+					this.OnAmbulanceNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmbulanceLocation", DbType="Int")]
+		public System.Nullable<int> AmbulanceLocation
+		{
+			get
+			{
+				return this._AmbulanceLocation;
+			}
+			set
+			{
+				if ((this._AmbulanceLocation != value))
+				{
+					if (this._Hospital.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAmbulanceLocationChanging(value);
+					this.SendPropertyChanging();
+					this._AmbulanceLocation = value;
+					this.SendPropertyChanged("AmbulanceLocation");
+					this.OnAmbulanceLocationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Đang_Hoạt_Động", DbType="Bit")]
+		public System.Nullable<bool> Đang_Hoạt_Động
+		{
+			get
+			{
+				return this._Đang_Hoạt_Động;
+			}
+			set
+			{
+				if ((this._Đang_Hoạt_Động != value))
+				{
+					this.OnĐang_Hoạt_ĐộngChanging(value);
+					this.SendPropertyChanging();
+					this._Đang_Hoạt_Động = value;
+					this.SendPropertyChanged("Đang_Hoạt_Động");
+					this.OnĐang_Hoạt_ĐộngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hospital_Ambulance", Storage="_Hospital", ThisKey="AmbulanceLocation", OtherKey="HospitalID", IsForeignKey=true)]
+		public Hospital Hospital
+		{
+			get
+			{
+				return this._Hospital.Entity;
+			}
+			set
+			{
+				Hospital previousValue = this._Hospital.Entity;
+				if (((previousValue != value) 
+							|| (this._Hospital.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Hospital.Entity = null;
+						previousValue.Ambulances.Remove(this);
+					}
+					this._Hospital.Entity = value;
+					if ((value != null))
+					{
+						value.Ambulances.Add(this);
+						this._AmbulanceLocation = value.HospitalID;
+					}
+					else
+					{
+						this._AmbulanceLocation = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Hospital");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AmbulanceMission")]
+	public partial class AmbulanceMission : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _AmbulanceId;
+		
+		private string _AmbulanceName;
+		
+		private string _MissionType;
+		
+		private System.Nullable<bool> _View;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAmbulanceIdChanging(string value);
+    partial void OnAmbulanceIdChanged();
+    partial void OnAmbulanceNameChanging(string value);
+    partial void OnAmbulanceNameChanged();
+    partial void OnMissionTypeChanging(string value);
+    partial void OnMissionTypeChanged();
+    partial void OnViewChanging(System.Nullable<bool> value);
+    partial void OnViewChanged();
+    #endregion
+		
+		public AmbulanceMission()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmbulanceId", DbType="Char(4) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string AmbulanceId
+		{
+			get
+			{
+				return this._AmbulanceId;
+			}
+			set
+			{
+				if ((this._AmbulanceId != value))
+				{
+					this.OnAmbulanceIdChanging(value);
+					this.SendPropertyChanging();
+					this._AmbulanceId = value;
+					this.SendPropertyChanged("AmbulanceId");
+					this.OnAmbulanceIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmbulanceName", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string AmbulanceName
+		{
+			get
+			{
+				return this._AmbulanceName;
+			}
+			set
+			{
+				if ((this._AmbulanceName != value))
+				{
+					this.OnAmbulanceNameChanging(value);
+					this.SendPropertyChanging();
+					this._AmbulanceName = value;
+					this.SendPropertyChanged("AmbulanceName");
+					this.OnAmbulanceNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MissionType", DbType="NChar(10)")]
+		public string MissionType
+		{
+			get
+			{
+				return this._MissionType;
+			}
+			set
+			{
+				if ((this._MissionType != value))
+				{
+					this.OnMissionTypeChanging(value);
+					this.SendPropertyChanging();
+					this._MissionType = value;
+					this.SendPropertyChanged("MissionType");
+					this.OnMissionTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[View]", Storage="_View", DbType="Bit")]
+		public System.Nullable<bool> View
+		{
+			get
+			{
+				return this._View;
+			}
+			set
+			{
+				if ((this._View != value))
+				{
+					this.OnViewChanging(value);
+					this.SendPropertyChanging();
+					this._View = value;
+					this.SendPropertyChanged("View");
+					this.OnViewChanged();
 				}
 			}
 		}

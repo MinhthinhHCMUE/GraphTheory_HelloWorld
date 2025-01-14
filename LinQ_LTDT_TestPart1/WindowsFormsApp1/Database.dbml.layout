@@ -2,25 +2,12 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
   <DataContextMoniker Name="/DataClasses1DataContext" />
   <nestedChildShapes>
-    <classShape Id="51385ee2-fdce-4207-b53a-6eb124d71c1b" absoluteBounds="2.875, 1, 2, 1.3862939453125">
-      <DataClassMoniker Name="/DataClasses1DataContext/Ambulance" />
-      <nestedChildShapes>
-        <elementListCompartment Id="56c95349-db1b-4493-b3ce-e4322cc8fcc0" absoluteBounds="2.8899999999999997, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="f04400f2-6f0a-428e-9e27-eebdf20c44dc" absoluteBounds="0.5, 1, 2, 1.1939925130208333">
       <DataClassMoniker Name="/DataClasses1DataContext/Hospital" />
       <nestedChildShapes>
         <elementListCompartment Id="31fd3285-c989-4a4f-84fa-035044b305a3" absoluteBounds="0.51500000000000012, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 1.59699625651042); (2.875 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/DataClasses1DataContext/Hospital/Hospital_Ambulance" />
-      <nodes>
-        <classShapeMoniker Id="f04400f2-6f0a-428e-9e27-eebdf20c44dc" />
-        <classShapeMoniker Id="51385ee2-fdce-4207-b53a-6eb124d71c1b" />
-      </nodes>
-    </associationConnector>
     <classShape Id="91cb3577-96b8-4974-ae0c-97d927c524dd" absoluteBounds="0.5, 3, 2, 2.5401025390625">
       <DataClassMoniker Name="/DataClasses1DataContext/Patient" />
       <nestedChildShapes>
@@ -34,10 +21,29 @@
         <classShapeMoniker Id="91cb3577-96b8-4974-ae0c-97d927c524dd" />
       </nodes>
     </associationConnector>
-    <classShape Id="f39c407a-8533-4ca7-80bb-2cd8d1514dbe" absoluteBounds="3, 3.125, 2, 2.9247054036458331">
+    <classShape Id="f39c407a-8533-4ca7-80bb-2cd8d1514dbe" absoluteBounds="6, 3.5, 2, 2.9247054036458331">
       <DataClassMoniker Name="/DataClasses1DataContext/NguoiDung" />
       <nestedChildShapes>
-        <elementListCompartment Id="8f9fc1f8-0649-43b9-9f3a-138da395e9f8" absoluteBounds="3.015, 3.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8f9fc1f8-0649-43b9-9f3a-138da395e9f8" absoluteBounds="6.0150000000000006, 3.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8f1737fd-8f02-4f9e-a228-e87d14e04aa0" absoluteBounds="3, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Ambulance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="366f528e-bcf5-4eb0-b44f-3928b3c2e8f6" absoluteBounds="3.015, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.59699625651042); (3 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Hospital/Hospital_Ambulance" />
+      <nodes>
+        <classShapeMoniker Id="f04400f2-6f0a-428e-9e27-eebdf20c44dc" />
+        <classShapeMoniker Id="8f1737fd-8f02-4f9e-a228-e87d14e04aa0" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="87333f57-b06f-403c-b8f1-821377193394" absoluteBounds="3.125, 3.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/AmbulanceMission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8baee9b-7b2b-408c-b6cf-d5c768a93396" absoluteBounds="3.14, 4.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
