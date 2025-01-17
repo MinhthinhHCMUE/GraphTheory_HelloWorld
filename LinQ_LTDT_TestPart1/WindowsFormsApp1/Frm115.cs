@@ -23,11 +23,10 @@ namespace WindowsFormsApp1
         private string accidentLocation; // biến lưu vị trí gây tai nạn.
         private Dijkstra dijkstra; // Khai báo biến dijkstra
         private List<int> hospitalNodes = new List<int>() { 0, 1, 6, 7, 9, 14, 15, 16, 17, 18, 19, 20, 26 }; //danh sách các đỉnh là bệnh viện
-        private FormView currentFormView; // Biến để lưu FormView hiện tại
+        public static FormView currentFormView; // Biến để lưu FormView hiện tại
         private Astar astar;
         public static int testerindex;
         private string AlgorithmType = MenuMain.AlgrType;
-        private DataClasses1DataContext db;
         //Ma trận của đề tài
         public static int[,] adjacencyMatrix = new int[,] {
             //đơn vị : mét - đồ thị vô hướng  a->b , b->a
@@ -139,6 +138,37 @@ namespace WindowsFormsApp1
     "Đèn đỏ 3/2 - Lý Chính Thắng", // 37
     "Đèn đỏ Ngô Quyền - Chợ rẫy", //38
 };
+        private void KhoiTaoAlgor()
+        {
+            dijkstra = new Dijkstra(listVertex.Count); //khởi tạo biến Dijkstra để phục vụ cho việc sử dụng dijkstra
+            for (int i = 0; i < listVertex.Count; i++)
+            {
+                for (int j = 0; j < listVertex.Count; j++)
+                {
+                    if (adjacencyMatrix[i, j] != 0)
+                    {
+                        dijkstra.AddEdge(i, j, adjacencyMatrix[i, j]); // Thêm cạnh vào Dijkstra với trọng số từ ma trận
+                    }
+                }
+            }
+            double[] heuristics = new double[listVertex.Count]; // Khởi tạo mảng heuristics với kích thước bằng số lượng nút
+            for (int i = 0; i < listVertex.Count; i++)
+            {
+                heuristics[i] = 0;  //do không có heuristics nên gán = 0
+            }
+
+            astar = new Astar(listVertex.Count, heuristics); // Khởi tạo astar với heuristic
+            for (int i = 0; i < listVertex.Count; i++)
+            {
+                for (int j = 0; j < listVertex.Count; j++)
+                {
+                    if (adjacencyMatrix[i, j] != 0)
+                    {
+                        astar.AddEdge(i, j, adjacencyMatrix[i, j]); // Thêm cạnh vào Astar với trọng số từma trận
+                    }
+                }
+            }
+        }
         public static int GetStreetNamesCount()
         {
             return listVertex.Count;
@@ -190,45 +220,17 @@ namespace WindowsFormsApp1
             }
             return hospitalNames;
         }
-        
+       
         public Form1()
             {
 
             InitializeComponent();
-            db = new DataClasses1DataContext();
+            KhoiTaoAlgor();
             string img = Path.Combine(Application.StartupPath, "EmercengyBUtton.gif");
-
             EmercengyButton.Image = Image.FromFile(img);
             txtHint.Visible = false; //ẩn txthint đi, sẽ gọi lại ở event rê chuột gần BtbEmercengy
             this.FormElement.Border.ForeColor = System.Drawing.Color.White; //xóa viền
-            dijkstra = new Dijkstra(listVertex.Count); //khởi tạo biến Dijkstra để phục vụ cho việc sử dụng dijkstra
-            for (int i = 0; i < listVertex.Count; i++)
-            {
-                for (int j = 0; j < listVertex.Count; j++)
-                {
-                    if (adjacencyMatrix[i, j] != 0)
-                    {
-                        dijkstra.AddEdge(i, j, adjacencyMatrix[i, j]); // Thêm cạnh vào Dijkstra với trọng số từ ma trận
-                    }
-                }
-            }
-            double[] heuristics = new double[listVertex.Count]; // Khởi tạo mảng heuristics với kích thước bằng số lượng nút
-            for (int i = 0; i < listVertex.Count; i++)
-            {
-                heuristics[i] = 0;  //do không có heuristics nên gán = 0
-            }
-
-            astar = new Astar(listVertex.Count, heuristics); // Khởi tạo astar với heuristic
-            for (int i = 0; i < listVertex.Count; i++)
-            {
-                for (int j = 0; j < listVertex.Count; j++)
-                {
-                    if (adjacencyMatrix[i, j] != 0)
-                    {
-                        astar.AddEdge(i, j, adjacencyMatrix[i, j]); // Thêm cạnh vào Astar với trọng số từma trận
-                    }
-                }
-            }
+           
             this.cmbDiseaseType.Visible = false;
             EmercengyButton.Visible = false;
         }
@@ -316,7 +318,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Không tìm thấy đường đi đến vị trí tai nạn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-           // Lấy chỉ số của con đường tai nạn
+            // Lấy chỉ số của con đường tai nạn
             int targetStreetIndex = pathToAccident.Count - 1;
             testerindex = targetStreetIndex;
             // Khởi tạo FormView và truyền dữ liệu
@@ -325,7 +327,7 @@ namespace WindowsFormsApp1
                 // Khởi tạo FormView và truyền dữ liệu
                 currentFormView = new FormView(pathToAccident, 1, accidentLocation,targetStreetIndex,RanId);
                 currentFormView.ReachedDestination += FormView_ReachedDestination; // Đăng ký event
-                currentFormView.Show();
+                FrmListView.AddFormView(currentFormView);
                 this.Hide();
             }
             else
@@ -341,7 +343,8 @@ namespace WindowsFormsApp1
             if (HospitalStart == null) { MessageBox.Show("Error PickrandomAmbu", "Thông báo", MessageBoxButtons.OK); }// ném ngooại lệ
             //lấy HospitalId từ string truyen62 vào
             int HospStartId = HospitalId[HospitalStart];
-            List<string> danhsachId = db.Ambulances
+            //lọc ra list Id những ambulance có thể hoạt động dc từ databasee
+            List<string> danhsachId =DatabaseQuanLy.Instance.Ambulances
                 .Where(ambulance => ambulance.AmbulanceLocation == HospStartId)
                 .Where(ambulance => ambulance.Đang_Hoạt_Động == false)
                 .Select(ambulance => ambulance.AmbulanceId).ToList();
@@ -352,18 +355,19 @@ namespace WindowsFormsApp1
         }
         private void AdjustmentDataAmbu(string HospitalStart, int AmbuId)
         {        
-            Ambulance ambu = db.Ambulances.FirstOrDefault(ab => ab.AmbulanceId == AmbuId.ToString());//lấy ra infor
+            Ambulance ambu = DatabaseQuanLy.Instance.Ambulances.FirstOrDefault(ab => ab.AmbulanceId == AmbuId.ToString());//lấy ra infor
             if (ambu != null)
             {
                 ambu.Đang_Hoạt_Động = true;
             }
-            db.SubmitChanges();
-            AmbulanceMission ambumiss = new AmbulanceMission();
+            DatabaseQuanLy.Instance.SubmitChanges();
+            AmbulanceMission ambumiss = new AmbulanceMission();//khởi tạo 1 object AmbulanceMission để đưa vào database
             ambumiss.AmbulanceId = ambu.AmbulanceId;
             ambumiss.AmbulanceName = ambu.AmbulanceName;
-            ambumiss.MissionType = "115";
-            db.AmbulanceMissions.InsertOnSubmit(ambumiss);
-            db.SubmitChanges();
+            ambumiss.MissionType = "115";//mission type = 115 vì Đây là tính năng 115
+            DatabaseQuanLy.Instance.AmbulanceMissions.InsertOnSubmit(ambumiss);
+            DatabaseQuanLy.Instance.SubmitChanges();
+            this.Tag = ambu.AmbulanceId.ToString();
             FrmAmbu frmAmbu = Application.OpenForms.OfType<FrmAmbu>().FirstOrDefault();
             if (frmAmbu != null)
             {
@@ -371,41 +375,11 @@ namespace WindowsFormsApp1
             }
         }
         //khi đóng form1 sẽ hiển thị lại MenuMain
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //if (e.CloseReason == CloseReason.UserClosing|| e.CloseReason == CloseReason.None && currentFormView == null)
-            //{
-            //    // Kiểm tra xem FormView có đang tồn tại không
-            //    if (currentFormView != null && !currentFormView.IsDisposed)
-            //    {
-            //        // Nếu FormView đang tồn tại, ngăn chặn việc đóng Form1
-            //        e.Cancel = true;
-            //    }
-            //    else
-            //    {
-            //        //// Nếu FormView không tồn tại, cho phép đóng Form1 và hiển thị MenuMain
-            //        //MenuMain menumain = Application.OpenForms.OfType<MenuMain>().FirstOrDefault();
-
-            //        //if (menumain != null)
-            //        //{
-            //        //    menumain.Show();
-            //        //    menumain.BringToFront();
-            //        //}
-            //        //else
-            //        //{
-            //        //    menumain = new MenuMain();
-            //        //    menumain.Show();
-            //        //}
-            //    }
-            //}
-        }
         private void Emercengy_MouseHover(object sender, EventArgs e)
         {
             // Lấy vị trí con trỏ chuột
             System.Drawing.Point mousePosition = Cursor.Position;
 
-            // Đặt vị trí cho TextBox (ví dụ: lệch xuống dưới và sang phải so với con trỏ chuột)
-            txtHint.Location = new System.Drawing.Point(mousePosition.X + 10, mousePosition.Y + 20);
 
             // Thiết lập nội dung cho TextBox
             txtHint.Text = "Tình huống khẩn cấp!! Điều xe cứu thương tới bệnh viện gần nhất có thể!";
@@ -419,9 +393,8 @@ namespace WindowsFormsApp1
             txtHint.Visible = false;
         }
         //Hàm hiện lại những button,Combo box cần thiết cho mô phỏng đợt 2
-        public void EnableDiseaseSelection(FormView formView)
+        public void EnableDiseaseSelection()
         {
-            currentFormView = formView; // Lưu FormView
             cmbDiseaseType.Visible = true; // Hiển thị ComboBox chọn loại bệnh
             txtStreetName.Enabled = false; // Khóa nhập tên đường
             EmercengyButton.Enabled = true; // Cho phép nhấn nút "Bắt đầu"
@@ -460,9 +433,8 @@ namespace WindowsFormsApp1
             }
 
             // Cập nhật đường đi và bắt đầu lại animation trong FormView
-            FormView formView = (FormView)sender; // Lấy FormView từ sender
-            formView.UpdatePath(pathToHospital);
-            formView.StartAnimation();
+            currentFormView.UpdatePath(pathToHospital);
+            currentFormView.StartAnimation();
             Form1 frm1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
             if (frm1 != null)
             {
@@ -479,8 +451,8 @@ namespace WindowsFormsApp1
             txtStreetName.Enabled = false; // Khóa nhập tên đường
 
             // Xử lý sự kiện nút "Bắt đầu" sau khi người dùng chọn bệnh
-            EmercengyButton.Click -= btnRun_Click;  // Gỡ sự kiện cũ
-            EmercengyButton.Click += btbRunReached_Click; //thay thế bằng event mới
+            btbRun.Click -= btnRun_Click;  // Gỡ sự kiện cũ
+            btbRun.Click += btbRunReached_Click; //thay thế bằng event mới
            
         }
         //sử lý sự kiện khi click vào nút khẩn cấp

@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using WindowsFormsApp1.QuanLy_Ambulance;
 using WindowsFormsApp1.QuanLyData;
-
 namespace WindowsFormsApp1
 {
     /*
@@ -21,7 +20,8 @@ namespace WindowsFormsApp1
     {
         public static string AlgrType = "Dijkstra";
         public static string infor = "";
-        private FrmAmbu Ambu;
+        public static FrmListView frmlist;
+        public static FrmAmbu Ambu;
         public MenuMain()
         {
 
@@ -76,6 +76,9 @@ namespace WindowsFormsApp1
             Ambu.Dock = DockStyle.Fill; 
             pnlFrm.Controls.Add(Ambu); // Thêm Form Ambu vào panel
             Ambu.Show();
+            frmlist = new FrmListView();
+            frmlist.Show();
+            this.BringToFront();
         }
         //gọi frm Introduce ( slide ppt giới thiệu đề tài nhóm)
         private void radMenuButtonItem1_Click(object sender, EventArgs e)
@@ -86,7 +89,6 @@ namespace WindowsFormsApp1
         //sự kiện gọi FrmHostohos
         private void btbChuyenTuyen_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FrmHostoHos frm = new FrmHostoHos(Form1.GetHospitalNames());
             frm.ShowDialog();
         }

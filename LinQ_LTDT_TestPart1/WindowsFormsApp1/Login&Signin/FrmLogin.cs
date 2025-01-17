@@ -49,23 +49,30 @@ namespace WindowsFormsApp1
                     byte[] inputBytes = Encoding.ASCII.GetBytes(pass + nd.RandomKey);
                     byte[] hashBytes = md5.ComputeHash(inputBytes);
                     if (nd.Password == hashBytes) { 
-                        if(nd.LevelID == 1)
+                        if(nd.Active == true)
                         {
-                            MessageBox.Show("Xin chào Admin!", "Thông báo", MessageBoxButtons.OK);
-                            MenuMain.infor = nd.UserName;
-                            MenuMain frm = new MenuMain();
-                            frm.Show();
-                            this.Hide();
+                            if (nd.LevelID == 1)
+                            {
+                                MessageBox.Show("Xin chào Admin!", "Thông báo", MessageBoxButtons.OK);
+                                MenuMain.infor = nd.UserName;
+                                MenuMain frm = new MenuMain();
+                                frm.Show();
+                                frm.BringToFront();
+                                this.Hide();
+                            }
+                            if (nd.LevelID == 0)
+                            {
+                                MessageBox.Show("Xin chào " + nd.UserName + "!", "Thông báo", MessageBoxButtons.OK);
+                                MenuMain.infor = nd.UserName;
+                                MenuMain frm = new MenuMain();
+                                frm.Show();
+                                this.Hide();
+                            }
                         }
-                        if(nd.LevelID == 0)
+                        else
                         {
-                            MessageBox.Show("Xin chào " + nd.UserName + "!", "Thông báo", MessageBoxButtons.OK);
-                            MenuMain.infor = nd.UserName;
-                            MenuMain frm = new MenuMain();
-                            frm.Show();
-                            this.Hide();
-                        }
-                       
+                            MessageBox.Show("Tài khoản chưa xác thực,vui lòng xác thực tài khoản", "Thông báo", MessageBoxButtons.OK);
+                        } 
                     }
                 }
                 else
@@ -77,7 +84,6 @@ namespace WindowsFormsApp1
             }
 
         }
-
         private void lblResig_Click(object sender, EventArgs e)
         {
             new FrmSign().Show();
@@ -87,10 +93,12 @@ namespace WindowsFormsApp1
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             checkboxShow.Location = new Point(182, 280);
+          
         }
 
         private void checkboxShow_CheckedChanged(object sender, EventArgs e)
         {
+            //dùng ký tự * để hiển thị cho mật khẩu
             if (checkboxShow.Checked)
             {
                 txtPassword.PasswordChar = '\0';

@@ -40,10 +40,10 @@
         <classShapeMoniker Id="8f1737fd-8f02-4f9e-a228-e87d14e04aa0" />
       </nodes>
     </associationConnector>
-    <classShape Id="87333f57-b06f-403c-b8f1-821377193394" absoluteBounds="3.125, 3.625, 2, 1.5785953776041666">
+    <classShape Id="32fe8571-6ef1-4b35-aa46-fe675d20a45b" absoluteBounds="3.125, 3.5, 2, 1.7708968098958331">
       <DataClassMoniker Name="/DataClasses1DataContext/AmbulanceMission" />
       <nestedChildShapes>
-        <elementListCompartment Id="e8baee9b-7b2b-408c-b6cf-d5c768a93396" absoluteBounds="3.14, 4.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e1d2eac8-b81c-49e1-b54c-d5fd495ce839" absoluteBounds="3.14, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

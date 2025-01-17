@@ -15,11 +15,9 @@ namespace WindowsFormsApp1.QuanLyData
 {
     public partial class FrmQuanLy : Telerik.WinControls.UI.RadForm
     {
-        private DataClasses1DataContext db;
         public FrmQuanLy()
         {
             InitializeComponent();
-            db = new DataClasses1DataContext(); // Khởi tạo DataContext
             this.FormElement.Border.ForeColor = Color.White;
             this.WindowState = FormWindowState.Maximized;
             string ico = Path.Combine(Application.StartupPath, "HCMUEicon.ico");
@@ -67,59 +65,57 @@ namespace WindowsFormsApp1.QuanLyData
         }
         private void loadDuLieuHospital()
         {
-            RGVHospital.DataSource = db.Hospitals.OrderBy(p => p.HospitalID);
-            if (db.Hospitals.Any())
+            RGVHospital.DataSource = DatabaseQuanLy.Instance.Hospitals.OrderBy(p => p.HospitalID);
+            if (DatabaseQuanLy.Instance.Hospitals.Any())
                 hienThiDuLieuHospital(0);
         }
 
         private void loadDuLieuAmbulance()
         {
-            RGVAmbu.DataSource = db.Ambulances.OrderBy(p => p.AmbulanceId);
-            if (db.Ambulances.Any())
+            RGVAmbu.DataSource = DatabaseQuanLy.Instance.Ambulances.OrderBy(p => p.AmbulanceId);
+            if (DatabaseQuanLy.Instance.Ambulances.Any())
                 hienThiDuLieuAmbulance(0);
         }
 
         private void loadDuLieuNguoiDung()
         {
-            RGVUser.DataSource = db.NguoiDungs.OrderBy(p => p.ID.ToString());
-            if (db.NguoiDungs.Any())
+            RGVUser.DataSource = DatabaseQuanLy.Instance.NguoiDungs.OrderBy(p => p.ID.ToString());
+            if (DatabaseQuanLy.Instance.NguoiDungs.Any())
                 hienThiDuLieuNguoiDung(0);
         }
 
         private void loadDuLieuPatient()
         {
-            RGVPatient.DataSource = db.Patients.OrderBy(p => p.PatientId.ToString());
-            if (db.Patients.Any())
+            RGVPatient.DataSource = DatabaseQuanLy.Instance.Patients.OrderBy(p => p.PatientId.ToString());
+            if (DatabaseQuanLy.Instance.Patients.Any())
                 hienThiDuLieuPatient(0);
         }
 
         private void hienThiDuLieuAmbulance(int idrow)
         {
             string ambulanceID = RGVAmbu.Rows[idrow].Cells[0].Value.ToString();
-            Ambulance ambulance = db.Ambulances.SingleOrDefault(p => p.AmbulanceId == ambulanceID.ToString());
+            Ambulance ambulance = DatabaseQuanLy.Instance.Ambulances.SingleOrDefault(p => p.AmbulanceId == ambulanceID.ToString());
         }
 
         private void hienThiDuLieuHospital(int idrow)
         {
             string HospitalId = RGVHospital.Rows[idrow].Cells[0].Value.ToString();
-            Hospital Hospital = db.Hospitals.SingleOrDefault(p => p.HospitalID.ToString() == HospitalId.ToString());
+            Hospital Hospital = DatabaseQuanLy.Instance.Hospitals.SingleOrDefault(p => p.HospitalID.ToString() == HospitalId.ToString());
         }
 
         private void hienThiDuLieuNguoiDung(int idrow)
         {
             string UserID = RGVUser.Rows[idrow].Cells[0].Value.ToString();
-            NguoiDung nd = db.NguoiDungs.SingleOrDefault(p => p.ID.ToString() == UserID);
+            NguoiDung nd = DatabaseQuanLy.Instance.NguoiDungs.SingleOrDefault(p => p.ID.ToString() == UserID);
         }
-
         private void hienThiDuLieuPatient(int idrow)
         {
             string PatientId = RGVPatient.Rows[idrow].Cells[0].Value.ToString();
-            Patient pt = db.Patients.SingleOrDefault(p => p.PatientId.ToString() == PatientId);
+            Patient pt = DatabaseQuanLy.Instance.Patients.SingleOrDefault(p => p.PatientId.ToString() == PatientId);
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (db != null)
-                db.Dispose(); // Giải phóng DataContext khi form đóng
+            
         }
         private void RadNavigationChanged(Object sender , EventArgs e)
         {

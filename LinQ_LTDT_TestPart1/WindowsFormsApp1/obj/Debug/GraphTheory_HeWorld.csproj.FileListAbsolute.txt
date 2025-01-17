@@ -84,8 +84,6 @@ C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\Telerik.Windows.Documents.Core.dll
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\Telerik.Windows.Documents.Fixed.dll
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\TelerikCommon.dll
-C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\Ubiety.Dns.Core.dll
-C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\Zstandard.Net.dll
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\Telerik.Windows.Documents.Spreadsheet.dll
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\Telerik.WinControls.ChartView.dll
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll
@@ -182,3 +180,15 @@ C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.QuanLy_Ambulance.FrmAmbu.resources
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmListView.resources
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.Collections.Immutable.dll
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.Threading.Channels.dll
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\ZstdSharp.dll
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.Collections.Immutable.xml
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.Threading.Channels.xml

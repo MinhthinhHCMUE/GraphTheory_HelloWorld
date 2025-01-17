@@ -20,7 +20,11 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuMain());
+            Application.Run(new FrmLogin());
+        }
+        public static class GlobalData
+        {
+            public static BindingSource AmbuBindingSource = new BindingSource();
         }
     }
 }

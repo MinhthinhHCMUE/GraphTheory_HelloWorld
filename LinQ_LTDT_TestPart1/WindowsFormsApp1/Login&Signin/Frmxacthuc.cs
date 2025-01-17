@@ -65,7 +65,7 @@ namespace WindowsFormsApp1.Login_Signin
             if (nd != null)
             {
                 Random rd = new Random();
-                nd.OTP = rd.Next(1000, 9999).ToString();
+                nd.OTP = rd.Next(1000, 9999).ToString();// mã OTp trong 1000 -> 9999
                 SendMail.sendMailTo(nd.Email, "Mã OTP xác thực là: " + nd.OTP);
                 nd.OTPDateSend = DateTime.Now;  //Kiem soat thoi gian 5 phut hieu luc
                 db.SubmitChanges();

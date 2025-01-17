@@ -51,56 +51,56 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.79681F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, -1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.68983F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.31017F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1278, 454);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1278, 453);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.5866F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.4134F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btbRun, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1272, 333);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1272, 332);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel4
             // 
+            this.tableLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel4.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.txtHint, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(694, 327);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(694, 326);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // txtHint
             // 
-            this.txtHint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHint.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtHint.Location = new System.Drawing.Point(2, 299);
+            this.txtHint.Location = new System.Drawing.Point(2, 298);
             this.txtHint.Margin = new System.Windows.Forms.Padding(2);
             this.txtHint.Name = "txtHint";
             this.txtHint.Size = new System.Drawing.Size(690, 34);
@@ -108,26 +108,26 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.EmercengyButton, 0, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.98925F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.01075F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(688, 291);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(688, 290);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // tableLayoutPanel5
             // 
+            this.tableLayoutPanel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.txtStreetName, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.cmbDiseaseType, 0, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
@@ -138,8 +138,8 @@
             // 
             // txtStreetName
             // 
-            this.txtStreetName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtStreetName.Location = new System.Drawing.Point(25, 25);
+            this.txtStreetName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtStreetName.Location = new System.Drawing.Point(25, 28);
             this.txtStreetName.Margin = new System.Windows.Forms.Padding(25);
             this.txtStreetName.Name = "txtStreetName";
             this.txtStreetName.Size = new System.Drawing.Size(632, 22);
@@ -147,9 +147,9 @@
             // 
             // cmbDiseaseType
             // 
-            this.cmbDiseaseType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbDiseaseType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbDiseaseType.FormattingEnabled = true;
-            this.cmbDiseaseType.Location = new System.Drawing.Point(25, 104);
+            this.cmbDiseaseType.Location = new System.Drawing.Point(25, 107);
             this.cmbDiseaseType.Margin = new System.Windows.Forms.Padding(25);
             this.cmbDiseaseType.Name = "cmbDiseaseType";
             this.cmbDiseaseType.Size = new System.Drawing.Size(632, 24);
@@ -157,25 +157,26 @@
             // 
             // EmercengyButton
             // 
-            this.EmercengyButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmercengyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.EmercengyButton.Image = global::WindowsFormsApp1.Properties.Resources.EmercengyBUtton;
             this.EmercengyButton.Location = new System.Drawing.Point(3, 168);
             this.EmercengyButton.Name = "EmercengyButton";
-            this.EmercengyButton.Size = new System.Drawing.Size(682, 120);
+            this.EmercengyButton.Size = new System.Drawing.Size(682, 119);
             this.EmercengyButton.TabIndex = 1;
             this.EmercengyButton.UseVisualStyleBackColor = true;
+            this.EmercengyButton.Visible = false;
             this.EmercengyButton.Click += new System.EventHandler(this.EmergencyButton_Click);
             this.EmercengyButton.MouseLeave += new System.EventHandler(this.Emercengy_MouseLeave);
             this.EmercengyButton.MouseHover += new System.EventHandler(this.Emercengy_MouseHover);
             // 
             // btbRun
             // 
-            this.btbRun.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btbRun.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btbRun.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btbRun.Location = new System.Drawing.Point(800, 100);
             this.btbRun.Margin = new System.Windows.Forms.Padding(100);
             this.btbRun.Name = "btbRun";
-            this.btbRun.Size = new System.Drawing.Size(275, 133);
+            this.btbRun.Size = new System.Drawing.Size(275, 132);
             this.btbRun.TabIndex = 1;
             this.btbRun.Text = "Bắt đầu";
             this.btbRun.UseVisualStyleBackColor = true;
@@ -183,14 +184,13 @@
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1278, 454);
+            this.ClientSize = new System.Drawing.Size(1278, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cấp cứu 115";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

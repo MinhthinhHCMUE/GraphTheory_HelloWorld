@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls.UI.Map.Bing;
+using WindowsFormsApp1.QuanLy_Ambulance;
 
 namespace WindowsFormsApp1
 {
@@ -52,6 +53,7 @@ namespace WindowsFormsApp1
         private int vertecnt = Form1.GetStreetNamesCount();
         private Random random = new Random();
         private List<TrafficLight> trafficLights = Form1.trafficLights;
+        private DataClasses1DataContext db;
         //Hàm khởi tạo các thuộc tính của form
         private void InitializeForm()
         {
@@ -168,6 +170,7 @@ namespace WindowsFormsApp1
         //hàm bắt đầu bộ đếm
         private void InitializeTimers()
         {
+            timerUpdate.Start();
             timer2.Start();
             dTIME.Start();
             timer1.Start();
@@ -178,8 +181,9 @@ namespace WindowsFormsApp1
         public FormView(List<int> path, int speedMultiplier)
         {
             InitializeComponent();
-            this.path = path;
+            this.path = path; this.TopLevel = false;
             this.speedMultiplier = speedMultiplier;
+            db = new DataClasses1DataContext();
             InitializeForm();
             InitializePictureBoxes();
             InitializeNodePositions();
@@ -206,6 +210,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.Visible = false;
+            db = new DataClasses1DataContext();
+            this.TopLevel = false;
             this.Tag = randId;
             this.path = path;
             this.speedMultiplier = speedMultiplier;
@@ -330,7 +336,7 @@ namespace WindowsFormsApp1
                     LineAlignment = StringAlignment.Center // căn giữa
                 };
                 graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit; // bật khử răng cưa
-                                                                                                     //nếu đỉnh đó là bệnh viện
+                //nếu đỉnh đó là bệnh viện
                 if (nodePositions[i].Type == NodeType.Hospital)
                 {
                     // Điều chỉnh vị trí của chữ cho các nút là bệnh viện ( để ko bị dính vào nhau )
@@ -633,6 +639,7 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            Console.WriteLine($"{this.Tag} is active");
             this.targetStreetIndex = Form1.testerindex;
             if (currentStep < pathCoordinates.Count - 1)
             {
@@ -766,6 +773,7 @@ namespace WindowsFormsApp1
                     Font boldFont = new Font("Segoe UI", 13, FontStyle.Bold);
                     lblNextRoute.Font = boldFont;
                     lblNextRoute.Text = $"Cung đường tiếp theo: {nextStreetName} (còn {nextDistance:F0} mét)";
+                    string currStreetName = Form1.listVertex[path[currentStep]];
                 }
                 //khi chỉ còn 1 đoạn đường tới bệnh viện :
                 else
@@ -774,7 +782,6 @@ namespace WindowsFormsApp1
                     Font boldFont = new Font("Segoe UI", 13, FontStyle.Bold);
                     lblSpeed.Font = boldFont;
                     lblSpeed.Text = $"Tốc độ của xe hiện tại: {currentSpeed:F2} km/h";
-
                     // Tính toán khoảng cách đến bệnh viện 
                     if (currentStep < path.Count - 1)
                     {
@@ -807,7 +814,7 @@ namespace WindowsFormsApp1
 
                 // Dừng timer
                 StopAnimation();
-                if (currentStep == path.Count - 1 && reachedAccidentLocation == true && !FrmHostoHos.CheckFrm2)
+                if (currentStep == path.Count - 1 && reachedAccidentLocation == true && !FrmHostoHos.CheckFrm2) //form2
                 {
                     // Xe đã đến đích cuối cùng (bệnh viện) trong chế độ "Cấp cứu 115"
                     // Dừng animation
@@ -817,32 +824,10 @@ namespace WindowsFormsApp1
                     string message = $"Xe đã tới {hospitalName}\nThời gian di chuyển: {travelTime.ToString(@"mm\:ss")}";
                     MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Reset các biến mô phỏng
                     ResetSimulationData();
-                    // Xác định tính năng tiếp theo (luôn là "Cấp cứu 115" trong trường hợp này)
-                    string nextFeature = "Cấp cứu 115";
-                    DialogResult result = MessageBox.Show($"Tiếp tục với tính năng {nextFeature}?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    // Ẩn FormView hiện tại
-                    this.Hide();
-
-                    if (result == DialogResult.Yes)
-                    {
-                        Form1 frm = new Form1(); // Tạo mới Form1
-                        frm.ShowDialog();
-
-                        // Đóng Form1 cũ SAU KHI người dùng chọn "Tiếp tục"
-                        Form1 frm1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
-                        if (frm1 != null)
-                        {
-                            frm1.Dispose();
-                        }
-                    }
-                    else
-                    {
-                        MenuMain menu = new MenuMain();
-                        menu.ShowDialog();
-                    }
+                    FreeDataAmbu();
+                    FreeSourceForm115();
+                    this.Close();
                 }
                 if (currentStep == path.Count - 1 && FrmHostoHos.CheckFrm2)
                 {
@@ -857,30 +842,10 @@ namespace WindowsFormsApp1
 
                     // Reset các biến mô phỏng
                     ResetSimulationData();
+                    FreeDataAmbu();
+                    FreeSourceForm115();
+                    this.Close();
 
-                    // Xác định tính năng tiếp theo dựa trên Form2.CheckFrm2
-                    string nextFeature = FrmHostoHos.CheckFrm2 ? "Chuyển tuyến" : "Cấp cứu 115";
-                    DialogResult result = MessageBox.Show($"Tiếp tục với tính năng {nextFeature}?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    this.Hide(); // Ẩn form hiện tại
-
-                    if (result == DialogResult.Yes)
-                    {
-                        FrmHostoHos frm = new FrmHostoHos(Form1.GetHospitalNames());
-                        frm.ShowDialog();
-                      
-                    }
-                    else
-                    {
-                        FrmHostoHos frm2 = Application.OpenForms.OfType<FrmHostoHos>().FirstOrDefault();
-                        if (frm2 != null)
-                        {
-                            frm2.Dispose(); // Giải phóng tài nguyên nếu Form2 đang mở
-                        }
-                        FrmHostoHos.CheckFrm2 = false;
-                        MenuMain menu = new MenuMain();
-                        menu.ShowDialog();
-                    }
                 }
                 if (reachedAccidentLocation == false && FrmHostoHos.CheckFrm2 == false)
                 {
@@ -888,7 +853,6 @@ namespace WindowsFormsApp1
                     if (currentStep == targetStreetIndex)
                     {  // Xe đã đến đích tạm thời (con đường tai nạn)         
                        // Hiển thị MessageBox
-                        Console.WriteLine("Khoi ifelse duoc kich hoat!!!!!!");
                         string streetName = "";
                         if (path != null && path.Count > 0)
                         {
@@ -905,20 +869,15 @@ namespace WindowsFormsApp1
                         reachedAccidentLocation = true;
                         // Hiển thị lại Form1 với ComboBox chọn loại bệnh
                         Form1 frm1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
-                        if (frm1 != null)
+                        if (frm1.Tag.ToString() == this.Tag.ToString())
                         {
-                            frm1.Show();
-                            frm1.BringToFront();
-                            frm1.EnableDiseaseSelection(this);
+                            FrmListView.AddForm115(this, frm1);
                         }
                     }
                   
                 }
             }
         }
- /*
-  
-  */
  void UpdateAmbulanceLocation_ZoomMode()
         {
             // Cập nhật zoomedBmp
@@ -985,8 +944,7 @@ namespace WindowsFormsApp1
         }
         private void FormView_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show("Không thể đóng ứng dụng khi mô phỏng đang chạy.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            e.Cancel = true;
+          
         }
         //tính năng nhấp nháy đoạn đường sẽ di chuyển
         private void timerFlash_Tick(object sender, EventArgs e)
@@ -1018,7 +976,7 @@ namespace WindowsFormsApp1
         private void flashingCheck_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
    
-            if (flashingCheck.Checked)
+            if (checkBox1.Checked)
             {
                 isFlashing = true;
             }
@@ -1065,25 +1023,25 @@ namespace WindowsFormsApp1
         //hàm kích hoạt tính năng pause khi ấn nút space
         private void PasueAnimation(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)
-            {
-                if (timer1.Enabled) // Kiểm tra nếu animation đang chạy
-                {
-                    lblNotiPause.Text = "TẠM DỪNG MÔ PHỎNG!!";
-                    lblNotiPause.Visible = true;
-                    StopAnimation();
-                }
-                else
-                {
-                    lblNotiPause.Visible = false; // Ẩn thông báo tạm dừng
-                    StartAnimation(); // Khởi động lại animation
-                }
-            }
+            //if (e.KeyCode == Keys.Space)
+            //{
+            //    if (timer1.Enabled) // Kiểm tra nếu animation đang chạy
+            //    {
+            //        lblNotiPause.Text = "TẠM DỪNG MÔ PHỎNG!!";
+            //        lblNotiPause.Visible = true;
+            //        StopAnimation();
+            //    }
+            //    else
+            //    {
+            //        lblNotiPause.Visible = false; // Ẩn thông báo tạm dừng
+            //        StartAnimation(); // Khởi động lại animation
+            //    }
+            //}
         }
         //Giá trị khi ng dùng kéo thanh trackbar để thay đổi tốc độ mô phỏng
         private void TimeTrackBar_ValueChanged(object sender, EventArgs e)
         {
-            speedMultiplier = (int)radTrackBar1.Value;
+            speedMultiplier = (int)trackbar.Value;
             // Tính toán lại thời gian đã trôi qua
             TimeSpan elapsedTime = customDateTime - segmentStartTime;
 
@@ -1095,6 +1053,58 @@ namespace WindowsFormsApp1
 
             // Cập nhật vị trí xe
             timer1_Tick(sender, e);
+        }
+        /// <summary> Xóa data sau khi xe cứu thương đã hoàn thành nhiệm vụ
+        /// <para>
+        /// Hàm này được dùng để xóa database dựa trên tag của formview sau khi finish mission
+        /// </para>
+        /// </summary>
+        private void FreeDataAmbu()
+        {
+            string id = this.Tag.ToString();
+            AmbulanceMission ambumiss = DatabaseQuanLy.Instance.AmbulanceMissions.Where(p => p.AmbulanceId == id).SingleOrDefault();
+            if(ambumiss == null)
+            {
+                MessageBox.Show("Lỗi ko có data ambu" , "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (ambumiss != null) {
+                DatabaseQuanLy.Instance.AmbulanceMissions.DeleteOnSubmit(ambumiss);
+                DatabaseQuanLy.Instance.SubmitChanges();
+                MenuMain.Ambu.RefreshDataGridView();
+            }
+        }
+        /// <summary> Xóa data sau khi xe cứu thương đã hoàn thành nhiệm vụ
+        /// <para>
+        /// Hàm này được dùng để chỉnh sửa database trong gridview ở MenuMain nhằm mục đích hiển thị đường đi hieện tại
+        /// </para>
+        /// </summary>
+        private void UpdateDataLocation(string location)
+        {
+            string id = this.Tag.ToString();
+            AmbulanceMission ambumiss = DatabaseQuanLy.Instance.AmbulanceMissions.Where(p => p.AmbulanceId == id).SingleOrDefault();
+         
+            if (ambumiss != null)
+            {
+                ambumiss.Vị_Trí_Hiện_Tại = location;
+                DatabaseQuanLy.Instance.SubmitChanges();
+                MenuMain.Ambu.RefreshDataGridView();
+            }
+        }
+
+        private void timerUpdate_Tick(object sender, EventArgs e)
+        {
+            string Curr = lblNextRoute.Text;
+            UpdateDataLocation(Curr);
+        }
+        private void FreeSourceForm115()
+        {
+            Form1 frm1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+            if(frm1.Tag.ToString() == this.Tag.ToString())
+            {
+                frm1.Close();
+            }
+
         }
     }
 }

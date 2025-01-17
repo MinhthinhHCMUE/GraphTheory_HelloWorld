@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.timercheck = new System.Windows.Forms.Timer(this.components);
             this.RGVAmbu = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.RGVAmbu)).BeginInit();
@@ -45,12 +45,12 @@
             // 
             this.RGVAmbu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RGVAmbu.Location = new System.Drawing.Point(0, 0);
-            this.RGVAmbu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RGVAmbu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             // 
             // 
             // 
             this.RGVAmbu.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            this.RGVAmbu.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.RGVAmbu.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.RGVAmbu.Name = "RGVAmbu";
             this.RGVAmbu.Size = new System.Drawing.Size(1562, 762);
             this.RGVAmbu.TabIndex = 0;

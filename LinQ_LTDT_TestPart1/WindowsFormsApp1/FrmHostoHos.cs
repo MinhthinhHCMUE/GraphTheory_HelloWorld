@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
 {
     /*
      CÁI NÀY CHƯA XONG!!!!!!!!
+
      */
     public partial class FrmHostoHos : Telerik.WinControls.UI.RadForm
     {
@@ -93,7 +94,6 @@ namespace WindowsFormsApp1
 
             cmbFromHospital.SelectedIndex = 0;
             cmbToHospital.SelectedIndex = 0;
-            this.Size = new System.Drawing.Size(1000, 365);
         }
 
         // Sự kiện khi người dùng quay lại (đóng Form2)

@@ -656,7 +656,7 @@ namespace WindowsFormsApp1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Password
 		{
 			get
@@ -1046,6 +1046,8 @@ namespace WindowsFormsApp1
 		
 		private System.Nullable<bool> _View;
 		
+		private string _Vị_Trí_Hiện_Tại;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1058,6 +1060,8 @@ namespace WindowsFormsApp1
     partial void OnMissionTypeChanged();
     partial void OnViewChanging(System.Nullable<bool> value);
     partial void OnViewChanged();
+    partial void OnVị_Trí_Hiện_TạiChanging(string value);
+    partial void OnVị_Trí_Hiện_TạiChanged();
     #endregion
 		
 		public AmbulanceMission()
@@ -1141,6 +1145,26 @@ namespace WindowsFormsApp1
 					this._View = value;
 					this.SendPropertyChanged("View");
 					this.OnViewChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vị_Trí_Hiện_Tại", DbType="NVarChar(100)")]
+		public string Vị_Trí_Hiện_Tại
+		{
+			get
+			{
+				return this._Vị_Trí_Hiện_Tại;
+			}
+			set
+			{
+				if ((this._Vị_Trí_Hiện_Tại != value))
+				{
+					this.OnVị_Trí_Hiện_TạiChanging(value);
+					this.SendPropertyChanging();
+					this._Vị_Trí_Hiện_Tại = value;
+					this.SendPropertyChanged("Vị_Trí_Hiện_Tại");
+					this.OnVị_Trí_Hiện_TạiChanged();
 				}
 			}
 		}

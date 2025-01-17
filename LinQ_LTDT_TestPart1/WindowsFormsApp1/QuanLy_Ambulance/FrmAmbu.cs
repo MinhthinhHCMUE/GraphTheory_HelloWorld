@@ -9,82 +9,82 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using static WindowsFormsApp1.Program;
 
 namespace WindowsFormsApp1.QuanLy_Ambulance
 {
     public partial class FrmAmbu : Telerik.WinControls.UI.RadForm
     {
-        private DataClasses1DataContext db;
         private BindingSource bindingSource = new BindingSource(); 
         public FrmAmbu()
         {
             InitializeComponent();
             timercheck.Start();
-            db = new DataClasses1DataContext();
             RGVAmbu.DataSource = bindingSource;
         }
         private void loadDuLieuAmbulance()
         {
-            bindingSource.DataSource = db.AmbulanceMissions.OrderBy(p => p.AmbulanceId.ToString()).ToList(); // Gán dữ liệu cho BindingSource
+            bindingSource.DataSource = DatabaseQuanLy.Instance.AmbulanceMissions.OrderBy(p => p.AmbulanceId).ToList();
 
-            if (db.AmbulanceMissions.Any())
+            if (DatabaseQuanLy.Instance.AmbulanceMissions.Any())
                 hienThiDuLieuAmbulance(0);
         }
      
         private void hienThiDuLieuAmbulance(int idrow)
         {
             string AmbulanceMissId = RGVAmbu.Rows[idrow].Cells[0].Value.ToString();
-          
-            AmbulanceMission ambulance = db.AmbulanceMissions.SingleOrDefault(p => p.AmbulanceId == AmbulanceMissId.ToString());
+
+            AmbulanceMission ambulance = DatabaseQuanLy.Instance.AmbulanceMissions.SingleOrDefault(p => p.AmbulanceId == AmbulanceMissId);
         }
         private void FrmAmbu_Load(object sender, EventArgs e)
         {
-
             loadDuLieuAmbulance();
-            //foreach (DataGridViewColumn column in this.RGVAmbu.Columns)
-            //{
-            //    column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //}
-            RGVAmbu.Columns["AmbulanceId"].ReadOnly = true;
-            RGVAmbu.Columns["AmbulanceName"].ReadOnly = true;
-            RGVAmbu.Columns["MissionType"].ReadOnly = true;
-            RGVAmbu.Columns["View"].ReadOnly = false;
+        
+            //RGVAmbu.Columns["AmbulanceId"].ReadOnly = true;
+            //RGVAmbu.Columns["AmbulanceName"].ReadOnly = true;
+            //RGVAmbu.Columns["MissionType"].ReadOnly = true;
+            //RGVAmbu.Columns["View"].ReadOnly = false;
         }
         public void RefreshDataGridView()
         {
             bindingSource.DataSource = null;
-            loadDuLieuAmbulance(); 
-            RGVAmbu.Refresh(); // Refresh DataGridView
+            bindingSource.ResetBindings(false); //reset bidings
+            bindingSource.DataSource = DatabaseQuanLy.Instance.AmbulanceMissions.OrderBy(p => p.AmbulanceId).ToList();
         }
 
         private void timercheck_Tick(object sender, EventArgs e)
         {
             foreach (GridViewRowInfo row in RGVAmbu.Rows)
             {
-          
-          
-            // Kiểm tra xem ô "View" (bit) có được tick hay không
-                if (Convert.ToBoolean(row.Cells["View"].Value) == true)
-                {
-                    // Lấy AmbulanceId từ cột "AmbulanceId" của hàng
-                    string ambulanceId = row.Cells["AmbulanceId"].Value.ToString();
 
-                    // Tìm form tương ứng với AmbulanceId
-                    foreach (Form form in Application.OpenForms)
-                    {
-                        Console.WriteLine(form.Name + " - Visible: " + form.Visible);
+                /*
+                 Hiện tại đã đưa Formview vào page -> target to focus formview when user click on tickbox in radgridview
+                 */
+                // Kiểm tra xem ô "View" (bit) có được tick hay không
+                //if (Convert.ToBoolean(row.Cells["View"].Value) == true)
+                //{
+                //    // Lấy AmbulanceId từ cột "AmbulanceId" của hàng
+                //    string ambulanceId = row.Cells["AmbulanceId"].Value.ToString();
 
-                        if (form is FormView formView && formView.Tag != null && formView.Tag.ToString() == ambulanceId)
-                        {
-                            formView.BringToFront();
-                            formView.Visible = true ;
+                //    // Tìm form tương ứng với AmbulanceId
+                //    this.Invoke((MethodInvoker)delegate
+                //    {
+                //        foreach (Form form in Application.OpenForms)
+                //        {
+                //            Console.WriteLine(form.Name + " - Visible: " + form.Visible);
+                //            if (form is FormView)
+                //            {
+                //                Console.WriteLine(form.Tag);
+                //            }
+                //            if (form is FormView formView && formView.Tag != null && formView.Tag.ToString() == ambulanceId)
 
-                            // Bỏ chọn "View" sau khi đã hiển thị form
-                            row.Cells["View"].Value = false;
-                            break;
-                        }
-                    }
-                }
+                //            {
+                //                // formView.BringToFront();
+                //                //formView.Visible = true;
+                //                break;
+                //            }
+                //        }
+                //    });
             }
         }
     }
