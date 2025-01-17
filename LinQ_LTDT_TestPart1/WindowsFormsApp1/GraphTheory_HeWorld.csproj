@@ -470,6 +470,7 @@
     <Content Include="Resources\logo-bo-y-te.ico" />
     <None Include="Resources\resize288.gif" />
     <None Include="Resources\resize288HOs.gif" />
+    <None Include="Resources\resizeFrmHos.gif" />
     <Content Include="RoadImg.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

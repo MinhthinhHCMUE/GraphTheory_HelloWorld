@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -29,8 +30,15 @@ namespace WindowsFormsApp1
         public static void AddFormView(FormView formView)
         {
                 string fromViewTag = formView.Tag.ToString();
-                TabPage tab = new TabPage(fromViewTag);
-
+            Ambulance amb = DatabaseQuanLy.Instance.Ambulances.Where(p => p.AmbulanceId.ToString() == fromViewTag).FirstOrDefault();
+            if (amb == null)
+            {
+                MessageBox.Show("FrmListView ko thêm đượcc trang với Tag mới", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            string PageName = amb.AmbulanceName;
+                TabPage tab = new TabPage(PageName);
+            tab.Tag = fromViewTag;
             // Sử dụng biến static frmListView từ FrmLogin
             MenuMain.frmlist.Tabcon1.TabPages.Add(tab); // Thêm TabPage vào TabControl
 
@@ -47,14 +55,25 @@ namespace WindowsFormsApp1
         }
         public static void FreePage(FormView frmView)
         {
-
+            string fromViewTag = frmView.Tag.ToString();
+          
+            TabPage tabPageToDelete = MenuMain.frmlist.Tabcon1.TabPages.Cast< TabPage>().FirstOrDefault(p => p.Tag.ToString() == fromViewTag); // Hoặc lấy TabPage từ index
+            MenuMain.frmlist.Tabcon1.TabPages.Remove(tabPageToDelete);   
+                
         }
         public static void AddForm115(FormView formView, Form1 frm115)
         {
-            string frmview = formView.Tag.ToString();
+            string fromViewTag = formView.Tag.ToString();
+            Ambulance amb = DatabaseQuanLy.Instance.Ambulances.Where(p => p.AmbulanceId.ToString() == fromViewTag).FirstOrDefault();
+            if (amb == null)
+            {
+                MessageBox.Show("FrmListView ko thêm đượcc trang với Tag mới", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            string PageName = amb.AmbulanceName;
             TabPage tab = MenuMain.frmlist.Tabcon1.TabPages.Cast<TabPage>()
-                                                          .FirstOrDefault(t => t.Text == frmview);
-            if (tab != null && tab.Text == frmview)
+                                                          .FirstOrDefault(t => t.Text == PageName);
+            if (tab != null && tab.Text == PageName)
             {
                
 

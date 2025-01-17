@@ -435,11 +435,6 @@ namespace WindowsFormsApp1
             // Cập nhật đường đi và bắt đầu lại animation trong FormView
             currentFormView.UpdatePath(pathToHospital);
             currentFormView.StartAnimation();
-            Form1 frm1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
-            if (frm1 != null)
-            {
-                frm1.Close();
-            }
             this.Hide(); // Ẩn Form115 sau khi bắt đầu di chuyển đến bệnh viện chuyên khoa
         }
         //khi xe cứu thương đến vị trí tai nạn thì gọi Event này

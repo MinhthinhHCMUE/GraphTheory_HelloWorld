@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceStack;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
@@ -53,7 +54,8 @@ namespace WindowsFormsApp1
         private int vertecnt = Form1.GetStreetNamesCount();
         private Random random = new Random();
         private List<TrafficLight> trafficLights = Form1.trafficLights;
-        private DataClasses1DataContext db;
+        private string PatienId;
+        private string HosToId;
         //Hàm khởi tạo các thuộc tính của form
         private void InitializeForm()
         {
@@ -178,12 +180,14 @@ namespace WindowsFormsApp1
         }
         //khởi tạo với 2 tham số dành cho
         //toHos
-        public FormView(List<int> path, int speedMultiplier)
+        public FormView(List<int> path, int speedMultiplier, string pt,string Hosid,int AmbuId)
         {
             InitializeComponent();
             this.path = path; this.TopLevel = false;
+            this.PatienId = pt;
+            this.HosToId = Hosid;
+            this.Tag = AmbuId;
             this.speedMultiplier = speedMultiplier;
-            db = new DataClasses1DataContext();
             InitializeForm();
             InitializePictureBoxes();
             InitializeNodePositions();
@@ -210,7 +214,6 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.Visible = false;
-            db = new DataClasses1DataContext();
             this.TopLevel = false;
             this.Tag = randId;
             this.path = path;
@@ -814,7 +817,7 @@ namespace WindowsFormsApp1
 
                 // Dừng timer
                 StopAnimation();
-                if (currentStep == path.Count - 1 && reachedAccidentLocation == true && !FrmHostoHos.CheckFrm2) //form2
+                if (currentStep == path.Count - 1 && reachedAccidentLocation == true && !FrmHostoHos.CheckFrm2) 
                 {
                     // Xe đã đến đích cuối cùng (bệnh viện) trong chế độ "Cấp cứu 115"
                     // Dừng animation
@@ -827,6 +830,7 @@ namespace WindowsFormsApp1
                     ResetSimulationData();
                     FreeDataAmbu();
                     FreeSourceForm115();
+                    FrmListView.FreePage(this);
                     this.Close();
                 }
                 if (currentStep == path.Count - 1 && FrmHostoHos.CheckFrm2)
@@ -843,7 +847,8 @@ namespace WindowsFormsApp1
                     // Reset các biến mô phỏng
                     ResetSimulationData();
                     FreeDataAmbu();
-                    FreeSourceForm115();
+                    FinishHostoHos();
+                    FrmListView.FreePage(this);
                     this.Close();
 
                 }
@@ -973,7 +978,7 @@ namespace WindowsFormsApp1
 
         }
         //sự kiện khi tickbox flashing dc check
-        private void flashingCheck_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        private void flashingCheck_ToggleStateChanged(object sender, EventArgs args)
         {
    
             if (checkBox1.Checked)
@@ -1068,10 +1073,42 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Lỗi ko có data ambu" , "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            Ambulance ambu = DatabaseQuanLy.Instance.Ambulances.Where(p => p.AmbulanceId == id).SingleOrDefault();
+            if (ambu == null)
+            {
+                MessageBox.Show("Lỗi ko có data ambu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if(ambu != null)
+            {
+                ambu.Đang_Hoạt_Động = false;
+                DatabaseQuanLy.Instance.SubmitChanges();
+            }
             if (ambumiss != null) {
                 DatabaseQuanLy.Instance.AmbulanceMissions.DeleteOnSubmit(ambumiss);
                 DatabaseQuanLy.Instance.SubmitChanges();
                 MenuMain.Ambu.RefreshDataGridView();
+            }
+        }
+        /// <summary> Hàm này dùng để cập nhật data của Patient sau khi tới bệnh viện dc chuyển tuyến
+        /// <para>
+        ///
+        /// </para>
+        /// </summary>
+        private void FinishHostoHos()
+        {
+            Patient pt = DatabaseQuanLy.Instance.Patients.Where(p => p.PatientId.ToString() == PatienId).SingleOrDefault();
+            if (pt == null)
+            {
+                MessageBox.Show("FormView ko tim thay pt!!!", "Thông báo", MessageBoxButtons.OK);
+                return;//ném ngoại lệ
+            }
+            else
+            {
+                pt.Status = "Đang điều trị";
+                int hosid = HosToId.ToInt();
+                pt.HospitalID = hosid;
+                DatabaseQuanLy.Instance.SubmitChanges();
             }
         }
         /// <summary> Xóa data sau khi xe cứu thương đã hoàn thành nhiệm vụ

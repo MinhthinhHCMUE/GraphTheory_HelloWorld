@@ -160,6 +160,7 @@
             this.checkBox1.TabIndex = 12;
             this.checkBox1.Text = "Hiển thị đường đi";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Click += new System.EventHandler(this.flashingCheck_ToggleStateChanged);
             // 
             // FormView
             // 

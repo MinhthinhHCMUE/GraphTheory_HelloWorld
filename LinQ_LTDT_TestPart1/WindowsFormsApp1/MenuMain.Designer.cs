@@ -90,7 +90,7 @@
             this.commandBarSeparator2,
             this.radButtonElement1});
             this.radStatusStrip1.Location = new System.Drawing.Point(0, 1004);
-            this.radStatusStrip1.Margin = new System.Windows.Forms.Padding(25030, 25030, 25030, 25030);
+            this.radStatusStrip1.Margin = new System.Windows.Forms.Padding(31288, 31288, 31288, 31288);
             this.radStatusStrip1.Name = "radStatusStrip1";
             this.radStatusStrip1.Size = new System.Drawing.Size(1912, 43);
             this.radStatusStrip1.TabIndex = 3;
@@ -249,8 +249,8 @@
             this.radMenu1.FitToScreenMode = ((Telerik.WinControls.UI.FitToScreenModes)((Telerik.WinControls.UI.FitToScreenModes.FitWidth | Telerik.WinControls.UI.FitToScreenModes.FitHeight)));
             this.radMenu1.HorizontalAlignmentCorrectionMode = Telerik.WinControls.UI.AlignmentCorrectionMode.Smooth;
             this.radMenu1.LastShowDpiScaleFactor = new System.Drawing.SizeF(1.25F, 1.25F);
-            this.radMenu1.Location = new System.Drawing.Point(624, 1839);
-            this.radMenu1.Margin = new System.Windows.Forms.Padding(48, 48, 48, 48);
+            this.radMenu1.Location = new System.Drawing.Point(780, 2299);
+            this.radMenu1.Margin = new System.Windows.Forms.Padding(60, 60, 60, 60);
             this.radMenu1.Maximum = new System.Drawing.Size(0, 0);
             this.radMenu1.Minimum = new System.Drawing.Size(0, 0);
             this.radMenu1.Name = "radMenu1";
@@ -361,7 +361,7 @@
             this.radMenuItem4,
             this.radMenuItem5});
             this.radMenu2.Location = new System.Drawing.Point(0, 0);
-            this.radMenu2.Margin = new System.Windows.Forms.Padding(38, 38, 38, 38);
+            this.radMenu2.Margin = new System.Windows.Forms.Padding(48, 48, 48, 48);
             this.radMenu2.Name = "radMenu2";
             this.radMenu2.Size = new System.Drawing.Size(1912, 36);
             this.radMenu2.TabIndex = 4;
@@ -429,6 +429,7 @@
             this.btbHostoHos.TabIndex = 1;
             this.btbHostoHos.Text = "button2";
             this.btbHostoHos.UseVisualStyleBackColor = true;
+            this.btbHostoHos.Click += new System.EventHandler(this.btbChuyenTuyen_Click);
             // 
             // tableLayoutPanel3
             // 

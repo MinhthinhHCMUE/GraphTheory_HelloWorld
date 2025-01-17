@@ -89,8 +89,10 @@ namespace WindowsFormsApp1
         //sự kiện gọi FrmHostohos
         private void btbChuyenTuyen_Click(object sender, EventArgs e)
         {
-            FrmHostoHos frm = new FrmHostoHos(Form1.GetHospitalNames());
+            this.WindowState = FormWindowState.Minimized;
+            FrmHostoHos frm = new FrmHostoHos();
             frm.ShowDialog();
+            frm.BringToFront();
         }
         //khi ng dùng chọn dijkstra ( mặc định ) thì AlgrType = Dijkstra
         private void ButtonDijkstraSelec(object sender, EventArgs e)
@@ -110,8 +112,7 @@ namespace WindowsFormsApp1
         private void FrmQuanly_click(object sender, EventArgs e)
         {
             string user = infor;
-            DataClasses1DataContext db = new DataClasses1DataContext();
-            NguoiDung nd = db.NguoiDungs.SingleOrDefault(p => p.UserName == user);
+            NguoiDung nd = DatabaseQuanLy.Instance.NguoiDungs.SingleOrDefault(p => p.UserName == user);
             if(nd.LevelID == 0)
             {
                 MessageBox.Show("Bạn không phải Admin!", "Thông báo", MessageBoxButtons.OK);

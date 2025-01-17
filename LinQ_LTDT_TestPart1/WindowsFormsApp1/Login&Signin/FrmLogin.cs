@@ -48,8 +48,8 @@ namespace WindowsFormsApp1
                     MD5 md5 = MD5.Create();
                     byte[] inputBytes = Encoding.ASCII.GetBytes(pass + nd.RandomKey);
                     byte[] hashBytes = md5.ComputeHash(inputBytes);
-                    if (nd.Password == hashBytes) { 
-                        if(nd.Active == true)
+                    if (nd.Password == hashBytes) {
+                        if (nd.Active == true)
                         {
                             if (nd.LevelID == 1)
                             {
@@ -72,13 +72,18 @@ namespace WindowsFormsApp1
                         else
                         {
                             MessageBox.Show("Tài khoản chưa xác thực,vui lòng xác thực tài khoản", "Thông báo", MessageBoxButtons.OK);
-                        } 
+                        }  
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn nhập sai mật khẩu, Vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtPassword.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Thông tin không tồn tại!", "Thông báo", MessageBoxButtons.OK);
-                    Clear();
+                    MessageBox.Show("Bạn nhập sai tài khoản hoặc chưa đăng ký!", "Thông báo", MessageBoxButtons.OK);
+                    txtUserName.Focus();
                 }
                 
             }
