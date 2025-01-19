@@ -61,7 +61,6 @@ namespace WindowsFormsApp1
             byte[] inputBytes = Encoding.ASCII.GetBytes(matkhau+otp);
             byte[] hashBytes = md.ComputeHash(inputBytes);
             //tạo và thêm dữ liệu vào database
-            DataClasses1DataContext db = new DataClasses1DataContext();
             NguoiDung nd = new NguoiDung();
             nd.UserName = taikhoan;
             nd.Password = hashBytes; //pass đã đc mã hóa dưới dạng MD5
@@ -71,15 +70,15 @@ namespace WindowsFormsApp1
             nd.DateCreate = DateTime.Now;
             nd.OTPDateSend = DateTime.Now;
             nd.DateActive = null;
-            nd.LevelID = 0;
+            nd.LevelID = 0; // là user mặc định.
             nd.Active = false;
-            db.NguoiDungs.InsertOnSubmit(nd);
-            db.SubmitChanges();
+            DatabaseQuanLy.Instance.NguoiDungs.InsertOnSubmit(nd);
+            DatabaseQuanLy.Instance.SubmitChanges();
             MessageBox.Show("Tạo tài khoản thành công!", "Thông báo");
             //gửi email xác thực
             SendMail.sendMailTo(nd.Email, "Mã OTP xác thực là: " + nd.OTP);
             nd.OTPDateSend = DateTime.Now;
-            db.SubmitChanges();
+            DatabaseQuanLy.Instance.SubmitChanges();
             Frmxacthuc frm = new Frmxacthuc(nd.UserName);
             frm.Show();
             this.Close();

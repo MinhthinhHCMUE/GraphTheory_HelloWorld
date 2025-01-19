@@ -22,9 +22,11 @@ namespace WindowsFormsApp1
         public static string infor = "";
         public static FrmListView frmlist;
         public static FrmAmbu Ambu;
+        public static MenuMain mn;
         public MenuMain()
         {
 
+            mn = this;
             InitializeComponent();
             string f = Path.Combine(Application.StartupPath, "logo-bo-y-te.ico");
             this.Icon = new Icon(f);
@@ -64,8 +66,10 @@ namespace WindowsFormsApp1
         private void Btb115_Click(object sender, EventArgs e)
         {
             //this.Hide();
+            this.WindowState = FormWindowState.Minimized;
             Form1 form = new Form1();
             form.ShowDialog();
+            form.BringToFront();
         }
         //điều chỉnh size các button
         private void MenuMain_Load(object sender, EventArgs e)
@@ -73,11 +77,16 @@ namespace WindowsFormsApp1
             Ambu = new FrmAmbu();
             Ambu.TopLevel = false;
             Ambu.FormBorderStyle = FormBorderStyle.None;
-            Ambu.Dock = DockStyle.Fill; 
-            pnlFrm.Controls.Add(Ambu); // Thêm Form Ambu vào panel
+            Ambu.Dock = DockStyle.Fill;
+        pnlFrm.Controls.Add(Ambu); // Thêm Form Ambu vào panel
             Ambu.Show();
+
             frmlist = new FrmListView();
             frmlist.Show();
+            tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             this.BringToFront();
         }
         //gọi frm Introduce ( slide ppt giới thiệu đề tài nhóm)
@@ -124,6 +133,11 @@ namespace WindowsFormsApp1
                 frm.Show();
                 this.Hide();
             }
+        }
+ 
+        public static void MiniMize()
+        {
+            mn.WindowState = FormWindowState.Minimized;
         }
     }
 }

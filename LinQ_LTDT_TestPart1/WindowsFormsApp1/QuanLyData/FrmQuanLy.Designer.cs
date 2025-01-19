@@ -88,19 +88,19 @@ namespace WindowsFormsApp1.QuanLyData
             // 
             // radNavigationView1
             // 
-            this.radNavigationView1.CollapsedPaneWidth = 380;
-            this.radNavigationView1.CompactModeThresholdWidth = 5968;
+            this.radNavigationView1.CollapsedPaneWidth = 475;
+            this.radNavigationView1.CompactModeThresholdWidth = 7460;
             this.radNavigationView1.Controls.Add(this.radPageViewPage1);
             this.radNavigationView1.Controls.Add(this.radPageViewPage3);
             this.radNavigationView1.Controls.Add(this.radPageViewPage4);
             this.radNavigationView1.Controls.Add(this.radPageViewPage2);
             this.radNavigationView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radNavigationView1.ExpandedModeThresholdWidth = 9388;
-            this.radNavigationView1.ExpandedPaneWidth = 2614;
-            this.radNavigationView1.HeaderHeight = 289;
-            this.radNavigationView1.HierarchyIndent = 186;
+            this.radNavigationView1.ExpandedModeThresholdWidth = 11735;
+            this.radNavigationView1.ExpandedPaneWidth = 3268;
+            this.radNavigationView1.HeaderHeight = 361;
+            this.radNavigationView1.HierarchyIndent = 233;
             this.radNavigationView1.Location = new System.Drawing.Point(0, 0);
-            this.radNavigationView1.Margin = new System.Windows.Forms.Padding(30, 30, 30, 30);
+            this.radNavigationView1.Margin = new System.Windows.Forms.Padding(38, 38, 38, 38);
             this.radNavigationView1.Name = "radNavigationView1";
             this.radNavigationView1.SelectedPage = this.radPageViewPage4;
             this.radNavigationView1.Size = new System.Drawing.Size(1912, 1047);
@@ -112,11 +112,11 @@ namespace WindowsFormsApp1.QuanLyData
             // 
             this.radPageViewPage1.Controls.Add(this.tableLayoutPanel1);
             this.radPageViewPage1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(22F, 22F);
-            this.radPageViewPage1.Location = new System.Drawing.Point(381, 290);
-            this.radPageViewPage1.Margin = new System.Windows.Forms.Padding(24, 24, 24, 24);
+            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(199F, 44F);
+            this.radPageViewPage1.Location = new System.Drawing.Point(476, 362);
+            this.radPageViewPage1.Margin = new System.Windows.Forms.Padding(30, 30, 30, 30);
             this.radPageViewPage1.Name = "radPageViewPage1";
-            this.radPageViewPage1.Size = new System.Drawing.Size(1530, 756);
+            this.radPageViewPage1.Size = new System.Drawing.Size(1912, 945);
             this.radPageViewPage1.Text = "Quản lý xe cứu thương";
             this.radPageViewPage1.Click += new System.EventHandler(this.btnAmbulance_Click);
             // 
@@ -128,12 +128,12 @@ namespace WindowsFormsApp1.QuanLyData
             this.tableLayoutPanel1.Controls.Add(this.RGVAmbu, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.54978F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.45023F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1530, 756);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1912, 945);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -144,21 +144,21 @@ namespace WindowsFormsApp1.QuanLyData
             this.tableLayoutPanel2.Controls.Add(this.btbAmbuView, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btbAmbuEdit, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(10, 10);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1510, 59);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1888, 75);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // btbAmbuView
             // 
             this.btbAmbuView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btbAmbuView.Location = new System.Drawing.Point(6, 6);
-            this.btbAmbuView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btbAmbuView.Location = new System.Drawing.Point(8, 8);
+            this.btbAmbuView.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btbAmbuView.Name = "btbAmbuView";
-            this.btbAmbuView.Size = new System.Drawing.Size(743, 47);
+            this.btbAmbuView.Size = new System.Drawing.Size(928, 59);
             this.btbAmbuView.TabIndex = 0;
             this.btbAmbuView.Text = "Xem";
             this.btbAmbuView.UseVisualStyleBackColor = true;
@@ -167,10 +167,10 @@ namespace WindowsFormsApp1.QuanLyData
             // btbAmbuEdit
             // 
             this.btbAmbuEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btbAmbuEdit.Location = new System.Drawing.Point(761, 6);
-            this.btbAmbuEdit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btbAmbuEdit.Location = new System.Drawing.Point(952, 8);
+            this.btbAmbuEdit.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btbAmbuEdit.Name = "btbAmbuEdit";
-            this.btbAmbuEdit.Size = new System.Drawing.Size(743, 47);
+            this.btbAmbuEdit.Size = new System.Drawing.Size(928, 59);
             this.btbAmbuEdit.TabIndex = 1;
             this.btbAmbuEdit.Text = "Chỉnh sửa";
             this.btbAmbuEdit.UseVisualStyleBackColor = true;
@@ -181,8 +181,8 @@ namespace WindowsFormsApp1.QuanLyData
             this.RGVAmbu.AutoGenerateHierarchy = true;
             this.RGVAmbu.AutoSizeRows = true;
             this.RGVAmbu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RGVAmbu.Location = new System.Drawing.Point(12, 91);
-            this.RGVAmbu.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.RGVAmbu.Location = new System.Drawing.Point(15, 114);
+            this.RGVAmbu.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             // 
             // 
             // 
@@ -190,18 +190,18 @@ namespace WindowsFormsApp1.QuanLyData
             this.RGVAmbu.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.RGVAmbu.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.RGVAmbu.Name = "RGVAmbu";
-            this.RGVAmbu.Size = new System.Drawing.Size(1506, 653);
+            this.RGVAmbu.Size = new System.Drawing.Size(1882, 816);
             this.RGVAmbu.TabIndex = 1;
             // 
             // radPageViewPage3
             // 
             this.radPageViewPage3.Controls.Add(this.tableLayoutPanel3);
             this.radPageViewPage3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(22F, 22F);
-            this.radPageViewPage3.Location = new System.Drawing.Point(381, 290);
-            this.radPageViewPage3.Margin = new System.Windows.Forms.Padding(24, 24, 24, 24);
+            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(199F, 44F);
+            this.radPageViewPage3.Location = new System.Drawing.Point(476, 362);
+            this.radPageViewPage3.Margin = new System.Windows.Forms.Padding(30, 30, 30, 30);
             this.radPageViewPage3.Name = "radPageViewPage3";
-            this.radPageViewPage3.Size = new System.Drawing.Size(1530, 756);
+            this.radPageViewPage3.Size = new System.Drawing.Size(1912, 945);
             this.radPageViewPage3.Text = "Quản lý User";
             this.radPageViewPage3.Click += new System.EventHandler(this.btbUser_Click);
             // 
@@ -213,12 +213,12 @@ namespace WindowsFormsApp1.QuanLyData
             this.tableLayoutPanel3.Controls.Add(this.RGVUser, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.54237F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.45763F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1530, 756);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1912, 945);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -229,19 +229,19 @@ namespace WindowsFormsApp1.QuanLyData
             this.tableLayoutPanel4.Controls.Add(this.btbXemUser, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btbEditUser, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(8, 8);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(10, 10);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1514, 63);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1892, 79);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // btbXemUser
             // 
             this.btbXemUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btbXemUser.Location = new System.Drawing.Point(610, 30);
-            this.btbXemUser.Margin = new System.Windows.Forms.Padding(610, 30, 610, 30);
+            this.btbXemUser.Location = new System.Drawing.Point(762, 38);
+            this.btbXemUser.Margin = new System.Windows.Forms.Padding(762, 38, 762, 38);
             this.btbXemUser.Name = "btbXemUser";
             this.btbXemUser.Size = new System.Drawing.Size(1, 3);
             this.btbXemUser.TabIndex = 0;
@@ -252,8 +252,8 @@ namespace WindowsFormsApp1.QuanLyData
             // btbEditUser
             // 
             this.btbEditUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btbEditUser.Location = new System.Drawing.Point(1367, 30);
-            this.btbEditUser.Margin = new System.Windows.Forms.Padding(610, 30, 610, 30);
+            this.btbEditUser.Location = new System.Drawing.Point(1708, 38);
+            this.btbEditUser.Margin = new System.Windows.Forms.Padding(762, 38, 762, 38);
             this.btbEditUser.Name = "btbEditUser";
             this.btbEditUser.Size = new System.Drawing.Size(1, 3);
             this.btbEditUser.TabIndex = 1;
@@ -265,25 +265,25 @@ namespace WindowsFormsApp1.QuanLyData
             // 
             this.RGVUser.AutoSizeRows = true;
             this.RGVUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RGVUser.Location = new System.Drawing.Point(8, 87);
-            this.RGVUser.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.RGVUser.Location = new System.Drawing.Point(8, 107);
+            this.RGVUser.Margin = new System.Windows.Forms.Padding(8);
             // 
             // 
             // 
             this.RGVUser.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.RGVUser.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.RGVUser.Name = "RGVUser";
-            this.RGVUser.Size = new System.Drawing.Size(1514, 661);
+            this.RGVUser.Size = new System.Drawing.Size(1896, 830);
             this.RGVUser.TabIndex = 1;
             // 
             // radPageViewPage4
             // 
             this.radPageViewPage4.Controls.Add(this.tableLayoutPanel7);
-            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(22F, 22F);
-            this.radPageViewPage4.Location = new System.Drawing.Point(381, 290);
-            this.radPageViewPage4.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(199F, 44F);
+            this.radPageViewPage4.Location = new System.Drawing.Point(3269, 362);
+            this.radPageViewPage4.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             this.radPageViewPage4.Name = "radPageViewPage4";
-            this.radPageViewPage4.Size = new System.Drawing.Size(1530, 756);
+            this.radPageViewPage4.Size = new System.Drawing.Size(0, 684);
             this.radPageViewPage4.Text = "Quản lý hospital";
             // 
             // tableLayoutPanel7
@@ -294,12 +294,12 @@ namespace WindowsFormsApp1.QuanLyData
             this.tableLayoutPanel7.Controls.Add(this.RGVHospital, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.60891F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.39109F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1530, 756);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(0, 684);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // tableLayoutPanel8
@@ -310,22 +310,22 @@ namespace WindowsFormsApp1.QuanLyData
             this.tableLayoutPanel8.Controls.Add(this.btbXemHospital, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.btbEditHospital, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(8, 8);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(10, 10);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1514, 64);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1, 52);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
             // btbXemHospital
             // 
             this.btbXemHospital.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btbXemHospital.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btbXemHospital.Location = new System.Drawing.Point(15, 15);
-            this.btbXemHospital.Margin = new System.Windows.Forms.Padding(15);
+            this.btbXemHospital.Location = new System.Drawing.Point(19, 19);
+            this.btbXemHospital.Margin = new System.Windows.Forms.Padding(19, 19, 19, 19);
             this.btbXemHospital.Name = "btbXemHospital";
-            this.btbXemHospital.Size = new System.Drawing.Size(727, 34);
+            this.btbXemHospital.Size = new System.Drawing.Size(1, 14);
             this.btbXemHospital.TabIndex = 0;
             this.btbXemHospital.Text = "Xem";
             this.btbXemHospital.UseVisualStyleBackColor = true;
@@ -335,10 +335,10 @@ namespace WindowsFormsApp1.QuanLyData
             // 
             this.btbEditHospital.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btbEditHospital.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btbEditHospital.Location = new System.Drawing.Point(1367, 30);
-            this.btbEditHospital.Margin = new System.Windows.Forms.Padding(610, 30, 610, 30);
+            this.btbEditHospital.Location = new System.Drawing.Point(762, 38);
+            this.btbEditHospital.Margin = new System.Windows.Forms.Padding(762, 38, 762, 38);
             this.btbEditHospital.Name = "btbEditHospital";
-            this.btbEditHospital.Size = new System.Drawing.Size(1, 4);
+            this.btbEditHospital.Size = new System.Drawing.Size(1, 1);
             this.btbEditHospital.TabIndex = 1;
             this.btbEditHospital.Text = "Chỉnh sửa";
             this.btbEditHospital.UseVisualStyleBackColor = true;
@@ -348,25 +348,25 @@ namespace WindowsFormsApp1.QuanLyData
             // 
             this.RGVHospital.AutoSizeRows = true;
             this.RGVHospital.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RGVHospital.Location = new System.Drawing.Point(6, 86);
-            this.RGVHospital.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.RGVHospital.Location = new System.Drawing.Point(8, 80);
+            this.RGVHospital.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             // 
             // 
             // 
             this.RGVHospital.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.RGVHospital.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.RGVHospital.Name = "RGVHospital";
-            this.RGVHospital.Size = new System.Drawing.Size(1518, 664);
+            this.RGVHospital.Size = new System.Drawing.Size(1, 596);
             this.RGVHospital.TabIndex = 1;
             // 
             // radPageViewPage2
             // 
             this.radPageViewPage2.Controls.Add(this.tableLayoutPanel5);
-            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(22F, 22F);
-            this.radPageViewPage2.Location = new System.Drawing.Point(381, 290);
-            this.radPageViewPage2.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(199F, 44F);
+            this.radPageViewPage2.Location = new System.Drawing.Point(476, 362);
+            this.radPageViewPage2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.radPageViewPage2.Name = "radPageViewPage2";
-            this.radPageViewPage2.Size = new System.Drawing.Size(1530, 756);
+            this.radPageViewPage2.Size = new System.Drawing.Size(1912, 945);
             this.radPageViewPage2.Text = "Quản lý bệnh nhân";
             // 
             // tableLayoutPanel5
@@ -377,12 +377,12 @@ namespace WindowsFormsApp1.QuanLyData
             this.tableLayoutPanel5.Controls.Add(this.RGVPatient, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.47766F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.52234F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1530, 756);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1912, 945);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -393,20 +393,20 @@ namespace WindowsFormsApp1.QuanLyData
             this.tableLayoutPanel6.Controls.Add(this.btbXemPatient, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.btbSuaPatient, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(8, 8);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(10, 10);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1514, 63);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1892, 79);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // btbXemPatient
             // 
             this.btbXemPatient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btbXemPatient.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btbXemPatient.Location = new System.Drawing.Point(610, 30);
-            this.btbXemPatient.Margin = new System.Windows.Forms.Padding(610, 30, 610, 30);
+            this.btbXemPatient.Location = new System.Drawing.Point(762, 38);
+            this.btbXemPatient.Margin = new System.Windows.Forms.Padding(762, 38, 762, 38);
             this.btbXemPatient.Name = "btbXemPatient";
             this.btbXemPatient.Size = new System.Drawing.Size(1, 3);
             this.btbXemPatient.TabIndex = 0;
@@ -418,8 +418,8 @@ namespace WindowsFormsApp1.QuanLyData
             // 
             this.btbSuaPatient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btbSuaPatient.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btbSuaPatient.Location = new System.Drawing.Point(1367, 30);
-            this.btbSuaPatient.Margin = new System.Windows.Forms.Padding(610, 30, 610, 30);
+            this.btbSuaPatient.Location = new System.Drawing.Point(1708, 38);
+            this.btbSuaPatient.Margin = new System.Windows.Forms.Padding(762, 38, 762, 38);
             this.btbSuaPatient.Name = "btbSuaPatient";
             this.btbSuaPatient.Size = new System.Drawing.Size(1, 3);
             this.btbSuaPatient.TabIndex = 1;
@@ -431,15 +431,15 @@ namespace WindowsFormsApp1.QuanLyData
             // 
             this.RGVPatient.AutoSizeRows = true;
             this.RGVPatient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RGVPatient.Location = new System.Drawing.Point(6, 85);
-            this.RGVPatient.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.RGVPatient.Location = new System.Drawing.Point(6, 105);
+            this.RGVPatient.Margin = new System.Windows.Forms.Padding(6);
             // 
             // 
             // 
             this.RGVPatient.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.RGVPatient.MasterTemplate.ViewDefinition = tableViewDefinition4;
             this.RGVPatient.Name = "RGVPatient";
-            this.RGVPatient.Size = new System.Drawing.Size(1518, 665);
+            this.RGVPatient.Size = new System.Drawing.Size(1900, 834);
             this.RGVPatient.TabIndex = 1;
             // 
             // FrmQuanLy

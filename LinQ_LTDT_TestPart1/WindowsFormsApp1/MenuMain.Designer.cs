@@ -60,11 +60,12 @@
             this.radMenuButtonItem8 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenuButtonItem12 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenu2 = new Telerik.WinControls.UI.RadMenu();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new WindowsFormsApp1.TableLayoutPanelDoubleBuffered();
+            this.tableLayoutPanel2 = new WindowsFormsApp1.TableLayoutPanelDoubleBuffered();
+            this.tableLayoutPanel3 = new WindowsFormsApp1.TableLayoutPanelDoubleBuffered();
             this.btb115 = new System.Windows.Forms.Button();
-            this.btbHostoHos = new System.Windows.Forms.Button();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new WindowsFormsApp1.TableLayoutPanelDoubleBuffered();
             this.pnlFrm = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboAlgorithm.ComboBoxElement)).BeginInit();
@@ -74,6 +75,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +92,7 @@
             this.commandBarSeparator2,
             this.radButtonElement1});
             this.radStatusStrip1.Location = new System.Drawing.Point(0, 1004);
-            this.radStatusStrip1.Margin = new System.Windows.Forms.Padding(31288, 31288, 31288, 31288);
+            this.radStatusStrip1.Margin = new System.Windows.Forms.Padding(95485, 95485, 95485, 95485);
             this.radStatusStrip1.Name = "radStatusStrip1";
             this.radStatusStrip1.Size = new System.Drawing.Size(1912, 43);
             this.radStatusStrip1.TabIndex = 3;
@@ -249,8 +251,8 @@
             this.radMenu1.FitToScreenMode = ((Telerik.WinControls.UI.FitToScreenModes)((Telerik.WinControls.UI.FitToScreenModes.FitWidth | Telerik.WinControls.UI.FitToScreenModes.FitHeight)));
             this.radMenu1.HorizontalAlignmentCorrectionMode = Telerik.WinControls.UI.AlignmentCorrectionMode.Smooth;
             this.radMenu1.LastShowDpiScaleFactor = new System.Drawing.SizeF(1.25F, 1.25F);
-            this.radMenu1.Location = new System.Drawing.Point(780, 2299);
-            this.radMenu1.Margin = new System.Windows.Forms.Padding(60, 60, 60, 60);
+            this.radMenu1.Location = new System.Drawing.Point(2381, 7015);
+            this.radMenu1.Margin = new System.Windows.Forms.Padding(185, 185, 185, 185);
             this.radMenu1.Maximum = new System.Drawing.Size(0, 0);
             this.radMenu1.Minimum = new System.Drawing.Size(0, 0);
             this.radMenu1.Name = "radMenu1";
@@ -361,29 +363,27 @@
             this.radMenuItem4,
             this.radMenuItem5});
             this.radMenu2.Location = new System.Drawing.Point(0, 0);
-            this.radMenu2.Margin = new System.Windows.Forms.Padding(48, 48, 48, 48);
+            this.radMenu2.Margin = new System.Windows.Forms.Padding(148, 148, 148, 148);
             this.radMenu2.Name = "radMenu2";
             this.radMenu2.Size = new System.Drawing.Size(1912, 36);
             this.radMenu2.TabIndex = 4;
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel1.BackgroundImage")));
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.88912F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.11088F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.839F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.161F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.29252F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1912, 1047);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -391,67 +391,87 @@
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.btb115, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btbHostoHos, 0, 1);
-            this.tableLayoutPanel2.ForeColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 275);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.16556F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.83444F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(488, 604);
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.96943F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.03057F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(488, 1041);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // btb115
-            // 
-            this.btb115.BackColor = System.Drawing.SystemColors.Control;
-            this.btb115.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btb115.Image = global::WindowsFormsApp1.Properties.Resources.resize288;
-            this.btb115.Location = new System.Drawing.Point(50, 50);
-            this.btb115.Margin = new System.Windows.Forms.Padding(50);
-            this.btb115.Name = "btb115";
-            this.btb115.Size = new System.Drawing.Size(388, 203);
-            this.btb115.TabIndex = 0;
-            this.btb115.Text = "button1";
-            this.btb115.UseVisualStyleBackColor = true;
-            this.btb115.Click += new System.EventHandler(this.Btb115_Click);
-            // 
-            // btbHostoHos
-            // 
-            this.btbHostoHos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btbHostoHos.Image = global::WindowsFormsApp1.Properties.Resources.resize288HOs;
-            this.btbHostoHos.Location = new System.Drawing.Point(50, 353);
-            this.btbHostoHos.Margin = new System.Windows.Forms.Padding(50);
-            this.btbHostoHos.Name = "btbHostoHos";
-            this.btbHostoHos.Size = new System.Drawing.Size(388, 201);
-            this.btbHostoHos.TabIndex = 1;
-            this.btbHostoHos.Text = "button2";
-            this.btbHostoHos.UseVisualStyleBackColor = true;
-            this.btbHostoHos.Click += new System.EventHandler(this.btbChuyenTuyen_Click);
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.46742F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.532578F));
-            this.tableLayoutPanel3.Controls.Add(this.pnlFrm, 0, 0);
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.btb115, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.button2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(497, 275);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 305);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1412, 604);
-            this.tableLayoutPanel3.TabIndex = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(482, 608);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // btb115
+            // 
+            this.btb115.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btb115.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btb115.Image = global::WindowsFormsApp1.Properties.Resources.resize388;
+            this.btb115.Location = new System.Drawing.Point(47, 356);
+            this.btb115.Margin = new System.Windows.Forms.Padding(47, 52, 47, 51);
+            this.btb115.Name = "btb115";
+            this.btb115.Size = new System.Drawing.Size(388, 201);
+            this.btb115.TabIndex = 0;
+            this.btb115.Text = "Chuyển tuyến";
+            this.btb115.UseVisualStyleBackColor = true;
+            this.btb115.Click += new System.EventHandler(this.Btb115_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::WindowsFormsApp1.Properties.Resources.resize288;
+            this.button2.Location = new System.Drawing.Point(47, 50);
+            this.button2.Margin = new System.Windows.Forms.Padding(47, 50, 47, 51);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(388, 203);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Cấp cứu 115";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel4.Controls.Add(this.pnlFrm, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(497, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.99079F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.00921F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1412, 1041);
+            this.tableLayoutPanel4.TabIndex = 1;
             // 
             // pnlFrm
             // 
+            this.pnlFrm.BackColor = System.Drawing.Color.White;
             this.pnlFrm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFrm.Location = new System.Drawing.Point(3, 3);
+            this.pnlFrm.Location = new System.Drawing.Point(3, 169);
             this.pnlFrm.Name = "pnlFrm";
-            this.pnlFrm.Size = new System.Drawing.Size(1342, 598);
+            this.pnlFrm.Size = new System.Drawing.Size(1341, 805);
             this.pnlFrm.TabIndex = 0;
             // 
             // MenuMain
@@ -480,6 +500,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -504,7 +525,6 @@
         private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem4;
         private Telerik.WinControls.UI.RadDropDownMenu radMenu1;
         private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Telerik.WinControls.UI.RadMenuButtonItem btbIntroduce;
         private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem9;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem4;
@@ -519,10 +539,12 @@
         private Telerik.WinControls.UI.RadMenu radMenu2;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator2;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanelDoubleBuffered tableLayoutPanel1;
+        private TableLayoutPanelDoubleBuffered tableLayoutPanel2;
+        private TableLayoutPanelDoubleBuffered tableLayoutPanel3;
         private System.Windows.Forms.Button btb115;
-        private System.Windows.Forms.Button btbHostoHos;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button button2;
+        private TableLayoutPanelDoubleBuffered tableLayoutPanel4;
         private System.Windows.Forms.Panel pnlFrm;
     }
 }

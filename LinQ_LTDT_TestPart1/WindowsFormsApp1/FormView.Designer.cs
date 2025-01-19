@@ -44,6 +44,7 @@
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblChange = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btbBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackbar)).BeginInit();
@@ -162,11 +163,24 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.Click += new System.EventHandler(this.flashingCheck_ToggleStateChanged);
             // 
+            // btbBack
+            // 
+            this.btbBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbBack.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btbBack.Location = new System.Drawing.Point(1351, 6);
+            this.btbBack.Name = "btbBack";
+            this.btbBack.Size = new System.Drawing.Size(182, 101);
+            this.btbBack.TabIndex = 13;
+            this.btbBack.Text = "Quay lại";
+            this.btbBack.UseVisualStyleBackColor = true;
+            this.btbBack.Click += new System.EventHandler(this.btbBack_Click);
+            // 
             // FormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.btbBack);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.lblChange);
             this.Controls.Add(this.trackbar);
@@ -207,5 +221,6 @@
         private System.Windows.Forms.Timer timerUpdate;
         private System.Windows.Forms.Label lblChange;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btbBack;
     }
 }

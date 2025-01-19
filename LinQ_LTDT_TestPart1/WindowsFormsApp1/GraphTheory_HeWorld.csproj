@@ -267,7 +267,7 @@
     <Compile Include="Database.cs">
       <DependentUpon>Database.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\DatabaseQuanLy.cs" />
+    <Compile Include="QuanLyData\DatabaseQuanLy.cs" />
     <Compile Include="FrmIntro\AStarAndDijktraFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,6 +362,9 @@
     </Compile>
     <Compile Include="QuanLy_Ambulance\FrmAmbu.Designer.cs">
       <DependentUpon>FrmAmbu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableLayoutPanelDoubleBuffered .cs">
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="FrmIntro\AStarAndDijktraFrm.resx">
       <DependentUpon>AStarAndDijktraFrm.cs</DependentUpon>
@@ -471,6 +474,7 @@
     <None Include="Resources\resize288.gif" />
     <None Include="Resources\resize288HOs.gif" />
     <None Include="Resources\resizeFrmHos.gif" />
+    <None Include="Resources\resize388.gif" />
     <Content Include="RoadImg.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Tls.Crypto.Impl.BC;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 using static WindowsFormsApp1.Program;
 
 namespace WindowsFormsApp1.QuanLy_Ambulance
@@ -39,7 +41,6 @@ namespace WindowsFormsApp1.QuanLy_Ambulance
         private void FrmAmbu_Load(object sender, EventArgs e)
         {
             loadDuLieuAmbulance();
-        
             //RGVAmbu.Columns["AmbulanceId"].ReadOnly = true;
             //RGVAmbu.Columns["AmbulanceName"].ReadOnly = true;
             //RGVAmbu.Columns["MissionType"].ReadOnly = true;
@@ -51,7 +52,50 @@ namespace WindowsFormsApp1.QuanLy_Ambulance
             bindingSource.ResetBindings(false); //reset bidings
             bindingSource.DataSource = DatabaseQuanLy.Instance.AmbulanceMissions.OrderBy(p => p.AmbulanceId).ToList();
         }
-
+        public void UpdateLabel()
+        {
+            lblNotication.Text = "Có xe cứu thương cần được giải quyết! Tính năng khẩn cấp sẽ được bắt đầu sau 10 giây nếu không có phản hồi!";
+            Font f = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblNotication.Font = f;
+            lblNotication.ForeColor = Color.Red;
+        }
+        public void ResetLabel()
+        {
+            if(cmbListAmbu.Items.Count == 0)
+            {
+                lblNotication.Text = "Đang chờ tín hiệu từ xe cứu thương!";
+                Font f = new Font("Segoe UI", 12, FontStyle.Bold);
+                lblNotication.Font = f;
+                lblNotication.ForeColor = Color.Black;
+                button1.Enabled = false;
+            }
+        }
+        public void AddAmbuToCmbox(string id)
+        {
+            AmbulanceMission ambu = DatabaseQuanLy.Instance.AmbulanceMissions.SingleOrDefault(p => p.AmbulanceId == id);
+            if(ambu == null)
+            {
+                throw new Exception("Sai sót ở AddAmbuTocmbox");
+            }
+            else
+            {
+                cmbListAmbu.Items.Add("              " + ambu.AmbulanceName);
+                cmbListAmbu.SelectedIndex = 0;
+                button1.Enabled = true;
+            }
+        }
+        public void RemoveAmbuFormCmbox(string id)
+        {
+            AmbulanceMission ambu = DatabaseQuanLy.Instance.AmbulanceMissions.SingleOrDefault(p => p.AmbulanceId == id);
+            if (ambu == null)
+            {
+                throw new Exception("Sai sót ở RemoveAmbuFormCmbox");
+            }
+            else
+            {
+                cmbListAmbu.Items.Remove("              " + ambu.AmbulanceName);
+            }
+        }
         private void timercheck_Tick(object sender, EventArgs e)
         {
             foreach (GridViewRowInfo row in RGVAmbu.Rows)
@@ -87,5 +131,11 @@ namespace WindowsFormsApp1.QuanLy_Ambulance
                 //    });
             }
         }
+        private  void btbClick(object sender, EventArgs e)
+        {
+            MenuMain.MiniMize();
+            MenuMain.frmlist.WindowState = FormWindowState.Maximized;
+        }
+       
     }
 }

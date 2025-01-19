@@ -826,7 +826,6 @@ namespace WindowsFormsApp1
                     string hospitalName = Form1.listVertex[path[path.Count - 1]];
                     string message = $"Xe đã tới {hospitalName}\nThời gian di chuyển: {travelTime.ToString(@"mm\:ss")}";
                     MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     ResetSimulationData();
                     FreeDataAmbu();
                     FreeSourceForm115();
@@ -840,7 +839,7 @@ namespace WindowsFormsApp1
                     // Hiển thị thời gian di chuyển
                     TimeSpan travelTime = customDateTime - startTime;
                     string hospitalName = Form1.listVertex[path[path.Count - 1]];
-                    string message = $"Xe đã tới {hospitalName}\n" +
+                    string message = $"Xe {this.Tag.ToString()} đã tới {hospitalName}\n" +
                                      $"Thời gian di chuyển: {travelTime.ToString(@"mm\:ss")}";
                     MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -869,9 +868,10 @@ namespace WindowsFormsApp1
                             // Xử lý trường hợp path là null hoặc rỗng
                             MessageBox.Show("Không tìm thấy đường đi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        MessageBox.Show($"Xe đã tới {streetName}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ReachedDestination?.Invoke(this, EventArgs.Empty);
                         reachedAccidentLocation = true;
+                        MenuMain.Ambu.UpdateLabel();
+                        MenuMain.Ambu.AddAmbuToCmbox(this.Tag.ToString());
                         // Hiển thị lại Form1 với ComboBox chọn loại bệnh
                         Form1 frm1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
                         if (frm1.Tag.ToString() == this.Tag.ToString())
@@ -1143,5 +1143,11 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        private void btbBack_Click(object sender, EventArgs e)
+        {
+            MenuMain.frmlist.WindowState = FormWindowState.Minimized;
+            MenuMain.mn.WindowState = FormWindowState.Maximized;
+        }   
     }
 }

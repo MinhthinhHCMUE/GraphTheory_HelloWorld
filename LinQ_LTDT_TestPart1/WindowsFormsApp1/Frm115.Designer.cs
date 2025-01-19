@@ -139,20 +139,23 @@
             // txtStreetName
             // 
             this.txtStreetName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtStreetName.Location = new System.Drawing.Point(25, 28);
-            this.txtStreetName.Margin = new System.Windows.Forms.Padding(25);
+            this.txtStreetName.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtStreetName.Location = new System.Drawing.Point(25, 36);
+            this.txtStreetName.Margin = new System.Windows.Forms.Padding(25, 25, 25, 0);
             this.txtStreetName.Name = "txtStreetName";
-            this.txtStreetName.Size = new System.Drawing.Size(632, 22);
+            this.txtStreetName.Size = new System.Drawing.Size(632, 31);
             this.txtStreetName.TabIndex = 0;
             // 
             // cmbDiseaseType
             // 
             this.cmbDiseaseType.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbDiseaseType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDiseaseType.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbDiseaseType.FormattingEnabled = true;
-            this.cmbDiseaseType.Location = new System.Drawing.Point(25, 107);
+            this.cmbDiseaseType.Location = new System.Drawing.Point(25, 104);
             this.cmbDiseaseType.Margin = new System.Windows.Forms.Padding(25);
             this.cmbDiseaseType.Name = "cmbDiseaseType";
-            this.cmbDiseaseType.Size = new System.Drawing.Size(632, 24);
+            this.cmbDiseaseType.Size = new System.Drawing.Size(632, 33);
             this.cmbDiseaseType.TabIndex = 1;
             // 
             // EmercengyButton

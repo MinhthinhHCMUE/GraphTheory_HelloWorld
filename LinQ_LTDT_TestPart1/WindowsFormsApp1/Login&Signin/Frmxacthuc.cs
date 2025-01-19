@@ -26,8 +26,7 @@ namespace WindowsFormsApp1.Login_Signin
 
         private void btnXacThuc_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext db = new DataClasses1DataContext();
-            NguoiDung nd = db.NguoiDungs.SingleOrDefault(p=>p.UserName == taikhoan);
+            NguoiDung nd = DatabaseQuanLy.Instance.NguoiDungs.SingleOrDefault(p=>p.UserName == taikhoan);
             if (nd != null)
             {
                 if (nd.OTP.ToString() == txtOTP.Text) 
@@ -37,7 +36,7 @@ namespace WindowsFormsApp1.Login_Signin
                     {
                         nd.DateActive = DateTime.Now;
                         nd.Active = true;
-                        db.SubmitChanges();
+                        DatabaseQuanLy.Instance.SubmitChanges();
                         MessageBox.Show("Đã kích hoạt thành công tài khoản", "Thông báo");
                         FrmLogin frm = new FrmLogin();
                         frm.Show();
@@ -60,15 +59,14 @@ namespace WindowsFormsApp1.Login_Signin
         private void btnGuiLai_Click(object sender, EventArgs e)
         {
             //gửi email xác thực
-            DataClasses1DataContext db = new DataClasses1DataContext();
-            NguoiDung nd = db.NguoiDungs.SingleOrDefault(p => p.UserName == taikhoan);
+            NguoiDung nd = DatabaseQuanLy.Instance.NguoiDungs.SingleOrDefault(p => p.UserName == taikhoan);
             if (nd != null)
             {
                 Random rd = new Random();
                 nd.OTP = rd.Next(1000, 9999).ToString();// mã OTp trong 1000 -> 9999
                 SendMail.sendMailTo(nd.Email, "Mã OTP xác thực là: " + nd.OTP);
                 nd.OTPDateSend = DateTime.Now;  //Kiem soat thoi gian 5 phut hieu luc
-                db.SubmitChanges();
+                DatabaseQuanLy.Instance.SubmitChanges();
                 MessageBox.Show("Đã gửi email", "Thông báo");
             }
         }

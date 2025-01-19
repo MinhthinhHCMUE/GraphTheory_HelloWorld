@@ -27,6 +27,8 @@ namespace WindowsFormsApp1
         private Astar astar;
         public static int testerindex;
         private string AlgorithmType = MenuMain.AlgrType;
+        private Timer EmercengyTime;
+        private int EmercengyTimeCount = 0; // Biến đếm số giây không hoạt động
         //Ma trận của đề tài
         public static int[,] adjacencyMatrix = new int[,] {
             //đơn vị : mét - đồ thị vô hướng  a->b , b->a
@@ -238,6 +240,7 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
             {
             // Cài đặt văn bản mặc định cho TextBox (txtStreetName)
+            this.ActiveControl = null;
             txtStreetName.Text = "Hãy chọn tên đường xe cứu thương đang ở";
             txtStreetName.ForeColor = System.Drawing.Color.Gray;
             cmbDiseaseType.Visible = false; 
@@ -399,6 +402,7 @@ namespace WindowsFormsApp1
             txtStreetName.Enabled = false; // Khóa nhập tên đường
             EmercengyButton.Enabled = true; // Cho phép nhấn nút "Bắt đầu"
             EmercengyButton.Visible = true;
+            this.TopLevel = false;
         }
         //tạo một event hco btbRun click ở đợt mô phỏng 2
         private void btbRunReached_Click(object sender , EventArgs e)
@@ -433,6 +437,8 @@ namespace WindowsFormsApp1
             }
 
             // Cập nhật đường đi và bắt đầu lại animation trong FormView
+            MenuMain.Ambu.RemoveAmbuFormCmbox(this.Tag.ToString());
+            MenuMain.Ambu.ResetLabel();
             currentFormView.UpdatePath(pathToHospital);
             currentFormView.StartAnimation();
             this.Hide(); // Ẩn Form115 sau khi bắt đầu di chuyển đến bệnh viện chuyên khoa
@@ -444,11 +450,28 @@ namespace WindowsFormsApp1
             this.BringToFront(); // Đưa Form115 lên trên cùng
             cmbDiseaseType.Visible = true; // Hiển thị ComboBox chọn loại bệnh
             txtStreetName.Enabled = false; // Khóa nhập tên đường
-
+            KhoitaoTimerEmercengy();
             // Xử lý sự kiện nút "Bắt đầu" sau khi người dùng chọn bệnh
             btbRun.Click -= btnRun_Click;  // Gỡ sự kiện cũ
             btbRun.Click += btbRunReached_Click; //thay thế bằng event mới
            
+        }
+        private void KhoitaoTimerEmercengy()
+        {
+            EmercengyTime = new Timer();
+            EmercengyTime.Interval = 2000; // 2 giây 1 lần 
+            EmercengyTime.Tick += EmergencyClick_NotReaction;
+            EmercengyTimeCount = 0;
+            EmercengyTime.Start();
+        }
+        private void EmergencyClick_NotReaction(object sender, EventArgs e)
+        {
+            EmercengyTimeCount++;
+            if(EmercengyTimeCount == 10)
+            {
+                EmercengyTime.Stop();
+                EmergencyButton_Click(sender, e);
+            }
         }
         //sử lý sự kiện khi click vào nút khẩn cấp
         private void EmergencyButton_Click(object sender, EventArgs e)
@@ -473,6 +496,8 @@ namespace WindowsFormsApp1
             // Cập nhật đường đi trong FormView
             if (currentFormView != null && !currentFormView.IsDisposed)
             {
+                MenuMain.Ambu.RemoveAmbuFormCmbox(this.Tag.ToString());
+                MenuMain.Ambu.ResetLabel();
                 currentFormView.UpdatePath(pathToHospital);
                 currentFormView.StartAnimation(); 
                 this.Hide(); 

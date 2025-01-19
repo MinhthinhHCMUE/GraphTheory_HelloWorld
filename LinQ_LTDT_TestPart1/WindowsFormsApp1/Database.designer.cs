@@ -656,7 +656,7 @@ namespace WindowsFormsApp1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Password
 		{
 			get
@@ -1044,8 +1044,6 @@ namespace WindowsFormsApp1
 		
 		private string _MissionType;
 		
-		private System.Nullable<bool> _View;
-		
 		private string _Vị_Trí_Hiện_Tại;
 		
     #region Extensibility Method Definitions
@@ -1058,8 +1056,6 @@ namespace WindowsFormsApp1
     partial void OnAmbulanceNameChanged();
     partial void OnMissionTypeChanging(string value);
     partial void OnMissionTypeChanged();
-    partial void OnViewChanging(System.Nullable<bool> value);
-    partial void OnViewChanged();
     partial void OnVị_Trí_Hiện_TạiChanging(string value);
     partial void OnVị_Trí_Hiện_TạiChanged();
     #endregion
@@ -1109,7 +1105,7 @@ namespace WindowsFormsApp1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MissionType", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MissionType", DbType="NVarChar(35)")]
 		public string MissionType
 		{
 			get
@@ -1125,26 +1121,6 @@ namespace WindowsFormsApp1
 					this._MissionType = value;
 					this.SendPropertyChanged("MissionType");
 					this.OnMissionTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[View]", Storage="_View", DbType="Bit")]
-		public System.Nullable<bool> View
-		{
-			get
-			{
-				return this._View;
-			}
-			set
-			{
-				if ((this._View != value))
-				{
-					this.OnViewChanging(value);
-					this.SendPropertyChanging();
-					this._View = value;
-					this.SendPropertyChanged("View");
-					this.OnViewChanged();
 				}
 			}
 		}

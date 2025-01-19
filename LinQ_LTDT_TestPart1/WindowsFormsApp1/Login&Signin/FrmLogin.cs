@@ -41,8 +41,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                DataClasses1DataContext db = new DataClasses1DataContext();
-                NguoiDung nd = db.NguoiDungs.SingleOrDefault(p => p.UserName == user);
+                NguoiDung nd = DatabaseQuanLy.Instance.NguoiDungs.SingleOrDefault(p => p.UserName == user);
                 if (nd != null)
                 {
                     MD5 md5 = MD5.Create();

@@ -79,8 +79,8 @@ namespace WindowsFormsApp1
 
                 frm115.EnableDiseaseSelection();
                 frm115.Show();
+                tab.Controls.Add(frm115);
                 frm115.BringToFront();
-                //tab.Controls.Add(frm115);
             }
         }
     }
