@@ -13,17 +13,25 @@ namespace WindowsFormsApp1.Login_Signin
     public partial class Frmxacthuc : Telerik.WinControls.UI.RadForm
     {
         string taikhoan;
+        int Ty = 0;
         public Frmxacthuc()
         {
             InitializeComponent();
+            string ico = System.IO.Path.Combine(Application.StartupPath, "loginico.ico");
+            this.Icon = new Icon(ico);
         }
-        public Frmxacthuc(string _taikhoan)
+        public Frmxacthuc(string _taikhoan, int Type)
         {
             InitializeComponent();
+            string ico = System.IO.Path.Combine(Application.StartupPath, "loginico.ico");
+            this.Icon = new Icon(ico);
             taikhoan = _taikhoan;
-
+            this.Ty = Type;
+            if(Type == 0)
+            {
+                lblHienthi.Text = "Lấy mã OTP để reset mật khẩu";
+            }
         }
-
         private void btnXacThuc_Click(object sender, EventArgs e)
         {
             NguoiDung nd = DatabaseQuanLy.Instance.NguoiDungs.SingleOrDefault(p=>p.UserName == taikhoan);
@@ -37,9 +45,20 @@ namespace WindowsFormsApp1.Login_Signin
                         nd.DateActive = DateTime.Now;
                         nd.Active = true;
                         DatabaseQuanLy.Instance.SubmitChanges();
-                        MessageBox.Show("Đã kích hoạt thành công tài khoản", "Thông báo");
-                        FrmLogin frm = new FrmLogin();
-                        frm.Show();
+                        if (this.Ty != 0) 
+                        {
+                            MessageBox.Show("Đã kích hoạt thành công tài khoản", "Thông báo");
+                        }
+                        if (this.Ty == 0)
+                        {
+                            MessageBox.Show("Đã xác thực thành công, đang đi đến trang Reset", "Thông báo", MessageBoxButtons.OK);
+                            Forgot(nd);
+                        }
+                        else
+                        {
+                            FrmLogin frm = new FrmLogin();
+                            frm.Show();
+                        }
                         this.Close();
                     }
                     else
@@ -55,7 +74,12 @@ namespace WindowsFormsApp1.Login_Signin
                 }
             }
         }
-
+        private void Forgot(NguoiDung nd)
+        {
+            FrmDoiMatKhau frm = new FrmDoiMatKhau(nd);
+            frm.Show();
+            this.Close();
+        }
         private void btnGuiLai_Click(object sender, EventArgs e)
         {
             //gửi email xác thực

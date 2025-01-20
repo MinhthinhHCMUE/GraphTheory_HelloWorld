@@ -39,8 +39,8 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.txtStreetName = new System.Windows.Forms.TextBox();
             this.cmbDiseaseType = new System.Windows.Forms.ComboBox();
-            this.EmercengyButton = new System.Windows.Forms.Button();
             this.btbRun = new System.Windows.Forms.Button();
+            this.EmercengyButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -158,6 +158,19 @@
             this.cmbDiseaseType.Size = new System.Drawing.Size(632, 33);
             this.cmbDiseaseType.TabIndex = 1;
             // 
+            // btbRun
+            // 
+            this.btbRun.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btbRun.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btbRun.Location = new System.Drawing.Point(800, 100);
+            this.btbRun.Margin = new System.Windows.Forms.Padding(100);
+            this.btbRun.Name = "btbRun";
+            this.btbRun.Size = new System.Drawing.Size(275, 132);
+            this.btbRun.TabIndex = 1;
+            this.btbRun.Text = "Bắt đầu";
+            this.btbRun.UseVisualStyleBackColor = true;
+            this.btbRun.Click += new System.EventHandler(this.btnRun_Click);
+            // 
             // EmercengyButton
             // 
             this.EmercengyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -172,28 +185,16 @@
             this.EmercengyButton.MouseLeave += new System.EventHandler(this.Emercengy_MouseLeave);
             this.EmercengyButton.MouseHover += new System.EventHandler(this.Emercengy_MouseHover);
             // 
-            // btbRun
-            // 
-            this.btbRun.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btbRun.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btbRun.Location = new System.Drawing.Point(800, 100);
-            this.btbRun.Margin = new System.Windows.Forms.Padding(100);
-            this.btbRun.Name = "btbRun";
-            this.btbRun.Size = new System.Drawing.Size(275, 132);
-            this.btbRun.TabIndex = 1;
-            this.btbRun.Text = "Bắt đầu";
-            this.btbRun.UseVisualStyleBackColor = true;
-            this.btbRun.Click += new System.EventHandler(this.btnRun_Click);
-            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1278, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cấp cứu 115";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClosingForm);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

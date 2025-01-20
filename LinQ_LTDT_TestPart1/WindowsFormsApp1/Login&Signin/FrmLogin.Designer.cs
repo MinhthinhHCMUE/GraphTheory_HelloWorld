@@ -37,6 +37,8 @@
             this.btbLogin = new System.Windows.Forms.Button();
             this.lblResig = new System.Windows.Forms.Label();
             this.checkboxShow = new System.Windows.Forms.CheckBox();
+            this.lblXacthuc = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,11 +135,11 @@
             this.lblResig.AutoSize = true;
             this.lblResig.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResig.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(78)))), ((int)(((byte)(165)))));
-            this.lblResig.Location = new System.Drawing.Point(121, 435);
+            this.lblResig.Location = new System.Drawing.Point(125, 426);
             this.lblResig.Name = "lblResig";
-            this.lblResig.Size = new System.Drawing.Size(157, 23);
+            this.lblResig.Size = new System.Drawing.Size(162, 23);
             this.lblResig.TabIndex = 21;
-            this.lblResig.Text = "Đăng ký tài khoản";
+            this.lblResig.Text = " Đăng ký tài khoản";
             this.lblResig.UseWaitCursor = true;
             this.lblResig.Click += new System.EventHandler(this.lblResig_Click);
             // 
@@ -155,11 +157,37 @@
             this.checkboxShow.UseVisualStyleBackColor = true;
             this.checkboxShow.CheckedChanged += new System.EventHandler(this.checkboxShow_CheckedChanged);
             // 
+            // lblXacthuc
+            // 
+            this.lblXacthuc.AutoSize = true;
+            this.lblXacthuc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lblXacthuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(78)))), ((int)(((byte)(165)))));
+            this.lblXacthuc.Location = new System.Drawing.Point(125, 449);
+            this.lblXacthuc.Name = "lblXacthuc";
+            this.lblXacthuc.Size = new System.Drawing.Size(170, 23);
+            this.lblXacthuc.TabIndex = 23;
+            this.lblXacthuc.Text = "Xác thực đăng nhập";
+            this.lblXacthuc.Click += new System.EventHandler(this.lblXacthuc_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.label4.Location = new System.Drawing.Point(134, 472);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 23);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Quên mật khẩu?";
+            this.label4.Click += new System.EventHandler(this.ForgotPassword);
+            // 
             // FrmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(398, 541);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblXacthuc);
             this.Controls.Add(this.checkboxShow);
             this.Controls.Add(this.lblResig);
             this.Controls.Add(this.btbLogin);
@@ -190,5 +218,7 @@
         private System.Windows.Forms.Button btbLogin;
         private System.Windows.Forms.Label lblResig;
         private System.Windows.Forms.CheckBox checkboxShow;
+        private System.Windows.Forms.Label lblXacthuc;
+        private System.Windows.Forms.Label label4;
     }
 }

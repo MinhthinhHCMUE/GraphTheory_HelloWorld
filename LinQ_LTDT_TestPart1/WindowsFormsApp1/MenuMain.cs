@@ -33,10 +33,7 @@ namespace WindowsFormsApp1
             this.FormElement.Border.ForeColor = Color.White;
             NgayVaGio.Start(); //bắt đầu bộ đếm ngày tháng năm giờ
             //gán giá trị cho các Menubutton và event cho nó
-            radMenuButtonItem10.Text = "Sơ bộ về Dijkstra và A*";
-            radMenuButtonItem11.Text = "Minh họa thuật toán";
-            radMenuButtonItem10.Click += DisplayFrmIntroduce;
-            radMenuButtonItem11.Click += DisplayFrmAlgorithm;
+
 
         }
         //cập nhật ngày và giờ liên tục
@@ -70,6 +67,7 @@ namespace WindowsFormsApp1
             Form1 form = new Form1();
             form.ShowDialog();
             form.BringToFront();
+            form.WindowState = FormWindowState.Maximized;
         }
         //điều chỉnh size các button
         private void MenuMain_Load(object sender, EventArgs e)
@@ -100,8 +98,10 @@ namespace WindowsFormsApp1
         {
             this.WindowState = FormWindowState.Minimized;
             FrmHostoHos frm = new FrmHostoHos();
+            frm.WindowState = FormWindowState.Maximized;
             frm.ShowDialog();
             frm.BringToFront();
+            
         }
         //khi ng dùng chọn dijkstra ( mặc định ) thì AlgrType = Dijkstra
         private void ButtonDijkstraSelec(object sender, EventArgs e)
@@ -131,13 +131,26 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Xin chào Admin!", "Thông báo", MessageBoxButtons.OK);
                 FrmQuanLy frm = new FrmQuanLy();
                 frm.Show();
-                this.Hide();
+                frm.BringToFront();
+                this.WindowState = FormWindowState.Minimized;
             }
         }
- 
         public static void MiniMize()
         {
             mn.WindowState = FormWindowState.Minimized;
+        }
+        private void closedform(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+        private void btbExit_Click(object sender, EventArgs e)
+        {
+            FrmLogin frm = new FrmLogin();
+            frm.Show();
+            mn.Dispose();
+            frmlist.Dispose();
+            Ambu.Dispose();
+            frm.BringToFront();
         }
     }
 }

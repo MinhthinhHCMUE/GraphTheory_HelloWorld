@@ -90,8 +90,8 @@
             // 
             this.RGVPatient.AutoSizeRows = true;
             this.RGVPatient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RGVPatient.Location = new System.Drawing.Point(12, 73);
-            this.RGVPatient.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.RGVPatient.Location = new System.Drawing.Point(15, 76);
+            this.RGVPatient.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             // 
             // 
             // 
@@ -100,7 +100,7 @@
             this.RGVPatient.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.RGVPatient.Name = "RGVPatient";
             this.RGVPatient.ReadOnly = true;
-            this.RGVPatient.Size = new System.Drawing.Size(1346, 408);
+            this.RGVPatient.Size = new System.Drawing.Size(1340, 402);
             this.RGVPatient.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -154,11 +154,11 @@
             // radSeparator1
             // 
             this.radSeparator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radSeparator1.Location = new System.Drawing.Point(389, 12);
-            this.radSeparator1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.radSeparator1.Location = new System.Drawing.Point(392, 15);
+            this.radSeparator1.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             this.radSeparator1.Name = "radSeparator1";
             this.radSeparator1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.radSeparator1.Size = new System.Drawing.Size(1, 31);
+            this.radSeparator1.Size = new System.Drawing.Size(1, 25);
             this.radSeparator1.TabIndex = 2;
             ((Telerik.WinControls.UI.SeparatorElement)(this.radSeparator1.GetChildAt(0))).Orientation = System.Windows.Forms.Orientation.Vertical;
             ((Telerik.WinControls.UI.SeparatorElement)(this.radSeparator1.GetChildAt(0))).Alignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -193,11 +193,11 @@
             // radSeparator2
             // 
             this.radSeparator2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radSeparator2.Location = new System.Drawing.Point(933, 12);
-            this.radSeparator2.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.radSeparator2.Location = new System.Drawing.Point(936, 15);
+            this.radSeparator2.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             this.radSeparator2.Name = "radSeparator2";
             this.radSeparator2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.radSeparator2.Size = new System.Drawing.Size(1, 31);
+            this.radSeparator2.Size = new System.Drawing.Size(1, 25);
             this.radSeparator2.TabIndex = 5;
             // 
             // button2

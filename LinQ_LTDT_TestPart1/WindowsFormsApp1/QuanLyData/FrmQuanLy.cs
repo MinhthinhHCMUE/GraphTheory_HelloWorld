@@ -1,10 +1,12 @@
-﻿using System;
+﻿using ServiceStack;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -20,47 +22,40 @@ namespace WindowsFormsApp1.QuanLyData
             InitializeComponent();
             this.FormElement.Border.ForeColor = Color.White;
             this.WindowState = FormWindowState.Maximized;
-            string ico = Path.Combine(Application.StartupPath, "HCMUEicon.ico");
+            string ico = System.IO.Path.Combine(Application.StartupPath, "adminico.ico");
             this.Icon = new Icon(ico);
+
         }
         private void btnAmbulance_Click(object sender, EventArgs e)
         {
-            loadDuLieuAmbulance();
             RGVAmbu.ReadOnly = true;
         }
         private void btbHospital_Click(object sender, EventArgs e)
         {
-            loadDuLieuHospital();
             RGVHospital.ReadOnly = true;
         }
         private void btbPatient_Click(object sender, EventArgs e)
         {
-            loadDuLieuPatient();
             RGVPatient.ReadOnly = true;
         }
         private void btbUser_Click(object sender, EventArgs e)
         {
-            loadDuLieuNguoiDung();
             RGVUser.ReadOnly = true;
         }
         private void btnAmbulanceEdit_Click(object sender, EventArgs e)
         {
-            loadDuLieuAmbulance();
             RGVAmbu.ReadOnly = false;
         }
         private void btbHospitalEdit_Click(object sender, EventArgs e)
         {
-            loadDuLieuHospital();
             RGVHospital.ReadOnly=false;
         }
         private void btbPatientEdit_Click(object sender, EventArgs e)
         {
-            loadDuLieuPatient();
             RGVPatient.ReadOnly=false;
         }
         private void btbUserEdit_Click(object sender, EventArgs e)
         {
-            loadDuLieuNguoiDung();
             RGVUser.ReadOnly=false;
         }
         private void loadDuLieuHospital()
@@ -113,23 +108,136 @@ namespace WindowsFormsApp1.QuanLyData
             string PatientId = RGVPatient.Rows[idrow].Cells[0].Value.ToString();
             Patient pt = DatabaseQuanLy.Instance.Patients.SingleOrDefault(p => p.PatientId.ToString() == PatientId);
         }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void SearchIDPatient(object sender , EventArgs e) 
         {
-            
+            string id = txtIDPatient.Text;
+            if (id.IsEmpty())
+            {
+                loadDuLieuPatient();            
+                this.RGVPatient.ReadOnly = true;
+            }
+            else 
+            {
+                Patient pt = DatabaseQuanLy.Instance.Patients.FirstOrDefault(p => p.PatientId.ToString() == id);
+                if (pt == null)
+                {
+                    MessageBox.Show($"Không tìm thấy bệnh nhân với ID : {id}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    RGVPatient.DataSource = DatabaseQuanLy.Instance.Patients.Where(p => p.PatientId.ToString() == id);
+                    RGVPatient.Columns["Hospital"].IsVisible = false;
+                }
+            }
         }
-        private void RadNavigationChanged(Object sender , EventArgs e)
+        private void SearchIDAmbu(object sender, EventArgs e) 
         {
-            if (radPageViewPage1.IsContentVisible)
+            string id = txtIDAmbu.Text;
+            if (id.IsEmpty())
             {
                 loadDuLieuAmbulance();
+                this.RGVAmbu.ReadOnly = true;
             }
-            else if (radPageViewPage2.IsContentVisible) 
-            { 
+            else 
+            {
+                Ambulance ambu = DatabaseQuanLy.Instance.Ambulances.FirstOrDefault(p => p.AmbulanceId.ToString() == id);
+                if (ambu == null)
+                {
+                    MessageBox.Show($"Không tìm thấy xe cứu thương với ID : {id}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    RGVAmbu.DataSource = DatabaseQuanLy.Instance.Ambulances.Where(p => p.AmbulanceId.ToString() == id);
+                    RGVAmbu.Columns["Hospital"].IsVisible = false;
+                }
+            }
+        }
+        private void SearchIDHospital(object sender, EventArgs e) 
+        {
+            string id = txtIDHos.Text;
+            if (id.IsEmpty())
+            {
                 loadDuLieuHospital();
+                this.RGVHospital.ReadOnly = true;
             }
+            else 
+            {
+                Hospital hos = DatabaseQuanLy.Instance.Hospitals.FirstOrDefault(p => p.HospitalID.ToString() == id);
+                if (hos == null)
+                {
+                    MessageBox.Show($"Không tìm thấy bệnh viện với ID : {id}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    RGVHospital.DataSource = DatabaseQuanLy.Instance.Hospitals.Where(p => p.HospitalID.ToString() == id);
+                    RGVHospital.Columns["Patients"].IsVisible = false;
+                    RGVHospital.Columns["Ambulances"].IsVisible = false;
+                }
+            }
+        }
+        private void SearchIDUser(object sender, EventArgs e) 
+        {
+            string id = txtIDUser.Text;
+            if (id.IsEmpty())
+            {
+                loadDuLieuNguoiDung();
+                this.RGVUser.ReadOnly = true;
+            }
+            else 
+            {
+                NguoiDung nd = DatabaseQuanLy.Instance.NguoiDungs.FirstOrDefault(p => p.ID.ToString() == id);
+                if (nd == null)
+                {
+                    MessageBox.Show($"Không tìm thấy người dùng với ID : {id}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    RGVUser.DataSource = DatabaseQuanLy.Instance.NguoiDungs.Where(p => p.ID.ToString() == id);
+                }
+            }
+            
+        }
+        private void  ClosingFrm(Object sender, FormClosedEventArgs e)
+        {
+            DatabaseQuanLy.Instance.SubmitChanges();
+            MenuMain.mn.WindowState = FormWindowState.Maximized;
+            MenuMain.mn.BringToFront();
+            this.Dispose();
+        }
+        private void LoadLaiDataAmbu()
+        {
+            loadDuLieuAmbulance();
+            this.RGVAmbu.ReadOnly = true;
+            RGVAmbu.Columns["Hospital"].IsVisible = false;
+        }
+        private void LoadLaiDataNguoiDung()
+        {
+            loadDuLieuNguoiDung();
+            this.RGVUser.ReadOnly = true;
+        }
+        private void LoadLaiDataHospital()
+        {
+            loadDuLieuHospital();
+            this.RGVHospital.ReadOnly = true;
+            RGVHospital.Columns["Patients"].IsVisible = false;
+            RGVHospital.Columns["Ambulances"].IsVisible = false;
+        }
+        private void LoadLaiDataPatient()
+        {
+            loadDuLieuPatient();
+            this.RGVPatient.ReadOnly = true;
+            RGVPatient.Columns["Hospital"].IsVisible = false;
+        }
+        private void Submit(object sender , GridViewCellEventArgs e)
+        {
+            DatabaseQuanLy.Instance.SubmitChanges();
         }
         private void FrmQuanLy_Load(object sender, EventArgs e)
         {
+            LoadLaiDataAmbu();
+            LoadLaiDataHospital();
+            LoadLaiDataNguoiDung();
+            LoadLaiDataPatient();
             foreach (GridViewColumn col in RGVAmbu.MasterTemplate.Columns)
                 col.TextAlignment = ContentAlignment.MiddleCenter;
             foreach (GridViewColumn col in RGVHospital.MasterTemplate.Columns)
@@ -139,5 +247,7 @@ namespace WindowsFormsApp1.QuanLyData
             foreach (GridViewColumn col in RGVUser.MasterTemplate.Columns)
                 col.TextAlignment = ContentAlignment.MiddleCenter;
         }
+
+      
     }
 }

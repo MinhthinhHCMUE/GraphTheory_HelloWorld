@@ -192,3 +192,5 @@ C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.Configuration.ConfigurationManager.xml
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.IO.Pipelines.xml
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.Threading.Channels.xml
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmDoiMatKhau.resources
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmEmail.resources

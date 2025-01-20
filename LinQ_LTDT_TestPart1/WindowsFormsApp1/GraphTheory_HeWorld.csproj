@@ -267,6 +267,18 @@
     <Compile Include="Database.cs">
       <DependentUpon>Database.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Login&amp;Signin\FrmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login&amp;Signin\FrmDoiMatKhau.Designer.cs">
+      <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login&amp;Signin\FrmEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login&amp;Signin\FrmEmail.Designer.cs">
+      <DependentUpon>FrmEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyData\DatabaseQuanLy.cs" />
     <Compile Include="FrmIntro\AStarAndDijktraFrm.cs">
       <SubType>Form</SubType>
@@ -366,6 +378,12 @@
     <Compile Include="TableLayoutPanelDoubleBuffered .cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Login&amp;Signin\FrmDoiMatKhau.resx">
+      <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login&amp;Signin\FrmEmail.resx">
+      <DependentUpon>FrmEmail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmIntro\AStarAndDijktraFrm.resx">
       <DependentUpon>AStarAndDijktraFrm.cs</DependentUpon>
     </EmbeddedResource>

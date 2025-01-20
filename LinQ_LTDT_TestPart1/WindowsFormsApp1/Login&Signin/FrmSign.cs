@@ -13,9 +13,12 @@ namespace WindowsFormsApp1
 {
     public partial class FrmSign : Telerik.WinControls.UI.RadForm
     {
+        int Type = 3; // đăng ký
         public FrmSign()
         {
                 InitializeComponent();
+            string ico = System.IO.Path.Combine(Application.StartupPath, "loginico.ico");
+            this.Icon = new Icon(ico);
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -79,7 +82,7 @@ namespace WindowsFormsApp1
             SendMail.sendMailTo(nd.Email, "Mã OTP xác thực là: " + nd.OTP);
             nd.OTPDateSend = DateTime.Now;
             DatabaseQuanLy.Instance.SubmitChanges();
-            Frmxacthuc frm = new Frmxacthuc(nd.UserName);
+            Frmxacthuc frm = new Frmxacthuc(nd.UserName,this.Type);
             frm.Show();
             this.Close();
 

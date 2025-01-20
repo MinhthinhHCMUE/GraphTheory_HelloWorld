@@ -9,6 +9,7 @@ using Telerik.WinControls;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Data.Linq.Mapping;
+using WindowsFormsApp1.Login_Signin;
 namespace WindowsFormsApp1
 {
     public partial class FrmLogin : Telerik.WinControls.UI.RadForm
@@ -17,6 +18,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             txtPassword.PasswordChar = '*';
+            string ico = System.IO.Path.Combine(Application.StartupPath, "loginico.ico");
+            this.Icon = new Icon(ico);
         }
         
 
@@ -111,6 +114,22 @@ namespace WindowsFormsApp1
             {
                 txtPassword.PasswordChar = '*';
             }
+        }
+
+        private void lblXacthuc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            int a = 1; // xác thực tài khooản
+            FrmEmail frm = new FrmEmail(a);
+            frm.Show();
+        }
+
+        private void ForgotPassword(object sender, EventArgs e)
+        {
+            int a = 0; // 0 đại diện cho quên mât khẩu
+            FrmEmail frm = new FrmEmail(a);
+            frm.Show();
+            this.Hide();
         }
     }
 }

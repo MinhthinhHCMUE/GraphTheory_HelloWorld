@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.timercheck = new System.Windows.Forms.Timer(this.components);
             this.RGVAmbu = new Telerik.WinControls.UI.RadGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,16 +56,16 @@
             this.RGVAmbu.AutoSizeRows = true;
             this.RGVAmbu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RGVAmbu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.RGVAmbu.Location = new System.Drawing.Point(8, 134);
-            this.RGVAmbu.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.RGVAmbu.Location = new System.Drawing.Point(12, 137);
+            this.RGVAmbu.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             // 
             // 
             // 
             this.RGVAmbu.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            this.RGVAmbu.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.RGVAmbu.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.RGVAmbu.Name = "RGVAmbu";
             this.RGVAmbu.ReadOnly = true;
-            this.RGVAmbu.Size = new System.Drawing.Size(1325, 663);
+            this.RGVAmbu.Size = new System.Drawing.Size(1317, 656);
             this.RGVAmbu.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -99,7 +99,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1335, 120);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1335, 119);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -115,7 +115,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.26316F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.73684F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(927, 114);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(927, 113);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // lblNotication
@@ -127,7 +127,7 @@
             this.lblNotication.Location = new System.Drawing.Point(3, 10);
             this.lblNotication.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.lblNotication.Name = "lblNotication";
-            this.lblNotication.Size = new System.Drawing.Size(921, 43);
+            this.lblNotication.Size = new System.Drawing.Size(921, 42);
             this.lblNotication.TabIndex = 0;
             this.lblNotication.Text = "Đang chờ tín hiệu từ xe cứu thương!";
             this.lblNotication.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,7 +139,7 @@
             this.cmbListAmbu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbListAmbu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbListAmbu.FormattingEnabled = true;
-            this.cmbListAmbu.Location = new System.Drawing.Point(3, 73);
+            this.cmbListAmbu.Location = new System.Drawing.Point(3, 72);
             this.cmbListAmbu.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.cmbListAmbu.Name = "cmbListAmbu";
             this.cmbListAmbu.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -154,7 +154,7 @@
             this.button1.Location = new System.Drawing.Point(948, 15);
             this.button1.Margin = new System.Windows.Forms.Padding(15);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 90);
+            this.button1.Size = new System.Drawing.Size(180, 89);
             this.button1.TabIndex = 1;
             this.button1.Text = "Phản hồi";
             this.button1.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             this.btbView.Location = new System.Drawing.Point(1149, 15);
             this.btbView.Margin = new System.Windows.Forms.Padding(6, 15, 6, 15);
             this.btbView.Name = "btbView";
-            this.btbView.Size = new System.Drawing.Size(180, 90);
+            this.btbView.Size = new System.Drawing.Size(180, 89);
             this.btbView.TabIndex = 2;
             this.btbView.Text = "Xem mô phỏng";
             this.btbView.UseVisualStyleBackColor = true;

@@ -79,7 +79,7 @@ namespace WindowsFormsApp1.QuanLy_Ambulance
             }
             else
             {
-                cmbListAmbu.Items.Add("              " + ambu.AmbulanceName);
+                cmbListAmbu.Items.Add("                                           " + ambu.AmbulanceName);
                 cmbListAmbu.SelectedIndex = 0;
                 button1.Enabled = true;
             }
@@ -93,7 +93,7 @@ namespace WindowsFormsApp1.QuanLy_Ambulance
             }
             else
             {
-                cmbListAmbu.Items.Remove("              " + ambu.AmbulanceName);
+                cmbListAmbu.Items.Remove("                                           " + ambu.AmbulanceName);
             }
         }
         private void timercheck_Tick(object sender, EventArgs e)

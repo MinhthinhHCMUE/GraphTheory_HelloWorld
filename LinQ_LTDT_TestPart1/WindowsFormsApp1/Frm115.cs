@@ -589,6 +589,12 @@ namespace WindowsFormsApp1
 
             return shortestPath;
         }
+        private void ClosingForm(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+            MenuMain.mn.WindowState = FormWindowState.Maximized;
+            MenuMain.frmlist.WindowState = FormWindowState.Minimized;
+        }
     }
 }
 

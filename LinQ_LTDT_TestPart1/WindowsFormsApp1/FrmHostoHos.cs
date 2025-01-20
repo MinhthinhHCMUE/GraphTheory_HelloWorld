@@ -89,19 +89,9 @@ namespace WindowsFormsApp1
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Tìm Form1 đang mở
-
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                MenuMain menumain = Application.OpenForms.OfType<MenuMain>().FirstOrDefault();
-
-                if (menumain != null)
-                {
-                    // Nếu đã tồn tại, chỉ cần hiển thị lại
-                    menumain.WindowState = FormWindowState.Maximized;
-                    menumain.BringToFront(); // Đưa form lên đầu
-                }
-                
-            }
+            MenuMain.frmlist.WindowState = FormWindowState.Minimized;
+            MenuMain.mn.WindowState = FormWindowState.Maximized;
+            MenuMain.mn.BringToFront();
         }
         private void Form2_Load(object sender, EventArgs e)
         {
