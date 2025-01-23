@@ -21,15 +21,23 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Hàm khởi tạo 1 tham số
+        /// </summary>
+        /// <param name="nd">Người dùng cần đổi mật khẩu</param>
         public FrmDoiMatKhau(NguoiDung nd)
         {
-            string ico = Path.Combine(Application.StartupPath, "loginico.ico");
-            this.Icon = new Icon(ico);
+
             InitializeComponent();
             txtPass.PasswordChar = '*';
             txtConfirm.PasswordChar = '*';
             this.nd = nd;
         }
+        /// <summary>
+        /// Event cho việc đổi mật khẩu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btbChange_Click(object sender, EventArgs e)
         {
             if (txtPass.Text.IsEmpty() || txtConfirm.Text.IsEmpty()) 
@@ -59,7 +67,11 @@ namespace WindowsFormsApp1
                
             }
         }
-
+        /// <summary>
+        /// Show mật khẩu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboxShow_CheckedChanged(object sender, EventArgs e)
         {
             if (cboxShow.Checked)

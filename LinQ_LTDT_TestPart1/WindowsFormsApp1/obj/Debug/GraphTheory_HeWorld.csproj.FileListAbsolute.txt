@@ -194,3 +194,8 @@ C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\System.Threading.Channels.xml
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmDoiMatKhau.resources
 C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmEmail.resources
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmStart.resources
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.manifest
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.application
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.manifest
+C:\Users\ADMIN\Desktop\GraphTheoryFall\LinQ_LTDT_TestPart1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.application

@@ -22,6 +22,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Hàm khỏi tạo 1 tham số
+        /// </summary>
+        /// <param name="a">Type (Quên mật khẩu or xác thực)</param>
         public FrmEmail(int a) // tính năng quên mật khẩu / xác thực
         {
             this.Type = a;
@@ -72,6 +76,11 @@ namespace WindowsFormsApp1
                 };
             }
         }
+        /// <summary>
+        /// kích hoạt việc gửi Email
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btbGo_Click(object sender, EventArgs e)
         {
             string mail = txtEmail.Text;
@@ -113,7 +122,6 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
         private void btbBack_Click(object sender, EventArgs e)
         {
             FrmLogin login = new FrmLogin();

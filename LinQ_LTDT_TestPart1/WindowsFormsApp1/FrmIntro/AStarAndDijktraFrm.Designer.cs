@@ -55,11 +55,11 @@
             this.Name = "AStarAndDijktraFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mô phỏng thuật toán";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AStarAndDijktraFrm_FormClosing);
             this.Load += new System.EventHandler(this.AStarAndDijktraFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AStarAndDijktraFrm_FormClosing);
 
         }
 

@@ -13,6 +13,12 @@ namespace WindowsFormsApp1.Login_Signin
     {
         public static string taikhoan = "minhthinh.221005@gmail.com";
         public static string matkhau = "ymhr ysde vahv buya";
+        /// <summary>
+        /// Gửi mã OTP đến email dc chỉ định
+        /// </summary>
+        /// <param name="emailto">Email cần được gửi đi</param>
+        /// <param name="content">Nội dung của email</param>
+        /// <returns></returns>
         public static bool sendMailTo(string emailto , string content)
         {
             var fromAddress = new MailAddress(taikhoan, "Admin Quan Ly");

@@ -51,12 +51,8 @@ namespace WindowsFormsApp1
         private void AlgorithmFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Tìm MenuMain đang mở
-            MenuMain frm = Application.OpenForms.OfType<MenuMain>().FirstOrDefault();
-            if (frm != null)
-            {
-                frm.Show(); // Hiển thị Form1
-                frm.BringToFront(); // Đưa Form1 lên trên cùng
-            }
+            MenuMain.mn.WindowState = FormWindowState.Maximized;
+            this.Dispose();
         }
     }
 }

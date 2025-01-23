@@ -49,6 +49,19 @@
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuButtonItem4 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenuButtonItem7 = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.radMenuButtonItem9 = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.btbExit = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.radMenuButtonItem10 = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.radMenuButtonItem14 = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.radMenuButtonItem15 = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.radMenuButtonItem8 = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.radMenuButtonItem11 = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSeparatorItem2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.radMenuButtonItem12 = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.radMenuButtonItem13 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.tableLayoutPanel1 = new WindowsFormsApp1.TableLayoutPanelDoubleBuffered();
             this.tableLayoutPanel2 = new WindowsFormsApp1.TableLayoutPanelDoubleBuffered();
             this.tableLayoutPanel3 = new WindowsFormsApp1.TableLayoutPanelDoubleBuffered();
@@ -56,28 +69,16 @@
             this.btb115 = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new WindowsFormsApp1.TableLayoutPanelDoubleBuffered();
             this.pnlFrm = new System.Windows.Forms.Panel();
-            this.radMenuButtonItem9 = new Telerik.WinControls.UI.RadMenuButtonItem();
-            this.btbExit = new Telerik.WinControls.UI.RadMenuButtonItem();
-            this.radMenuButtonItem10 = new Telerik.WinControls.UI.RadMenuButtonItem();
-            this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
-            this.radMenuButtonItem8 = new Telerik.WinControls.UI.RadMenuButtonItem();
-            this.radMenuButtonItem11 = new Telerik.WinControls.UI.RadMenuButtonItem();
-            this.radMenuSeparatorItem2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
-            this.radMenuButtonItem12 = new Telerik.WinControls.UI.RadMenuButtonItem();
-            this.radMenuButtonItem13 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.btbHDSD = new Telerik.WinControls.UI.RadMenuButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboAlgorithm.ComboBoxElement)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.closedform);
-
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // NgayVaGio
@@ -93,7 +94,7 @@
             this.commandBarSeparator2,
             this.radButtonElement1});
             this.radStatusStrip1.Location = new System.Drawing.Point(0, 1004);
-            this.radStatusStrip1.Margin = new System.Windows.Forms.Padding(364248, 364248, 364248, 364248);
+            this.radStatusStrip1.Margin = new System.Windows.Forms.Padding(711422, 711422, 711422, 711422);
             this.radStatusStrip1.Name = "radStatusStrip1";
             this.radStatusStrip1.Size = new System.Drawing.Size(1912, 43);
             this.radStatusStrip1.TabIndex = 3;
@@ -196,6 +197,127 @@
             this.radMenuButtonItem7.Name = "radMenuButtonItem7";
             this.radMenuButtonItem7.Text = "";
             // 
+            // radMenuButtonItem9
+            // 
+            this.radMenuButtonItem9.Name = "radMenuButtonItem9";
+            this.radMenuButtonItem9.Text = "";
+            // 
+            // btbExit
+            // 
+            // 
+            // 
+            // 
+            this.btbExit.ButtonElement.ShowBorder = false;
+            this.btbExit.Name = "btbExit";
+            this.btbExit.Text = "Đăng Xuất";
+            this.btbExit.Click += new System.EventHandler(this.btbExit_Click);
+            // 
+            // radMenuButtonItem10
+            // 
+            // 
+            // 
+            // 
+            this.radMenuButtonItem10.ButtonElement.ShowBorder = false;
+            this.radMenuButtonItem10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radMenuButtonItem10.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuButtonItem14,
+            this.radMenuButtonItem15});
+            this.radMenuButtonItem10.Name = "radMenuButtonItem10";
+            this.radMenuButtonItem10.Text = "Giới thiệu đề tài";
+            this.radMenuButtonItem10.Click += new System.EventHandler(this.radMenuButtonItem1_Click);
+            // 
+            // radMenuButtonItem14
+            // 
+            // 
+            // 
+            // 
+            this.radMenuButtonItem14.ButtonElement.ShowBorder = false;
+            this.radMenuButtonItem14.Name = "radMenuButtonItem14";
+            this.radMenuButtonItem14.Text = "Giới thiệu đề tài nhóm";
+            // 
+            // radMenuButtonItem15
+            // 
+            // 
+            // 
+            // 
+            this.radMenuButtonItem15.ButtonElement.ShowBorder = false;
+            this.radMenuButtonItem15.Name = "radMenuButtonItem15";
+            this.radMenuButtonItem15.Text = "Hướng dẫn sử dụng";
+            // 
+            // radMenuItem4
+            // 
+            this.radMenuItem4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radMenuItem4.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuSeparatorItem1,
+            this.radMenuButtonItem8,
+            this.radMenuButtonItem11});
+            this.radMenuItem4.Name = "radMenuItem4";
+            this.radMenuItem4.Text = "Giới thiệu và minh họa thuật toán";
+            // 
+            // radMenuSeparatorItem1
+            // 
+            this.radMenuSeparatorItem1.Name = "radMenuSeparatorItem1";
+            this.radMenuSeparatorItem1.Text = "radMenuSeparatorItem1";
+            this.radMenuSeparatorItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // radMenuButtonItem8
+            // 
+            // 
+            // 
+            // 
+            this.radMenuButtonItem8.ButtonElement.ShowBorder = false;
+            this.radMenuButtonItem8.Name = "radMenuButtonItem8";
+            this.radMenuButtonItem8.Text = "Giới thiệu thuật toán";
+            this.radMenuButtonItem8.Click += new System.EventHandler(this.DisplayFrmIntroduce);
+            // 
+            // radMenuButtonItem11
+            // 
+            // 
+            // 
+            // 
+            this.radMenuButtonItem11.ButtonElement.ShowBorder = false;
+            this.radMenuButtonItem11.Name = "radMenuButtonItem11";
+            this.radMenuButtonItem11.Text = "Minh họa thuật toán";
+            this.radMenuButtonItem11.Click += new System.EventHandler(this.DisplayFrmAlgorithm);
+            // 
+            // radMenuItem5
+            // 
+            this.radMenuItem5.DescriptionFont = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radMenuItem5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.radMenuItem5.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuSeparatorItem2,
+            this.radMenuButtonItem12,
+            this.radMenuButtonItem13});
+            this.radMenuItem5.Name = "radMenuItem5";
+            this.radMenuItem5.Text = "Chọn thuật toán";
+            // 
+            // radMenuSeparatorItem2
+            // 
+            this.radMenuSeparatorItem2.Name = "radMenuSeparatorItem2";
+            this.radMenuSeparatorItem2.Text = "radMenuSeparatorItem2";
+            this.radMenuSeparatorItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // radMenuButtonItem12
+            // 
+            // 
+            // 
+            // 
+            this.radMenuButtonItem12.ButtonElement.ShowBorder = false;
+            this.radMenuButtonItem12.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radMenuButtonItem12.Name = "radMenuButtonItem12";
+            this.radMenuButtonItem12.Text = "Dijkstra";
+            this.radMenuButtonItem12.Click += new System.EventHandler(this.ButtonDijkstraSelec);
+            // 
+            // radMenuButtonItem13
+            // 
+            // 
+            // 
+            // 
+            this.radMenuButtonItem13.ButtonElement.ShowBorder = false;
+            this.radMenuButtonItem13.Name = "radMenuButtonItem13";
+            this.radMenuButtonItem13.Text = "A*";
+            this.radMenuButtonItem13.Click += new System.EventHandler(this.ButtonAstarsSelec);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -212,7 +334,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.29252F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1047F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1912, 1047);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -304,113 +426,6 @@
             this.pnlFrm.Size = new System.Drawing.Size(1341, 805);
             this.pnlFrm.TabIndex = 0;
             // 
-            // radMenuButtonItem9
-            // 
-            this.radMenuButtonItem9.Name = "radMenuButtonItem9";
-            this.radMenuButtonItem9.Text = "";
-            // 
-            // btbExit
-            // 
-            // 
-            // 
-            // 
-            this.btbExit.ButtonElement.ShowBorder = false;
-            this.btbExit.Name = "btbExit";
-            this.btbExit.Text = "Đăng Xuất";
-            this.btbExit.Click += new System.EventHandler(this.btbExit_Click);
-            // 
-            // radMenuButtonItem10
-            // 
-            // 
-            // 
-            // 
-            this.radMenuButtonItem10.ButtonElement.ShowBorder = false;
-            this.radMenuButtonItem10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radMenuButtonItem10.Name = "radMenuButtonItem10";
-            this.radMenuButtonItem10.Text = "Giới thiệu đề tài";
-            this.radMenuButtonItem10.Click += new System.EventHandler(this.radMenuButtonItem1_Click);
-            // 
-            // radMenuItem4
-            // 
-            this.radMenuItem4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radMenuItem4.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuSeparatorItem1,
-            this.radMenuButtonItem8,
-            this.radMenuButtonItem11});
-            this.radMenuItem4.Name = "radMenuItem4";
-            this.radMenuItem4.Text = "Giới thiệu và minh họa thuật toán";
-            // 
-            // radMenuItem5
-            // 
-            this.radMenuItem5.DescriptionFont = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radMenuItem5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.radMenuItem5.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuSeparatorItem2,
-            this.radMenuButtonItem12,
-            this.radMenuButtonItem13});
-            this.radMenuItem5.Name = "radMenuItem5";
-            this.radMenuItem5.Text = "Chọn thuật toán";
-            // 
-            // radMenuSeparatorItem1
-            // 
-            this.radMenuSeparatorItem1.Name = "radMenuSeparatorItem1";
-            this.radMenuSeparatorItem1.Text = "radMenuSeparatorItem1";
-            this.radMenuSeparatorItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // radMenuButtonItem8
-            // 
-            // 
-            // 
-            // 
-            this.radMenuButtonItem8.ButtonElement.ShowBorder = false;
-            this.radMenuButtonItem8.Name = "radMenuButtonItem8";
-            this.radMenuButtonItem8.Text = "Giới thiệu thuật toán";
-            this.radMenuButtonItem8.Click += new System.EventHandler(this.DisplayFrmIntroduce);
-            // 
-            // radMenuButtonItem11
-            // 
-            // 
-            // 
-            // 
-            this.radMenuButtonItem11.ButtonElement.ShowBorder = false;
-            this.radMenuButtonItem11.Name = "radMenuButtonItem11";
-            this.radMenuButtonItem11.Text = "Minh họa thuật toán";
-            this.radMenuButtonItem11.Click += new System.EventHandler(this.DisplayFrmAlgorithm);
-            // 
-            // radMenuSeparatorItem2
-            // 
-            this.radMenuSeparatorItem2.Name = "radMenuSeparatorItem2";
-            this.radMenuSeparatorItem2.Text = "radMenuSeparatorItem2";
-            this.radMenuSeparatorItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // radMenuButtonItem12
-            // 
-            // 
-            // 
-            // 
-            this.radMenuButtonItem12.ButtonElement.ShowBorder = false;
-            this.radMenuButtonItem12.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radMenuButtonItem12.Name = "radMenuButtonItem12";
-            this.radMenuButtonItem12.Text = "Dijkstra";
-            this.radMenuButtonItem12.Click += new System.EventHandler(this.ButtonDijkstraSelec);
-            // 
-            // radMenuButtonItem13
-            // 
-            // 
-            // 
-            // 
-            this.radMenuButtonItem13.ButtonElement.ShowBorder = false;
-            this.radMenuButtonItem13.Name = "radMenuButtonItem13";
-            this.radMenuButtonItem13.Text = "A*";
-            this.radMenuButtonItem13.Click += new System.EventHandler(this.ButtonAstarsSelec);
-            // 
-            // MenuMain
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1912, 1047);
-            // 
             // radMenu1
             // 
             this.radMenu1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -418,12 +433,31 @@
             this.btbExit,
             this.radMenuButtonItem10,
             this.radMenuItem4,
-            this.radMenuItem5});
+            this.radMenuItem5,
+            this.btbHDSD});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
-            this.radMenu1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.radMenu1.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             this.radMenu1.Name = "radMenu1";
             this.radMenu1.Size = new System.Drawing.Size(1912, 36);
             this.radMenu1.TabIndex = 1;
+            // 
+            // btbHDSD
+            // 
+            // 
+            // 
+            // 
+            this.btbHDSD.ButtonElement.ShowBorder = false;
+            this.btbHDSD.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btbHDSD.Name = "btbHDSD";
+            this.btbHDSD.Text = "Hướng dẫn sử dụng";
+            this.btbHDSD.Click += new System.EventHandler(this.btbHDSD_Click);
+            // 
+            // MenuMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1912, 1047);
             this.Controls.Add(this.radMenu1);
             this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -434,6 +468,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm tìm đường cho xe cứu thương";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.closedform);
             this.Load += new System.EventHandler(this.MenuMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboAlgorithm.ComboBoxElement)).EndInit();
@@ -480,7 +515,6 @@
         private Telerik.WinControls.UI.RadMenuButtonItem btbExit;
         private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem10;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem4;
-        private Telerik.WinControls.UI.RadMenu radMenu1;
         private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem1;
         private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem8;
         private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem11;
@@ -488,5 +522,9 @@
         private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem2;
         private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem12;
         private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem13;
+        private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem14;
+        private Telerik.WinControls.UI.RadMenuButtonItem radMenuButtonItem15;
+        private Telerik.WinControls.UI.RadMenu radMenu1;
+        private Telerik.WinControls.UI.RadMenuButtonItem btbHDSD;
     }
 }

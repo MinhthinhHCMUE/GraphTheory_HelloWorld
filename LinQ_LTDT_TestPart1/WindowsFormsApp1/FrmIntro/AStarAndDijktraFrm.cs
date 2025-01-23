@@ -16,9 +16,7 @@ namespace WindowsFormsApp1
         public AStarAndDijktraFrm()
         {
             InitializeComponent();
-            string ico = Path.Combine(Application.StartupPath, "HCMUEicon.ico");
-            this.Icon = new Icon(ico);
-            string f = Path.Combine(Application.StartupPath, "VideoAlgor.mp4");
+            string f = Path.Combine(".\\VideoAlgor" , "VideoAlgor.mp4");
                 axWindowsMediaPlayer1.URL = f; 
         }
 
@@ -29,12 +27,9 @@ namespace WindowsFormsApp1
         private void AStarAndDijktraFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Tìm Form1 đang mở
-            MenuMain form1 = Application.OpenForms.OfType<MenuMain>().FirstOrDefault();
-            if (form1 != null)
-            {
-                form1.Show(); // Hiển thị Form1
-                form1.BringToFront(); // Đưa Form1 lên trên cùng
-            }
+            MenuMain.mn.WindowState = FormWindowState.Maximized;
+            MenuMain.mn.BringToFront();
+            MenuMain.mn.Activate();
         }
     }
 }

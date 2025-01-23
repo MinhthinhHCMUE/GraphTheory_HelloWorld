@@ -17,8 +17,7 @@ namespace WindowsFormsApp1
         public FrmSign()
         {
                 InitializeComponent();
-            string ico = System.IO.Path.Combine(Application.StartupPath, "loginico.ico");
-            this.Icon = new Icon(ico);
+
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -38,7 +37,11 @@ namespace WindowsFormsApp1
         {
             Clear();
         }
-
+        /// <summary>
+        /// Tạo tài khoản với các thông tin tương ứng và gửi mã OTP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btbDangKy_Click(object sender, EventArgs e)
         {
             //check xem có đầy đủ information ko 

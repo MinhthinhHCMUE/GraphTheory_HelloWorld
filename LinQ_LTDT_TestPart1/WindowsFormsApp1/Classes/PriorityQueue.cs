@@ -6,12 +6,10 @@ namespace WindowsFormsApp1
     /*
      Class Implementation PriorityQueue ( Do .Net Framework 4.8 ko hỗ trợ sẵn thư viện PriorityQueue nên phải tự Implementation
      */
-    /*
-     # Class PriorityQueue 
-     # Khai báo lớp với một tham số kiểu T
-     # where T : IComparable<T> là một ràng buộc kiểu (constraint) yêu cầu kiểu T phải triển khai interface IComparable<T>. 
-     # Điều này có nghĩa là các phần tử trong hàng đợi ưu tiên phải có thể so sánh được với nhau để xác định thứ tự ưu tiên.
-     */
+    /// <summary>
+    /// Hàng đợi ưu tiên
+    /// </summary>
+    /// <typeparam name="T">Kiểu dữ liệu</typeparam>
     public class PriorityQueue<T> where T : IComparable<T>
     {
         private List<T> _heap;

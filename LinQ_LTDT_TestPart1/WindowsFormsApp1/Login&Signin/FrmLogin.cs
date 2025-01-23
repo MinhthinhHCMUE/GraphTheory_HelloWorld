@@ -18,8 +18,6 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             txtPassword.PasswordChar = '*';
-            string ico = System.IO.Path.Combine(Application.StartupPath, "loginico.ico");
-            this.Icon = new Icon(ico);
         }
         
 
@@ -33,6 +31,11 @@ namespace WindowsFormsApp1
             txtPassword.Text = "";
             txtUserName.Focus();
         }
+        /// <summary>
+        /// Tính năng đăng nhập
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btbLogin_Click(object sender, EventArgs e)
         {
             string user = txtUserName.Text;
@@ -91,6 +94,11 @@ namespace WindowsFormsApp1
             }
 
         }
+        /// <summary>
+        /// Nút đăng ký
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblResig_Click(object sender, EventArgs e)
         {
             new FrmSign().Show();
@@ -102,7 +110,11 @@ namespace WindowsFormsApp1
             checkboxShow.Location = new Point(182, 280);
           
         }
-
+        /// <summary>
+        /// Hiển thị mật khẩu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void checkboxShow_CheckedChanged(object sender, EventArgs e)
         {
             //dùng ký tự * để hiển thị cho mật khẩu
@@ -115,7 +127,11 @@ namespace WindowsFormsApp1
                 txtPassword.PasswordChar = '*';
             }
         }
-
+        /// <summary>
+        /// Tính năng xác thực
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblXacthuc_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -123,7 +139,11 @@ namespace WindowsFormsApp1
             FrmEmail frm = new FrmEmail(a);
             frm.Show();
         }
-
+        /// <summary>
+        /// Tính năng quên mật khẩu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ForgotPassword(object sender, EventArgs e)
         {
             int a = 0; // 0 đại diện cho quên mât khẩu

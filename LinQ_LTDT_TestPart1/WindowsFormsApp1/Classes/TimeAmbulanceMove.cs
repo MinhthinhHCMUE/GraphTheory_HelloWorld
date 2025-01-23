@@ -7,6 +7,12 @@ internal class TimeAmbulanceMove
     private const int NightSpeed = 45; // km/h ban khuya
     public static int CurrentSpeed { get; private set; } // Tốc độ hiện tại của xe cứu thương
     //hàm tính thời gian di chuyển
+    /// <summary>
+    /// Tính toán thời gian di chuyển
+    /// </summary>
+    /// <param name="distance">Khoảng cách</param>
+    /// <param name="startTime">thời gian</param>
+    /// <returns>thời gian di chuyển theo giây</returns>
     public static float CalculateTravelTime(float distance, DateTime startTime)
     {
         // Xác định tốc độ dựa trên thời gian bắt đầu
@@ -19,7 +25,11 @@ internal class TimeAmbulanceMove
         // Tính toán thời gian di chuyển (theo giây)
         return distance / speedMetersPerSecond;
     }
-
+    /// <summary>
+    /// Kiểm tra tốc độ
+    /// </summary>
+    /// <param name="time">Thời gian trong ngày</param>
+    /// <returns>Tốc độ ở khung giờ tương ứng</returns>
     internal static int GetSpeed(DateTime time)
     {
         if (IsRushHour(time))
@@ -35,7 +45,11 @@ internal class TimeAmbulanceMove
             return NormalSpeed;
         }
     }
-    //hàm ktra xem có phải giờ cao điểm / cận cao điểm k
+    /// <summary>
+    /// Kiểm tra xem có phải giờ cao điểm k
+    /// </summary>
+    /// <param name="time">Thời gian trong ngày</param>
+    /// <returns>true nếu là giờ cao điểm, ngược lại ra false</returns>
     private static bool IsRushHour(DateTime time)
     {
         // Kiểm tra giờ cao điểm buổi sáng (7:00 - 8:30)
@@ -52,7 +66,11 @@ internal class TimeAmbulanceMove
 
         return false;
     }
-    //hàm ktra xem có phải ban đêm ko
+    /// <summary>
+    /// Kiểm tra xem có phải ban khuya không
+    /// </summary>
+    /// <param name="time">Thời gian trong ngày</param>
+    /// <returns>true nếu là ban khuya, ngược lại ra false</returns>
     private static bool IsNight(DateTime time)
     {
         return time.Hour >= 22 || time.Hour <= 6;

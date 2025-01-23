@@ -17,9 +17,12 @@ namespace WindowsFormsApp1.Login_Signin
         public Frmxacthuc()
         {
             InitializeComponent();
-            string ico = System.IO.Path.Combine(Application.StartupPath, "loginico.ico");
-            this.Icon = new Icon(ico);
         }
+        /// <summary>
+        /// Hàm khởi tạo 2 htam số
+        /// </summary>
+        /// <param name="_taikhoan"> tên tài khoản</param>
+        /// <param name="Type">Tính năng cần được thực thi</param>
         public Frmxacthuc(string _taikhoan, int Type)
         {
             InitializeComponent();
@@ -32,6 +35,11 @@ namespace WindowsFormsApp1.Login_Signin
                 lblHienthi.Text = "Lấy mã OTP để reset mật khẩu";
             }
         }
+        /// <summary>
+        /// Nút xác thực dựa trên OTP được gửi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnXacThuc_Click(object sender, EventArgs e)
         {
             NguoiDung nd = DatabaseQuanLy.Instance.NguoiDungs.SingleOrDefault(p=>p.UserName == taikhoan);
@@ -74,12 +82,21 @@ namespace WindowsFormsApp1.Login_Signin
                 }
             }
         }
+        /// <summary>
+        /// Tính năng quên mật khẩu
+        /// </summary>
+        /// <param name="nd"></param>
         private void Forgot(NguoiDung nd)
         {
             FrmDoiMatKhau frm = new FrmDoiMatKhau(nd);
             frm.Show();
             this.Close();
         }
+        /// <summary>
+        /// Gửi lại mã OTP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuiLai_Click(object sender, EventArgs e)
         {
             //gửi email xác thực
@@ -94,7 +111,7 @@ namespace WindowsFormsApp1.Login_Signin
                 MessageBox.Show("Đã gửi email", "Thông báo");
             }
         }
-
+       
         private void btbExit_Click(object sender, EventArgs e)
         {
             this.Close();

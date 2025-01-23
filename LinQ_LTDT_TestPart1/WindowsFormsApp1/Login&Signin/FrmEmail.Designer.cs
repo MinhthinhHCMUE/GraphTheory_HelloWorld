@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmail));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -65,7 +66,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(787, 132);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(787, 131);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtEmail
@@ -88,7 +89,7 @@
             this.btbGo.Location = new System.Drawing.Point(610, 25);
             this.btbGo.Margin = new System.Windows.Forms.Padding(25);
             this.btbGo.Name = "btbGo";
-            this.btbGo.Size = new System.Drawing.Size(152, 82);
+            this.btbGo.Size = new System.Drawing.Size(152, 81);
             this.btbGo.TabIndex = 1;
             this.btbGo.Text = "Nhận mã OTP";
             this.btbGo.UseVisualStyleBackColor = true;
@@ -101,10 +102,10 @@
             this.btbBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btbBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btbBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.btbBack.Location = new System.Drawing.Point(100, 153);
+            this.btbBack.Location = new System.Drawing.Point(100, 152);
             this.btbBack.Margin = new System.Windows.Forms.Padding(100, 15, 100, 15);
             this.btbBack.Name = "btbBack";
-            this.btbBack.Size = new System.Drawing.Size(593, 45);
+            this.btbBack.Size = new System.Drawing.Size(593, 46);
             this.btbBack.TabIndex = 1;
             this.btbBack.Text = "Quay lại màn hình đăng nhập";
             this.btbBack.UseVisualStyleBackColor = true;
@@ -117,6 +118,7 @@
             this.ClientSize = new System.Drawing.Size(793, 213);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEmail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEmail";

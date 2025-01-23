@@ -26,8 +26,8 @@ namespace WindowsFormsApp1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-C12ITL7N\\SQLEXPRESS;Initial Catalog=GraphTheoryProject;Integra" +
-            "ted Security=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=GraphTheoryProject;Integrated Security=T" +
+            "rue;TrustServerCertificate=True; User id=1234; Password =1234")]
         public string GraphTheoryProjectConnectionString {
             get {
                 return ((string)(this["GraphTheoryProjectConnectionString"]));
@@ -37,8 +37,8 @@ namespace WindowsFormsApp1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-C12ITL7N\\SQLEXPRESS;Initial Catalog=GraphTheoryProject;Integra" +
-            "ted Security=True;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=GraphTheoryProject;Integrated Security=T" +
+            "rue;Encrypt=True;TrustServerCertificate=True;User id=1234; Password =1234")]
         public string GraphTheoryProjectConnectionString1 {
             get {
                 return ((string)(this["GraphTheoryProjectConnectionString1"]));

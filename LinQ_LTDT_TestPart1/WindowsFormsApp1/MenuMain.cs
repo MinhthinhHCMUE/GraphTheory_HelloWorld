@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.Svg.ExCSS;
 using WindowsFormsApp1.QuanLy_Ambulance;
 using WindowsFormsApp1.QuanLyData;
 namespace WindowsFormsApp1
@@ -48,16 +49,16 @@ namespace WindowsFormsApp1
         //sự kiện để gọi form ALgorithm
         private void DisplayFrmIntroduce(object sender, EventArgs e)
         {
-            this.Hide();
+            this.WindowState = FormWindowState.Minimized;
             AlgorithmFrm frm = new AlgorithmFrm();
-            frm.ShowDialog();
+            frm.Show();
         }
         //sự kiện để gọi form minh họa thuật toán
         private void DisplayFrmAlgorithm(object sender, EventArgs args)
         {
-            this.Hide();
+            this.WindowState = FormWindowState.Minimized;
             AStarAndDijktraFrm frm = new AStarAndDijktraFrm();
-            frm.ShowDialog();
+            frm.Show();
         }
         //Sự kiện gọi form115 cho button
         private void Btb115_Click(object sender, EventArgs e)
@@ -150,6 +151,17 @@ namespace WindowsFormsApp1
             mn.Dispose();
             frmlist.Dispose();
             Ambu.Dispose();
+            frm.BringToFront();
+        }
+
+        private void btbHDSD_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+            frmlist.WindowState = FormWindowState.Minimized;
+            FrmStart frm = new FrmStart();
+            frm.Show();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Activate();
             frm.BringToFront();
         }
     }
