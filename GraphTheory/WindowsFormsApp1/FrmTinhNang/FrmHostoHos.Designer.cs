@@ -154,8 +154,8 @@
             // radSeparator1
             // 
             this.radSeparator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radSeparator1.Location = new System.Drawing.Point(495, 118);
-            this.radSeparator1.Margin = new System.Windows.Forms.Padding(118, 118, 118, 118);
+            this.radSeparator1.Location = new System.Drawing.Point(525, 148);
+            this.radSeparator1.Margin = new System.Windows.Forms.Padding(148, 148, 148, 148);
             this.radSeparator1.Name = "radSeparator1";
             this.radSeparator1.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.radSeparator1.Size = new System.Drawing.Size(1, 1);
@@ -193,8 +193,8 @@
             // radSeparator2
             // 
             this.radSeparator2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radSeparator2.Location = new System.Drawing.Point(1039, 118);
-            this.radSeparator2.Margin = new System.Windows.Forms.Padding(118, 118, 118, 118);
+            this.radSeparator2.Location = new System.Drawing.Point(1069, 148);
+            this.radSeparator2.Margin = new System.Windows.Forms.Padding(148, 148, 148, 148);
             this.radSeparator2.Name = "radSeparator2";
             this.radSeparator2.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.radSeparator2.Size = new System.Drawing.Size(1, 1);
